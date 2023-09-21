@@ -17,7 +17,7 @@ public class PlayerMovement_Ryk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !netActive)
+        /*if (Input.GetKeyDown(KeyCode.Q) && !netActive)
         {
             Instantiate(net, transform.position, Quaternion.identity);
             netActive = true;
@@ -28,7 +28,7 @@ public class PlayerMovement_Ryk : MonoBehaviour
         {
             Destroy(net);
             netActive = false;
-        }
+        }*/
 
     }
 }
