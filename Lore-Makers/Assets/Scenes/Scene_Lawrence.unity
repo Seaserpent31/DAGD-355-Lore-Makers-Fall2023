@@ -1245,8 +1245,8 @@ MonoBehaviour:
   isShooting: 0
   isDead: 0
   maxChargeTime: 2
-  HealthHolder: {fileID: 1402704129}
-  chargeHolder: {fileID: 1554986590}
+  healthBar: {fileID: 1402704131}
+  chargeBar: {fileID: 1554986592}
 --- !u!50 &1534870263
 Rigidbody2D:
   serializedVersion: 4

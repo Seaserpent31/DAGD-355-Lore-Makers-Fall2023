@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Script_Player_Lawrence : MonoBehaviour
 {
@@ -14,10 +14,8 @@ public class Script_Player_Lawrence : MonoBehaviour
     public bool isShooting;
     public bool isDead;
     public float maxChargeTime;
-    public GameObject HealthHolder;
-    public GameObject chargeHolder;
 
-    public ProgressBar healthBar;
+    public Slider healthBar;
     public Slider chargeBar;
 
     private float curHealth;
@@ -37,8 +35,6 @@ public class Script_Player_Lawrence : MonoBehaviour
         curHealth = maxHealth;
         //healthBar.value = curHealth;
         isDead = false;
-        healthBar = HealthHolder.GetComponent<ProgressBar>();
-        chargeBar = chargeHolder.GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -73,10 +69,10 @@ public class Script_Player_Lawrence : MonoBehaviour
                 }
             }
 
-            // chargeBar.value = chargeTime;
+             chargeBar.value = chargeTime;
 
             //update player health
-            // healthBar.value = curHealth;
+             healthBar.value = curHealth;
 
 
             //playerMovement
