@@ -27,7 +27,6 @@ public class NetSpawn_Ryk : MonoBehaviour
             }
             else if (netActive)
             {
-                DestroyImmediate(net, true);
                 netActive = false;
                 Debug.Log("Destroyed");
             }
