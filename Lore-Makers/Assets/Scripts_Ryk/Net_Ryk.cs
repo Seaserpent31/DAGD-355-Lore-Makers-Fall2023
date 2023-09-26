@@ -11,7 +11,7 @@ public class Net_Ryk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 3;
+        speed = 4f;
     }
 
     // Update is called once per frame
@@ -21,7 +21,6 @@ public class Net_Ryk : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && netActive)
         {
             Destroy(gameObject);
-            netActive = false;
             Debug.Log("Destroyed");
         }
 

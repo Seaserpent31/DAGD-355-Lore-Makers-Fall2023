@@ -23,12 +23,10 @@ public class NetSpawn_Ryk : MonoBehaviour
             {
                 Instantiate(net, transform.position, Quaternion.identity);
                 netActive = true;
-                Debug.Log("Q is hit");
             }
             else if (netActive)
             {
                 netActive = false;
-                Debug.Log("Destroyed");
             }
         }
     }
