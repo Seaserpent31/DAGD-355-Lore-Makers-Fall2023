@@ -8,10 +8,13 @@ public class Net_Ryk : MonoBehaviour
 
     public bool netActive = true;
 
+    public float burstRadius;
+
     // Start is called before the first frame update
     void Start()
     {
         speed = 4f;
+        burstRadius = 5f;
     }
 
     // Update is called once per frame
