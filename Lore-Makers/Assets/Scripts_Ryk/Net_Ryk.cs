@@ -18,18 +18,19 @@ public class Net_Ryk : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Q) && !netActive)
+        /*if (Input.GetKeyDown(KeyCode.W) && !netActive)
         {
             Instantiate(gameObject, transform.position, Quaternion.identity);
             netActive = true;
             Debug.Log("Q is hit");
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && netActive)
+        else if (Input.GetKeyDown(KeyCode.W) && netActive)
         {
             Destroy(gameObject);
             netActive = false;
-        }
+            //Debug.Log("Destroyed");
+        }*/
 
         transform.position += new Vector3(0f, 1f, 0f) * speed * Time.deltaTime;
     }
