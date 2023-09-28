@@ -11,10 +11,11 @@ public class BulletPool_Lauren : MonoBehaviour
     // *~~ VARIABLES ~~*
     public static BulletPool_Lauren bulletPoolInstance;
 
-    [SerializeField] private GameObject pooledBullet;
+    public GameObject pooledBullet;
     private bool notEnoughBullets = true;
 
     private List<GameObject> bullets;
+    // private List<GameObject> speedyBullets;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class BulletPool_Lauren : MonoBehaviour
     void Start()
     {
         bullets = new List<GameObject>();
+        // speedyBullets = new List<GameObject>();
     }
 
     public GameObject GetBullet()

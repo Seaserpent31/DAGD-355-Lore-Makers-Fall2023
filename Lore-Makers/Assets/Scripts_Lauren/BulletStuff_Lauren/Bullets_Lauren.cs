@@ -45,6 +45,14 @@ public class Bullets_Lauren : MonoBehaviour
     [SerializeField] private Vector2 bulletDirection;
     [SerializeField] private int bulletDamage;
 
+    public int bulletType;
+        // Type 0: Bullet
+        // Type 1: Electro Bullet
+        // Type 2: Posion Dart
+        // Type 3: Rocket
+        // Type 4: Sniper Bullet
+        // Type 5: Speedy Bullet
+
     private Rigidbody2D rb;
 
     private void OnEnable()

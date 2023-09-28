@@ -14,11 +14,27 @@ public class FiringBullets_Lauren : MonoBehaviour
 
     private Vector2 bulletMoveDirection;
 
+    private float angle = 0;
+
+    // BulletPool_Lauren bulletPool;
+    WeaponsManager_Lauren weaponType;
+
+    private void Awake()
+    {
+        weaponType = GetComponent<WeaponsManager_Lauren>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Fire", 0f, 2f);
+        if (weaponType.currentWeaponIndex == 0)
+        {
+            InvokeRepeating("Fire", 0f, 1f);
+        }
+        else if (weaponType.currentWeaponIndex == 1)
+        {
+            InvokeRepeating("Spiral", 0f, 0.25f);
+        }
     }
 
     private void Fire()
@@ -41,7 +57,39 @@ public class FiringBullets_Lauren : MonoBehaviour
             bullet.SetActive(true);
             bullet.GetComponent<Bullets_Lauren>().SetMoveDirection(bulDir);
 
-            angle += angleStep;
+           angle += angleStep;
+        }
+    }
+
+    private void Spiral()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            // Firing bullets at different angles.
+            float bulDirX = transform.position.x + Mathf.Sin(((angle + 180f * i) * Mathf.PI) / 180f);
+            float bulDirY = transform.position.y + Mathf.Cos(((angle + 180f * i) * Mathf.PI) / 180f);
+            // Firing double spiral bullets from the top and bottom of the player.
+
+            bulDirX = transform.position.x + Mathf.Sin(((angle + 90f * i) * Mathf.PI / 2) / 90f);
+            bulDirY = transform.position.y + Mathf.Cos(((angle + 90f * i) * Mathf.PI / 2) / 90f);
+            // Firing more bullets at the player's side.
+
+            Vector3 bulMove = new Vector3(bulDirX, bulDirY, 0f);
+            Vector2 bulDir = (bulMove - transform.position).normalized;
+
+            GameObject bul = BulletPool_Lauren.bulletPoolInstance.GetBullet();
+            bul.transform.position = transform.position;
+            bul.transform.rotation = transform.rotation;
+            bul.SetActive(true);
+            bul.GetComponent<Bullets_Lauren>().SetMoveDirection(bulDir);
+        }
+
+        angle += 10f;
+
+        // If the angle reaches the "end," we have to reset it.
+        if (angle >= 360f)
+        {
+            angle = 0f;
         }
     }
 
