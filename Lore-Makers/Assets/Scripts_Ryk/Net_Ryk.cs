@@ -13,7 +13,7 @@ public class Net_Ryk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 4f;
+        speed = 6f;
         burstRadius = 5f;
     }
 
@@ -21,12 +21,12 @@ public class Net_Ryk : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.W) && netActive)
+        if (Input.GetKeyDown(KeyCode.E) && netActive)
         {
             Destroy(gameObject);
             Debug.Log("Destroyed");
         }
 
-        transform.position += new Vector3(0f, 1f, 0f) * speed * Time.deltaTime;
+        transform.position += new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
     }
 }
