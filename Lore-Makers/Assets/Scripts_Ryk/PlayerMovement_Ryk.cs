@@ -17,11 +17,9 @@ public class PlayerMovement_Ryk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-
-        }
 
         /*goalPos = Input.mousePosition();
         goalPos.z = 0;
