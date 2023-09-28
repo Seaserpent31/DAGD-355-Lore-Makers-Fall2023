@@ -25,6 +25,7 @@ public class BombSpawner_Ryk : MonoBehaviour
         {
             spawnBomb = true;
         }
+
         if (spawnBomb) 
         {
             Instantiate(bomb, transform.position, Quaternion.identity);
