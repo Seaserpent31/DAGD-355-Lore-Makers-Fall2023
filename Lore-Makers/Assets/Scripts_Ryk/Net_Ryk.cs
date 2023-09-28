@@ -5,14 +5,15 @@ using UnityEngine;
 public class Net_Ryk : MonoBehaviour
 {
     public float speed;
-
     public int damage;
 
     public bool netActive = true;
 
     public float burstRadius;
-
     public bool burstNet;
+
+    public float gravityRange;
+    public float gravityStrength;
 
     // Start is called before the first frame update
     void Start()
