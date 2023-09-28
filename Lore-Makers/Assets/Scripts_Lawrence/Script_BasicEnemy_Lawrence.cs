@@ -14,11 +14,15 @@ public class Script_BasicEnemy_Lawrence : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if(health <= 0)
         {
             Destroy(gameObject);
+            if (GetComponent<Script_ShieldEnemy_Lawrence>() != null)
+            {
+                GetComponent<Script_ShieldEnemy_Lawrence>().SpawnPowerUp();
+            }
         }
     }
 

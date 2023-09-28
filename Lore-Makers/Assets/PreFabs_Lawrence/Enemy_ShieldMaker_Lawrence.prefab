@@ -182,6 +182,7 @@ MonoBehaviour:
   speed: 3
   StopPoint: 6
   TrueShieldMaker: {fileID: 4679548997299321647, guid: 2bdd458233a656b40b6fb6e17b4bd10d, type: 3}
+  powerDrop: {fileID: 9007097032026866703, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
 --- !u!114 &2097858576755946673
 MonoBehaviour:
   m_ObjectHideFlags: 0

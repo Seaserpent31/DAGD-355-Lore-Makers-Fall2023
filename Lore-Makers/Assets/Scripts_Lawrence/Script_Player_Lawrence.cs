@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,9 @@ public class Script_Player_Lawrence : MonoBehaviour
     private float angleToGoal;
     private float distToGoal;
     private float easeStrength;
+
+    public float chargeFasterTimer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,12 +61,25 @@ public class Script_Player_Lawrence : MonoBehaviour
                 }
             }
 
+            //cahrge faster power timer
+            if (chargeFasterTimer >= 0)
+            {
+                chargeFasterTimer -= Time.deltaTime;
+            }
+
 
             //if is charging then display charge meter and stop shooting bullets
             if(isCharging)
             {
                 isShooting = false;
                 chargeTime += Time.deltaTime;
+                //if fast charging is true then charge twice as fast
+                if (chargeFasterTimer > 0)
+                {
+                    chargeTime += Time.deltaTime;
+                }
+
+
                 if(chargeTime > maxChargeTime)
                 {
                     AttemptChargeShot();
@@ -70,9 +87,18 @@ public class Script_Player_Lawrence : MonoBehaviour
             }
 
              chargeBar.value = chargeTime;
+            if(chargeFasterTimer > 0)
+            {
+                chargeBar.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = new UnityEngine.Color(0f / 255f, 243f / 255f, 255f / 255f);
+            }
+            else
+            {
 
+                chargeBar.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = new UnityEngine.Color(255f / 255f, 243f / 255f, 0f / 255f);
+            }
+            
             //update player health
-             healthBar.value = curHealth;
+            healthBar.value = curHealth;
 
 
             //playerMovement
@@ -89,7 +115,7 @@ public class Script_Player_Lawrence : MonoBehaviour
                 //max moveSpeed
                 rb.velocity = MaxSpeed * new Vector2(Mathf.Cos(angleToGoal),Mathf.Sin(angleToGoal));
             }
-            else if(distToGoal < .5)
+            else if(distToGoal < .1)
             {
                 //no speed
                 rb.velocity = new Vector2(0,0);
@@ -115,7 +141,14 @@ public class Script_Player_Lawrence : MonoBehaviour
         }
         else if(chargeTime > .9f * maxChargeTime)// take damage if charge is overfull;
         {
-            curHealth -= 10;
+            if(chargeFasterTimer > 0)
+            {
+                Instantiate(ChargeShot, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                curHealth -= 10;
+            }
         }
         chargeTime = 0;
         isCharging = false;
