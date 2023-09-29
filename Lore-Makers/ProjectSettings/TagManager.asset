@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - PowerUp
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Enemy

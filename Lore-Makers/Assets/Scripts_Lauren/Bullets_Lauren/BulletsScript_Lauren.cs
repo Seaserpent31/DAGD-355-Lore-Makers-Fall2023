@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-// Help from: https://www.youtube.com/watch?v=46TqkhJu7uA&t=510s.
+// Help with particle systems from: https://www.youtube.com/watch?v=46TqkhJu7uA&t=510s.
 
 // ========== BULLETS ==========
 // Bullets using Unity's Particle System.

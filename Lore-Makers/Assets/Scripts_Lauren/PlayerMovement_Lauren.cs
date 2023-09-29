@@ -15,7 +15,7 @@ public class PlayerMovement_Lauren : MonoBehaviour
     // public float detectionRadius = 0.5f;
     // public LayerMask enemyLayer; // Since I gave my enemy the "Enemy" layer.
 
-    public float detectionRadius = 0.5f; // So we can find the "things" (enemies) we're trying to detect.
+    private float detectionRadius = 0.5f; // So we can find the "things" (enemies) we're trying to detect.
 
 // ==========[ START ]==========
     void Start()

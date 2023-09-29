@@ -11,6 +11,8 @@ using UnityEngine;
     // Add the "explosion" and make sure it deals damage to the player.
     // Make sure the collision with the bullets works before we do the first one.
     // Fix enemy rotation - it doesn't "rotate fast enough" to face the player.
+    // When the player is phasing in and out, the enemies should NOT be able to detect the player.
+        // Make it to where the enemies roam randomly until the player phases back into existence.
 
 public class EnemyMovement_Lauren : MonoBehaviour
 {
