@@ -2,19 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// GameManager.
+// ==========[ GAME MANAGER ]==========
 
 public class GameManager : MonoBehaviour
 {
-    // ========== VARIABLES ==========
+    // ==========[ VARIABLES ]==========
 
+// ==========[ START ]==========
     void Start()
     {
         
-    }
 
+    } // End of Start.
+
+// ==========[ UPDATE ]==========
     void Update()
     {
         
-    }
-}
+
+    } // End of Update.
+
+} // End of Game Manager.

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// EnemyMovement.
+// ==========[ ENEMY MOVEMENT ]==========
 // Enemy: Bomber.
     // This enemy follows player movements.
     // They do not shoot at the player, however they carry a bomb.
@@ -10,10 +10,11 @@ using UnityEngine;
 // To-Do:
     // Add the "explosion" and make sure it deals damage to the player.
     // Make sure the collision with the bullets works before we do the first one.
+    // Fix enemy rotation - it doesn't "rotate fast enough" to face the player.
 
 public class EnemyMovement_Lauren : MonoBehaviour
 {
-    // ========== VARIABLES ==========
+    // ==========[ VARIABLES ]==========
     private GameObject player; // For finding the player's location.
     public float speed;
 
@@ -21,14 +22,17 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
     // private Rigidbody2D rb;
 
+// ==========[ START ]==========
     void Start()
     {
         // rb = GetComponent<Rigidbody2D>();
 
         // Instead of plugging the "Player" in into Unity, this was added so I could make the Enemy prefab work.
         player = GameObject.FindGameObjectWithTag("Player");
-    }
 
+    } // End of Start.
+
+// ==========[ UPDATE ]==========
     void Update()
     {
         // Finding the player's location.
@@ -40,7 +44,8 @@ public class EnemyMovement_Lauren : MonoBehaviour
         // Moving and rotating so the enemy faces the player.
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(Vector3.forward * angle);
-    }
+
+    } // End of Update.
 
     // private void OnCollisionEnter2D(Collision2D collision)
     // {
@@ -48,5 +53,7 @@ public class EnemyMovement_Lauren : MonoBehaviour
     //    {
     //        Destroy(gameObject);
     //    }
+    //
     // }
-}
+
+} // End of Enemy Movement.

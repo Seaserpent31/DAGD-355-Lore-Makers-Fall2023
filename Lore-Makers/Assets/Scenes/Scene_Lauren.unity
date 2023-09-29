@@ -157,10 +157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRadius: 0.5
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  detectionDistance: 1
 --- !u!212 &143657429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -630,9 +626,11 @@ MonoBehaviour:
   texture: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 0.32452828, g: 0.58134484, b: 1, a: 1}
   lifetime: 5
-  firerate: 1
+  firerate: 0.5
   size: 0.5
   material: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  spin: 45
+  time: 0
   system: {fileID: 0}
 --- !u!114 &2071111804
 MonoBehaviour:

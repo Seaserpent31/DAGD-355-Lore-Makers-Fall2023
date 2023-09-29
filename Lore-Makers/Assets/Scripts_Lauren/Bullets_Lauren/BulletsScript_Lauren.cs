@@ -5,13 +5,12 @@ using UnityEngine.UIElements;
 
 // Help from: https://www.youtube.com/watch?v=46TqkhJu7uA&t=510s.
 
-// BulletsScript.
+// ========== BULLETS ==========
 // Bullets using Unity's Particle System.
 // To-Do:
     // Add different patterns and types (types of weapons/bullets).
     // Figure out how collision works with the enemies.
         // If I can't, go back to what I was doing previously (Object Pooling).
-    // Add rotation/spiral to the pattern currently working on (similar to the one in the above video).
     // Change name to Bullets_Lauren eventually, depending on if I use particles or object pooling.
 
 public class EmitExample : MonoBehaviour
@@ -26,6 +25,8 @@ public class EmitExample : MonoBehaviour
     public float size; // The size of the bullets.
     private float angle; // Angle at which the bullets travel, depending on the columns.
     public Material material; // Particle's material.
+    public float spin; // Rotating the bullets into a pattern.
+    public float time;
     
     public ParticleSystem system;
     // private ParticleSystemRenderer render;
@@ -33,6 +34,14 @@ public class EmitExample : MonoBehaviour
     private void Awake()
     {
         Summon();
+    }
+
+    private void FixedUpdate()
+    {
+        // Spinning the particles/bullets.
+        time += Time.fixedDeltaTime;
+
+        transform.rotation = Quaternion.Euler(0, 0, time * spin);
     }
 
     void Summon()
@@ -55,6 +64,8 @@ public class EmitExample : MonoBehaviour
             mainModule.startColor = Color.green;
             mainModule.startSize = 0.5f;
             mainModule.startSpeed = speed;
+            mainModule.maxParticles = 10000;
+            mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
 
             // var renderModule = render;
             // render.renderMode = ParticleSystemRenderMode.Stretch;
