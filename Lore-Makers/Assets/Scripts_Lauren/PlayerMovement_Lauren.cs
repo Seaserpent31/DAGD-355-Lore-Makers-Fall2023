@@ -17,7 +17,7 @@ public class PlayerMovement_Lauren : MonoBehaviour
 
     private float detectionRadius = 0.5f; // So we can find the "things" (enemies) we're trying to detect.
 
-// ==========[ START ]==========
+    // ==========[ START ]==========
     void Start()
     {
         // rb = GetComponent<Rigidbody2D>();
@@ -25,18 +25,18 @@ public class PlayerMovement_Lauren : MonoBehaviour
 
     } // End of Start.
 
-   // private void FixedUpdate()
-   // {
-   //     Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius, enemyLayer);
-   //
-   //     foreach (Collider2D collider in colliders)
-   //     {
-   //        Debug.Log("Enemy Collision.");
-   //        Destroy(collider.gameObject);
-   //     }
-   // }
+    // private void FixedUpdate()
+    // {
+    //     Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius, enemyLayer);
+    //
+    //     foreach (Collider2D collider in colliders)
+    //     {
+    //        Debug.Log("Enemy Collision.");
+    //        Destroy(collider.gameObject);
+    //     }
+    // }
 
-// ==========[ UPDATE ]==========
+    // ==========[ UPDATE ]==========
     void Update()
     {
         Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

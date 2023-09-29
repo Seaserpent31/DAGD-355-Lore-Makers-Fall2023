@@ -134,4 +134,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpEffects: {fileID: 11400000, guid: c948e8a2e1b4d9045a0127757d76b500, type: 2}
-  phaseTime: 2
+  playerMovement: {fileID: 0}
+  duration: 2
