@@ -1293,6 +1293,7 @@ MonoBehaviour:
   maxChargeTime: 2
   healthBar: {fileID: 1402704131}
   chargeBar: {fileID: 1554986592}
+  chargeFasterTimer: 0
 --- !u!50 &1534870263
 Rigidbody2D:
   serializedVersion: 4
@@ -2161,7 +2162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.94858587, b: 0, a: 1}
+  m_Color: {r: 0.27044016, g: 0.97672117, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2377,6 +2378,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7adcf8e5e12254e8e51fac0a4953bd, type: 3}
+--- !u!1001 &6209060565532431519
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7302451238072152623, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3942308
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302451238072152623, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.339038
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302451238072152623, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302451238072152623, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302451238072152623, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302451238072152623, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302451238072152623, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302451238072152623, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302451238072152623, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302451238072152623, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007097032026866703, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
+      propertyPath: m_Name
+      value: Power_FastCharge_Lawrence
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f5fd82cad9e46194fadcc7bdb3a3058d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2396,3 +2454,4 @@ SceneRoots:
   - {fileID: 1618814182}
   - {fileID: 97592369}
   - {fileID: 1526203358}
+  - {fileID: 6209060565532431519}
