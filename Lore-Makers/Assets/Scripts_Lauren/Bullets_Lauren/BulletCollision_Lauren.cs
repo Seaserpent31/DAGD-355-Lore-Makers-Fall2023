@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// BulletCollision.
+// To-Do:
+    // everything :')
+
 public class BulletCollision_Lauren : MonoBehaviour
 {
+    // ========== VARIABLES ==========
     public GameObject enemy;
 
     private void OnParticleCollision()
     {
-        // You can add your custom logic here.
+        // Checking to make sure the bullets collide.
         print("collided");
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
