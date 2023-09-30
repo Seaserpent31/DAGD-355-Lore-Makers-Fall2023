@@ -16,7 +16,7 @@ public class PowerUp_Lauren : MonoBehaviour
     private GameManager gameManager;
     private GameObject player;
 
-    private float detectionRadius = 0.5f; // So we can find the player.
+    // private float detectionRadius = 0.5f; // So we can find the player.
 
     // public float alpha = 1f; // Instead of making the player completely invisible, I want them to be see-through.
 
@@ -38,23 +38,38 @@ public class PowerUp_Lauren : MonoBehaviour
 // ==========[ UPDATE ]==========
     private void Update()
     {
+        // RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, detectionRadius);
+
+        // if (hit.collider != null)
+        // {
+        //     if (hit.collider.CompareTag("Player"))
+        //     {
+        //         Debug.Log("Phasing out.");
+        //         gameManager.isPhasing = true;
+        // 
+        // Disable collision and player's render.
+        //         player.GetComponent<Renderer>().enabled = false;
+        //         player.GetComponent<Collider2D>().enabled = false;
+
+        // Destroy the Power-Up.
+        //         Destroy(gameObject);
+        //     }
+        // }
+
         // Still haven't figure out how to make it detectable with OnCollision/OnTriggerEnter2D, so using Raycasting again.
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, detectionRadius);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0f, transform.right, 0f);
 
-        if (hit.collider != null)
+        if (hit.collider.CompareTag("Player"))
         {
-            if (hit.collider.CompareTag("Player"))
-            {
-                Debug.Log("Phasing out.");
-                gameManager.isPhasing = true;
+              Debug.Log("Phasing out.");
+              gameManager.isPhasing = true;
+        
+              // Disable collision and player's render.
+              player.GetComponent<Renderer>().enabled = false;
+              player.GetComponent<Collider2D>().enabled = false;
 
-                // Disable collision and player's render.
-                player.GetComponent<Renderer>().enabled = false;
-                player.GetComponent<Collider2D>().enabled = false;
-
-                // Destroy the Power-Up.
-                Destroy(gameObject);
-            }
+              // Destroy the Power-Up.
+              Destroy(gameObject);
         }
 
     } // End of Update.

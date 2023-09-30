@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using static UnityEngine.UI.Image;
 
 // ==========[ PLAYER MOVEMENT ]==========
 // The Player is controlled with the mouse.
 // To-Do:
-    // Disable enemy collision when the player is phasing out (Power-Up).
-    // Use the better movement code that Lawrence provided.
+// Disable enemy collision when the player is phasing out (Power-Up).
+// Use the better movement code that Lawrence provided.
 
 public class PlayerMovement_Lauren : MonoBehaviour
 {
@@ -16,9 +17,9 @@ public class PlayerMovement_Lauren : MonoBehaviour
     // private Rigidbody2D rb;
     private GameObject enemy;
 
-    // public LayerMask enemyLayer; // Since I gave my enemy the "Enemy" layer.
+    public LayerMask layerMask; // Since I gave my enemy the "Enemy" layer.
 
-    private float detectionRadius = 1f; // So we can find the "things" (enemies) we're trying to detect.
+    // private float detectionRadius = 1f; // So we can find the "things" (enemies) we're trying to detect.
 
     // ==========[ START ]==========
     void Start()
@@ -42,22 +43,33 @@ public class PlayerMovement_Lauren : MonoBehaviour
     // ==========[ UPDATE ]==========
     void Update()
     {
+        // Mouse movement.
         Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(cursorPosition.x, cursorPosition.y);
 
+        // RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, detectionRadius);
+        // Debug.DrawRay(transform.position, transform.right * detectionRadius, Color.white);
+
+        // if (hit.collider != null)
+        // {
+        //   if (hit.collider.CompareTag("Enemy"))
+        //   {
+        //       Debug.Log("Collided with Enemy.");
+        //       Destroy(hit.collider.gameObject);
+        //   }
+        // }
+
         // Raycasting
         // For some reason, NOTHING I did for 2D collision was working, but after trying this, it worked.
-        // (temporary solution).
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, detectionRadius);
-        Debug.DrawRay(transform.position, transform.right * detectionRadius, Color.white);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0f, transform.right, 0f, layerMask);
 
         if (hit.collider != null)
         {
-            if (hit.collider.CompareTag("Enemy"))
-            {
-                Debug.Log("Collided with Enemy.");
-                Destroy(hit.collider.gameObject);
-            }
+            GameObject enemy = hit.collider.gameObject;
+            Debug.Log("Player collided with enemy: " + enemy.name);
+
+            // Delete this and replace with dealing damage.
+            Destroy(hit.collider.gameObject);
         }
 
     } // End of Update.
