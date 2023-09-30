@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.UIElements.Experimental;
 
 // // ==========[ POWER UP ]==========
+// Power-Up: Phasing.
+    // Gives the player the ability to phase out and then back in after a certain amount of time.
+    // To-Do:
+        // Decide whether we want the Power-Up to be activated as soon as the player picks it up, or if it activates with a key.
+        // Decide how we want the Power-Ups to spawn - randomly across the screen, or dropped by enemies.
 
 public class PowerUp_Lauren : MonoBehaviour
 {
     // ==========[ VARIABLES ]==========
-    public PowerUpEffects_Lauren powerUpEffects;
     private GameManager gameManager;
     private GameObject player;
 
@@ -41,12 +45,14 @@ public class PowerUp_Lauren : MonoBehaviour
         {
             if (hit.collider.CompareTag("Player"))
             {
-                Debug.Log("Collided with Power-Up.");
+                Debug.Log("Phasing out.");
                 gameManager.isPhasing = true;
 
+                // Disable collision and player's render.
                 player.GetComponent<Renderer>().enabled = false;
                 player.GetComponent<Collider2D>().enabled = false;
 
+                // Destroy the Power-Up.
                 Destroy(gameObject);
             }
         }

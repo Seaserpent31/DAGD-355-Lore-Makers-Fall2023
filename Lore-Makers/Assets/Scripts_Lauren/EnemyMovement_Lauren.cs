@@ -18,7 +18,11 @@ public class EnemyMovement_Lauren : MonoBehaviour
 {
     // ==========[ VARIABLES ]==========
     private GameObject player; // For finding the player's location.
+    private GameManager gameManager;
+
     public float speed;
+
+    [SerializeField] private int enemyHealth = 10;
 
     private float dis;
 
@@ -31,6 +35,7 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
         // Instead of plugging the "Player" in into Unity, this was added so I could make the Enemy prefab work.
         player = GameObject.FindGameObjectWithTag("Player");
+        gameManager = GameManager.FindAnyObjectByType<GameManager>();
 
     } // End of Start.
 
@@ -43,11 +48,26 @@ public class EnemyMovement_Lauren : MonoBehaviour
         dir.Normalize();
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-        // Moving and rotating so the enemy faces the player.
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-        transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        // If the player is phasing, the enemies should NOT continue following them.
+        if(!gameManager.isPhasing)
+        {
+            // Moving and rotating so the enemy faces the player.
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        }
+
+        // Instead, the enemies should find "new paths" until the player phases back in.
 
     } // End of Update.
+
+    public void TakeDamage(int damage)
+    {
+        enemyHealth -= damage;
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // private void OnCollisionEnter2D(Collision2D collision)
     // {

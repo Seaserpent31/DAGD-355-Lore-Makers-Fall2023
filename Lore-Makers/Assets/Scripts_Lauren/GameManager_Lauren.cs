@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
             // Be detected by enemies (specifically the Bombers - they shouldn't continue to follow the player).
             // Pick up other Power-Ups (maybe?).
             // Shoot bullets (maybe?).
-    public float phaseTime = 2f; // How long the player will be phasing for.
+    public float phaseTime = 7f; // How long the player will be phasing for.
 
 // ==========[ START ]==========
     void Start()
@@ -37,10 +37,12 @@ public class GameManager : MonoBehaviour
                 // Once the timer reaches zero, it should reset and the player should be visible and able to collide with things again.
                 Debug.Log("Phased back in.");
 
+                isPhasing = false;
+
                 player.GetComponent<Renderer>().enabled = true;
                 player.GetComponent<Collider2D>().enabled = true;
 
-                phaseTime = 2f;
+                phaseTime = 7f;
             }
         }
 

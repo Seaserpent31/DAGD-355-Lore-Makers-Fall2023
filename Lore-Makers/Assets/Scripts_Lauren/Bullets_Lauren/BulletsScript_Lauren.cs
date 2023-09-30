@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 // Help with particle systems from: https://www.youtube.com/watch?v=46TqkhJu7uA&t=510s.
 
-// ========== BULLETS ==========
+// ==========[ BULLETS ]==========
 // Bullets using Unity's Particle System.
 // To-Do:
     // Add different patterns and types (types of weapons/bullets).
@@ -13,9 +13,9 @@ using UnityEngine.UIElements;
         // If I can't, go back to what I was doing previously (Object Pooling).
     // Change name to Bullets_Lauren eventually, depending on if I use particles or object pooling.
 
-public class EmitExample : MonoBehaviour
+public class BulletsScript_Lauren : MonoBehaviour
 {
-    // ========== VARIABLES ==========
+    // ==========[ VARIABLES ]==========
     public int numColumns; // How many bullets I want fired out at a time.
     public float speed; // How fast I want the bullets to travel.
     public Sprite texture; // The particle's texture/sprite.
@@ -31,6 +31,8 @@ public class EmitExample : MonoBehaviour
     public ParticleSystem system;
     // private ParticleSystemRenderer render;
 
+    private GameManager gameManager;
+
     private void Awake()
     {
         Summon();
@@ -44,8 +46,11 @@ public class EmitExample : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, time * spin);
     }
 
+// ==========[ SUMMON (START) ]==========
     void Summon()
     {
+        gameManager = GameManager.FindAnyObjectByType<GameManager>();
+
         angle = 360f / numColumns;
         
         for(int i = 0; i < numColumns; i++)
@@ -91,7 +96,8 @@ public class EmitExample : MonoBehaviour
 
         // Firing the bullets. Keep OUTSIDE of the loop.
         InvokeRepeating("DoEmit", 0f, firerate);
-    }
+
+    } // End of Summon.
 
     // DoEmit() - Emit the particles (bullets).
     void DoEmit()
@@ -107,7 +113,11 @@ public class EmitExample : MonoBehaviour
             emitParams.startSize = size;
             emitParams.startLifetime = lifetime;
 
-            system.Emit(emitParams, 10);
+            // When phasing, we don't want the player to fire bullets.
+            if (!gameManager.isPhasing)
+            {
+                system.Emit(emitParams, 10);
+            }
         }
     }
 }

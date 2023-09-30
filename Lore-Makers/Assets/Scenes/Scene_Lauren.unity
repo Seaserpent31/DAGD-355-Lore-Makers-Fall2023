@@ -288,7 +288,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -603,6 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPhasing: 0
+  phaseTime: 7
 --- !u!1001 &1929108195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -799,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707baec088e72ab4eb82dedc639f1af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 3730107599685292168, guid: b39c8942574eb5443bc29907544d21d5, type: 3}
 --- !u!1001 &2757953414562855610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -849,9 +850,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4706811038042574964, guid: 04abd4376e869e34dbe8e4ea519f8434, type: 3}
-      propertyPath: phaseTime
-      value: 7
-      objectReference: {fileID: 0}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 143657428}
     - target: {fileID: 4823688606739849382, guid: 04abd4376e869e34dbe8e4ea519f8434, type: 3}
       propertyPath: m_Name
       value: PowerUp

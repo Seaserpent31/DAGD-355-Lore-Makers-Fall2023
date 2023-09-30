@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8371062676007245427}
   - component: {fileID: 5298403421544425218}
   - component: {fileID: 5924405950404632873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Lauren
   m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  enemyHealth: 10
 --- !u!61 &5924405950404632873
 BoxCollider2D:
   m_ObjectHideFlags: 0
