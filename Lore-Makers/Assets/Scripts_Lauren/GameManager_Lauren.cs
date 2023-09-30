@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // ==========[ VARIABLES ]==========
+// ==========[ VARIABLES ]==========
     private PowerUp_Lauren phasing;
     private GameObject player;
 

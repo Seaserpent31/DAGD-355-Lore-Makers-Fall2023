@@ -12,7 +12,7 @@ using UnityEngine.UIElements.Experimental;
 
 public class PowerUp_Lauren : MonoBehaviour
 {
-    // ==========[ VARIABLES ]==========
+// ==========[ VARIABLES ]==========
     private GameManager gameManager;
     private GameObject player;
 
@@ -27,7 +27,7 @@ public class PowerUp_Lauren : MonoBehaviour
     //     powerUpEffects.Apply(collision.gameObject);
     // }
 
-    // ==========[ START ]==========
+// ==========[ START ]==========
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); // Finding the Player.

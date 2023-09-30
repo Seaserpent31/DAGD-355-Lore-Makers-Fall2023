@@ -8,24 +8,26 @@ using static UnityEngine.UI.Image;
 // ==========[ PLAYER MOVEMENT ]==========
 // The Player is controlled with the mouse.
 // To-Do:
-// Disable enemy collision when the player is phasing out (Power-Up).
-// Use the better movement code that Lawrence provided.
+    // Disable enemy collision when the player is phasing out (Power-Up).
+    // Use the better movement code that Lawrence provided.
 
 public class PlayerMovement_Lauren : MonoBehaviour
 {
-    // ==========[ VARIABLES ]==========
+// ==========[ VARIABLES ]==========
     // private Rigidbody2D rb;
     private GameObject enemy;
+    private GameManager gameManager;
 
     public LayerMask layerMask; // Since I gave my enemy the "Enemy" layer.
 
     // private float detectionRadius = 1f; // So we can find the "things" (enemies) we're trying to detect.
 
-    // ==========[ START ]==========
+// ==========[ START ]==========
     void Start()
     {
         // rb = GetComponent<Rigidbody2D>();
         enemy = GameObject.FindGameObjectWithTag("Enemy"); // Finding the Enemy object.
+        gameManager = GameManager.FindAnyObjectByType<GameManager>();
 
     } // End of Start.
 
@@ -40,7 +42,7 @@ public class PlayerMovement_Lauren : MonoBehaviour
     //     }
     // }
 
-    // ==========[ UPDATE ]==========
+// ==========[ UPDATE ]==========
     void Update()
     {
         // Mouse movement.
@@ -63,13 +65,17 @@ public class PlayerMovement_Lauren : MonoBehaviour
         // For some reason, NOTHING I did for 2D collision was working, but after trying this, it worked.
         RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0f, transform.right, 0f, layerMask);
 
-        if (hit.collider != null)
+        if(!gameManager.isPhasing)
         {
-            GameObject enemy = hit.collider.gameObject;
-            Debug.Log("Player collided with enemy: " + enemy.name);
+            if (hit.collider != null)
+            {
+                GameObject enemy = hit.collider.gameObject;
+                Debug.Log("Player collided with enemy: " + enemy.name);
 
-            // Delete this and replace with dealing damage.
-            Destroy(hit.collider.gameObject);
+                // Delete this and replace with dealing damage.
+                //Destroy(hit.collider.gameObject);
+                enemy.GetComponent<EnemyMovement_Lauren>().TakeDamage(10);
+            }
         }
 
     } // End of Update.

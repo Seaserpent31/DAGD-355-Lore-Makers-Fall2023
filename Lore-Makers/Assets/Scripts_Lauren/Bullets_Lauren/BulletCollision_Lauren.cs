@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class BulletCollision_Lauren : MonoBehaviour
 {
-    // ==========[ VARIABLES ]==========
+// ==========[ VARIABLES ]==========
     private GameObject enemy;
     private BulletsScript_Lauren bullets;
     public ParticleSystem particles;
@@ -18,7 +18,7 @@ public class BulletCollision_Lauren : MonoBehaviour
    // [SerializeField] private Vector2 raycastRadius = Vector2.one;
    // [SerializeField] private float raycastDistance = 1f;
 
-    // ==========[ START ]==========
+// ==========[ START ]==========
     void Start()
     {
         //enemy = GameObject.FindGameObjectWithTag("Enemy");
@@ -55,16 +55,18 @@ public class BulletCollision_Lauren : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        // https://docs.unity3d.com/530/Documentation/ScriptReference/MonoBehaviour.OnParticleCollision.html
+        // https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnParticleCollision.html
+
         //EnemyMovement_Lauren enemy = other.GetComponent<EnemyMovement_Lauren>();
-        // GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
 
         // Rigidbody rb = other.GetComponent<Rigidbody>();
 
-        // if (enemy)
-        // {
-        //      Debug.Log("Hit an enemy");
-        //      // enemy.TakeDamage(10); // Adjust the damage value as needed.
-        // }
+        if (enemy)
+        {
+            Debug.Log("Hit an enemy");
+        }
     }
 
 } // End of Bullet Collision.

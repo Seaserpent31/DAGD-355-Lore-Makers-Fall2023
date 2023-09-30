@@ -15,7 +15,7 @@ using UnityEngine.UIElements;
 
 public class BulletsScript_Lauren : MonoBehaviour
 {
-    // ==========[ VARIABLES ]==========
+// ==========[ VARIABLES ]==========
     public int numColumns; // How many bullets I want fired out at a time.
     public float speed; // How fast I want the bullets to travel.
     public Sprite texture; // The particle's texture/sprite.

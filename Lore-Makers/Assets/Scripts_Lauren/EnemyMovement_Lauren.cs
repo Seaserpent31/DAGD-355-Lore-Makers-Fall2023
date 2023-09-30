@@ -16,7 +16,7 @@ using UnityEngine;
 
 public class EnemyMovement_Lauren : MonoBehaviour
 {
-    // ==========[ VARIABLES ]==========
+// ==========[ VARIABLES ]==========
     private GameObject player; // For finding the player's location.
     private GameManager gameManager;
 
