@@ -33,6 +33,9 @@ public class BulletsScript_Lauren : MonoBehaviour
 
     private GameManager gameManager;
 
+    // public ParticleSystem part;
+    // public List<ParticleCollisionEvent> collisionEvents;
+
     private void Awake()
     {
         Summon();
@@ -50,6 +53,9 @@ public class BulletsScript_Lauren : MonoBehaviour
     void Summon()
     {
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
+
+        // part = GetComponent<ParticleSystem>();
+        // collisionEvents = new List<ParticleCollisionEvent>();
 
         angle = 360f / numColumns;
         
@@ -120,4 +126,26 @@ public class BulletsScript_Lauren : MonoBehaviour
             }
         }
     }
+
+    // private void OnParticleCollision(GameObject other)
+    // {
+        // https://docs.unity3d.com/530/Documentation/ScriptReference/MonoBehaviour.OnParticleCollision.html
+        // https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnParticleCollision.html
+
+    //     int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
+
+    //     other = GameObject.FindGameObjectWithTag("Enemy");
+        // Rigidbody rb = other.GetComponent<Rigidbody>();
+    //     int i = 0;
+
+    //     while (i < numCollisionEvents)
+    //     {
+    //         if (other)
+    //         {
+    //             Debug.Log("Hit an enemy");
+    //         }
+    //         i++;
+    //     }
+
+    // }
 }

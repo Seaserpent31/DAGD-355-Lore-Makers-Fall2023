@@ -26,12 +26,12 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
     private float dis;
 
-    // private Rigidbody2D rb;
+    private Rigidbody2D rb;
 
 // ==========[ START ]==========
     void Start()
     {
-        // rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         // Instead of plugging the "Player" in into Unity, this was added so I could make the Enemy prefab work.
         player = GameObject.FindGameObjectWithTag("Player");

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 // ==========[ BULLET COLLISION ]==========
@@ -9,20 +10,30 @@ using UnityEngine;
 public class BulletCollision_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
-    private GameObject enemy;
-    private BulletsScript_Lauren bullets;
-    public ParticleSystem particles;
+    // private GameObject enemy;
+    // private BulletsScript_Lauren bullets;
 
-    public LayerMask enemyLayer;
+    // public ParticleSystem particles;
+    // List<ParticleCollisionEvent> collisionEvents;
 
-   // [SerializeField] private Vector2 raycastRadius = Vector2.one;
-   // [SerializeField] private float raycastDistance = 1f;
+    // public LayerMask enemyLayer;
 
-// ==========[ START ]==========
+    // [SerializeField] private Vector2 raycastRadius = Vector2.one;
+    // [SerializeField] private float raycastDistance = 1f;
+
+    // public new ParticleSystem particleSystem;
+    // public ParticleCollisionEvent[] collisionEvents;
+
+    // ==========[ START ]==========
     void Start()
     {
-        //enemy = GameObject.FindGameObjectWithTag("Enemy");
-        particles = GetComponent<ParticleSystem>();
+        // enemy = GameObject.FindGameObjectWithTag("Enemy");
+
+        // particles = GetComponent<ParticleSystem>();
+        // collisionEvents = new List<ParticleCollisionEvent>();
+
+        // particleSystem = GetComponent<ParticleSystem>();
+        // collisionEvents = new ParticleCollisionEvent[10000];
 
     } // End of Start.
 
@@ -51,6 +62,22 @@ public class BulletCollision_Lauren : MonoBehaviour
             } */
         //}
 
+        // List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
+
+        // int numCollisions = ParticlePhysicsExtensions.GetCollisionEvents(particleSystem, gameObject, collisionEvents);
+
+        // for (int i = 0; i < numCollisions; i++)
+        // {
+            // Access collision information for each event.
+        //     ParticleCollisionEvent collision = collisionEvents[i];
+        //     Vector3 collisionPoint = collision.intersection;
+        //     Vector3 collisionNormal = collision.normal;
+
+            // Handle the collision (e.g., spawn effects, apply forces, etc.).
+            // You can add your custom logic here.
+            // Debug.Log("Hit an enemy");
+        // }
+
     } // End of Update.
 
     private void OnParticleCollision(GameObject other)
@@ -58,15 +85,45 @@ public class BulletCollision_Lauren : MonoBehaviour
         // https://docs.unity3d.com/530/Documentation/ScriptReference/MonoBehaviour.OnParticleCollision.html
         // https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnParticleCollision.html
 
-        //EnemyMovement_Lauren enemy = other.GetComponent<EnemyMovement_Lauren>();
-        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        Debug.Log("Hit an enemy");
 
+        // int numCollisionEvents = particles.GetCollisionEvents(other, collisionEvents);
+
+        // other = GameObject.FindGameObjectWithTag("Test");
         // Rigidbody rb = other.GetComponent<Rigidbody>();
+        // int i = 0;
 
-        if (enemy)
-        {
-            Debug.Log("Hit an enemy");
-        }
+        // while (i < numCollisionEvents)
+        // {
+        //     if (other)
+        //     {
+        //         Debug.Log("Hit an enemy");
+        //     }
+        //     i++;
+        // }
+
+        // Rigidbody body = other.GetComponent<Rigidbody>();
+        // if (other.CompareTag("Test"))
+        // {
+        // Debug.Log("Hit an enemy");
+        // }
+
+        // int safeLength = particleSystem.GetSafeCollisionEventSize();
+        // if (collisionEvents.Length < safeLength)
+        //     collisionEvents = new ParticleCollisionEvent[safeLength];
+
+        // int numCollisionEvents = particleSystem.GetCollisionEvents(other, collisionEvents);
+        // Rigidbody rb = other.GetComponent<Rigidbody>();
+        // int i = 0;
+        // while (i < numCollisionEvents)
+        // {
+        //     if (other)
+        //     {
+        //         Debug.Log("Hit an enemy");
+        //     }
+        //     i++;
+        // }
+
     }
 
 } // End of Bullet Collision.

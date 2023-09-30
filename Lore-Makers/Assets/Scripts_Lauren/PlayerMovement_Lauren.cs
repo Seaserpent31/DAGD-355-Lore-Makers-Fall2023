@@ -14,18 +14,20 @@ using static UnityEngine.UI.Image;
 public class PlayerMovement_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
-    // private Rigidbody2D rb;
+    private Rigidbody2D rb;
+
     private GameObject enemy;
     private GameManager gameManager;
 
-    public LayerMask layerMask; // Since I gave my enemy the "Enemy" layer.
+    // public LayerMask layerMask; // Since I gave my enemy the "Enemy" layer.
 
     // private float detectionRadius = 1f; // So we can find the "things" (enemies) we're trying to detect.
 
 // ==========[ START ]==========
     void Start()
     {
-        // rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+
         enemy = GameObject.FindGameObjectWithTag("Enemy"); // Finding the Enemy object.
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
 
@@ -63,31 +65,29 @@ public class PlayerMovement_Lauren : MonoBehaviour
 
         // Raycasting
         // For some reason, NOTHING I did for 2D collision was working, but after trying this, it worked.
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0f, transform.right, 0f, layerMask);
+        // RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0f, transform.right, 0f, layerMask);
 
-        if(!gameManager.isPhasing)
-        {
-            if (hit.collider != null)
-            {
-                GameObject enemy = hit.collider.gameObject;
-                Debug.Log("Player collided with enemy: " + enemy.name);
+        // if(!gameManager.isPhasing)
+        // {
+        //     if (hit.collider != null)
+        //     {
+        //         GameObject enemy = hit.collider.gameObject;
+        //         Debug.Log("Player collided with enemy: " + enemy.name);
 
-                // Delete this and replace with dealing damage.
-                //Destroy(hit.collider.gameObject);
-                enemy.GetComponent<EnemyMovement_Lauren>().TakeDamage(10);
-            }
-        }
+        //         enemy.GetComponent<EnemyMovement_Lauren>().TakeDamage(10);
+        //     }
+        // }
 
     } // End of Update.
 
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "Enemy")
-    //     {
-    //         Debug.Log("Enemy Collision.");
-    //         Destroy(collision.gameObject);
-    //     }
-    //
-    // }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Enemy Collision.");
+            Destroy(collision.gameObject);
+        }
+   
+    }
 
 } // End of Player Movement.
