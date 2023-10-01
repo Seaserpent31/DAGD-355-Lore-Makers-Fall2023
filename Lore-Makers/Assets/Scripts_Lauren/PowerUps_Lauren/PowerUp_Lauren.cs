@@ -9,6 +9,8 @@ using UnityEngine.UIElements.Experimental;
     // To-Do:
         // Decide whether we want the Power-Up to be activated as soon as the player picks it up, or if it activates with a key.
         // Decide how we want the Power-Ups to spawn - randomly across the screen, or dropped by enemies.
+    // Make sure power-ups actually spawn instead of just placing prefabs.
+    // Switch collision to the regular kind, since I finally figured out what was wrong.
 
 public class PowerUp_Lauren : MonoBehaviour
 {

@@ -13,16 +13,20 @@ using UnityEngine;
     // Fix enemy rotation - it doesn't "rotate fast enough" to face the player.
     // When the player is phasing in and out, the enemies should NOT be able to detect the player.
         // Make it to where the enemies roam randomly until the player phases back into existence.
+    // Make sure enemies actually spawn instead of just placing prefabs.
 
 public class EnemyMovement_Lauren : MonoBehaviour
 {
-// ==========[ VARIABLES ]==========
-    private GameObject player; // For finding the player's location.
+    // ==========[ VARIABLES ]==========
     private GameManager gameManager;
+    private GameObject player; // For finding the player's location.
+
+    public GameObject bomb;
+    // private ExplosionBehavior_Lauren explosion;
 
     public float speed;
 
-    [SerializeField] private int enemyHealth = 10;
+    public float enemyHealth = 10f;
 
     private float dis;
 
@@ -36,6 +40,9 @@ public class EnemyMovement_Lauren : MonoBehaviour
         // Instead of plugging the "Player" in into Unity, this was added so I could make the Enemy prefab work.
         player = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
+
+        //bomb = GameObject.FindGameObjectWithTag("Test");
+        // explosion = ExplosionBehavior_Lauren.FindAnyObjectByType<ExplosionBehavior_Lauren>();
 
     } // End of Start.
 
@@ -60,13 +67,20 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
     } // End of Update.
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
-        if (enemyHealth <= 0)
+        if (enemyHealth <= 0f)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        // Instantiate the bomb.
+        Instantiate(bomb, transform.position, Quaternion.identity);
+        Debug.Log("Bomb deployed.");
     }
 
     // private void OnCollisionEnter2D(Collision2D collision)

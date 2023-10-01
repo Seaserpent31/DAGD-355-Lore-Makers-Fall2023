@@ -19,6 +19,8 @@ public class PlayerMovement_Lauren : MonoBehaviour
     private GameObject enemy;
     private GameManager gameManager;
 
+    public float playerHealth = 10f;
+
     // public LayerMask layerMask; // Since I gave my enemy the "Enemy" layer.
 
     // private float detectionRadius = 1f; // So we can find the "things" (enemies) we're trying to detect.
@@ -88,6 +90,16 @@ public class PlayerMovement_Lauren : MonoBehaviour
             Destroy(collision.gameObject);
         }
    
+    }
+
+    public void TakeDamage(float damage)
+    {
+        playerHealth -= damage;
+        if (playerHealth <= 0f)
+        {
+            // Game is over.
+            Debug.Log("Game Over.");
+        }
     }
 
 } // End of Player Movement.
