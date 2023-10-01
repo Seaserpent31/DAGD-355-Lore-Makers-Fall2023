@@ -32,14 +32,14 @@ public class BombSpawner_Ryk : MonoBehaviour
 
         if (spawnBomb) 
         {
-            Instantiate(bomb, transform.position, Quaternion.identity);
+            Instantiate(bomb, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
         }*/
 
-        if(Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if(!bombActive)
             {
-                Instantiate(bomb, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
+                Instantiate(bomb, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
                 bombActive = true;
             }
             else if (bombActive)
