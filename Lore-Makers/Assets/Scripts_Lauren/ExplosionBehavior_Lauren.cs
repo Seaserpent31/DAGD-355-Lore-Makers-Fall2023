@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
+// Help with creating "Splash Damage" from: https://youtu.be/6YvEDbBjgAY?si=91v3FH2A8INLt43j.
+
 // ==========[ EXPLOSION BEHAVIOR ]==========
 // When the Bomber enemy is "killed" or reaches the player, they explode, dealing damage.
 // The bomb is not meant to move, when the Bomber is destroyed, the bomb goes off where the Bomber was.
 // To-Do:
-    // Fix the amount of damage the player is supposed to take.
+    // Change things with damage (works for now - up close, deals around 9 and deals less further away).
+    // Add particles for when the bomb explodes.
 
 public class ExplosionBehavior_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
     private PlayerMovement_Lauren player;
-    // private GameObject bomb;
+    public ParticleSystem explosion;
     
     // public bool hasExploded = false; // Whether the bomb has exploded or not.
 
-    public float damage = 2f;
+    public float damage = 1f;
     public float radius = 5f; // Range for splash damage.
 
 // ==========[ START ]==========
@@ -39,10 +42,10 @@ public class ExplosionBehavior_Lauren : MonoBehaviour
 
     void Explode()
     {
-        // Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
-        var colliders = Physics2D.OverlapCircleAll(transform.position, radius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
+        // var colliders = Physics2D.OverlapCircleAll(transform.position, radius);
 
-        foreach (var collider in colliders)
+        foreach (Collider2D collider in colliders)
         {
             if (collider.CompareTag("Player"))
             {
@@ -55,14 +58,18 @@ public class ExplosionBehavior_Lauren : MonoBehaviour
 
                     // Deal damage depending on how close the player is.
                     var damagePercent = Mathf.InverseLerp(radius, 0, distance);
-                    int calculatedDamage = (int)(damagePercent * damage);
+                    int calculatedDamage = (int)(damagePercent * 10 * damage);
 
                     // Dea damage.
                     player.TakeDamage(calculatedDamage);
+                    Debug.Log(calculatedDamage);
                     Debug.Log("Damage taken. Remaining health: " + player.playerHealth);
                 }
             }
         }
+
+        // Explosion effect.
+        // Instantiate(explosion, transform.position, Quaternion.identity);
 
         // Destroy the bomb.
         Destroy(gameObject);

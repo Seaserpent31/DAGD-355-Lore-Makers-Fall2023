@@ -19,7 +19,7 @@ public class PlayerMovement_Lauren : MonoBehaviour
     private GameObject enemy;
     private GameManager gameManager;
 
-    public float playerHealth = 10f;
+    public float playerHealth = 100f;
 
     // public LayerMask layerMask; // Since I gave my enemy the "Enemy" layer.
 

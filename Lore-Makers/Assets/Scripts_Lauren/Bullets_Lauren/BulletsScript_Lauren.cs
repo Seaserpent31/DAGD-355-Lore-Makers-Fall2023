@@ -13,6 +13,27 @@ using UnityEngine.UIElements;
         // If I can't, go back to what I was doing previously (Object Pooling).
     // Change name to Bullets_Lauren eventually, depending on if I use particles or object pooling.
 
+    // Bullet types:
+        // Bullet:
+            // Shoots at a normal speed in a spinning pattern.
+            // Deals normal amount of damage.
+        // Speedy Bullet:
+            // Shoot more bullets at a faster speed in random directions.
+            // Deals less damage than regular bullets.
+        // Electro Bullets:
+            // Shoots at a normal speed in a pattern.
+            // Deals normal amount of damage, but at multiple targets that were near each other.
+        // Poison Dart:
+            // Shoots at a normal speed in a pattern.
+            // Deals a little less damage than regular bullets, but the bullets deal damage over time.
+        // Sniper Bullet:
+            // Shoots one bullet at a time that go to the closest enemy.
+            // Deals a lot of damage to enemies.
+        // Rockets:
+            // Similar to Sniper Bullet.
+            // Shoots one rocket at a time that go to the closest enemy.
+            // Deals a lot of damage to multiple enemies at a time, depending on how close they are to the rocket.
+
 public class BulletsScript_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========

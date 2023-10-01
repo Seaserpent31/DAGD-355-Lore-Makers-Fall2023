@@ -84,8 +84,9 @@ public class BulletCollision_Lauren : MonoBehaviour
     {
         // https://docs.unity3d.com/530/Documentation/ScriptReference/MonoBehaviour.OnParticleCollision.html
         // https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnParticleCollision.html
+        // https://docs.unity3d.com/530/Documentation/ScriptReference/ParticlePhysicsExtensions.GetCollisionEvents.html
 
-        Debug.Log("Hit an enemy");
+        // Debug.Log("Hit an enemy");
 
         // int numCollisionEvents = particles.GetCollisionEvents(other, collisionEvents);
 

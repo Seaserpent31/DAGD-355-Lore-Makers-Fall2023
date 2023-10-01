@@ -11,6 +11,7 @@ using UnityEngine.UIElements.Experimental;
         // Decide how we want the Power-Ups to spawn - randomly across the screen, or dropped by enemies.
     // Make sure power-ups actually spawn instead of just placing prefabs.
     // Switch collision to the regular kind, since I finally figured out what was wrong.
+    // Make a timer appear on screen counting down the seconds.
 
 public class PowerUp_Lauren : MonoBehaviour
 {
