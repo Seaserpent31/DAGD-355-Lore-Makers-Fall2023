@@ -58,14 +58,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a867eba83e30a2e4996cea6f9178ef33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numColumns: 10
+  numColumns: 2
   speed: 5
   texture: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 0.32452828, g: 0.58134484, b: 1, a: 1}
   lifetime: 5
-  firerate: 0.5
+  firerate: 0.1
   size: 0.35
   material: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-  spin: 45
+  spin: 180
   time: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   system: {fileID: 0}

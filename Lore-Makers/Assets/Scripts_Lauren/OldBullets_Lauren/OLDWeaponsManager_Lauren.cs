@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponsManager_Lauren : MonoBehaviour
+public class OLDWeaponsManager_Lauren : MonoBehaviour
 {
     public GameObject[] bulletTypes;
     [SerializeField] public int currentWeaponIndex = 0;

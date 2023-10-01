@@ -5,38 +5,17 @@ using UnityEngine.UIElements;
 
 // Help with particle systems from: https://www.youtube.com/watch?v=46TqkhJu7uA&t=510s.
 
-// ==========[ BULLETS ]==========
-// Bullets using Unity's Particle System.
-// To-Do:
-// Add different patterns and types (types of weapons/bullets).
-// Figure out how collision works with the enemies.
-// If I can't, go back to what I was doing previously (Object Pooling).
-// Change name to Bullets_Lauren eventually, depending on if I use particles or object pooling.
-
-// Bullet types:
-// Bullet:
-// Shoots at a normal speed in a spinning pattern.
-// Deals normal amount of damage.
+// ==========[ SPEEDY BULLET ]==========
 // Speedy Bullet:
-// Shoot more bullets at a faster speed in random directions.
-// Deals less damage than regular bullets.
-// Electro Bullets:
-// Shoots at a normal speed in a pattern.
-// Deals normal amount of damage, but at multiple targets that were near each other.
-// Poison Dart:
-// Shoots at a normal speed in a pattern.
-// Deals a little less damage than regular bullets, but the bullets deal damage over time.
-// Sniper Bullet:
-// Shoots one bullet at a time that go to the closest enemy.
-// Deals a lot of damage to enemies.
-// Rockets:
-// Similar to Sniper Bullet.
-// Shoots one rocket at a time that go to the closest enemy.
-// Deals a lot of damage to multiple enemies at a time, depending on how close they are to the rocket.
+    // Shoot more bullets at a faster speed in random directions.
+    // Deals less damage than regular bullets.
+    // To-Do:
+        // Make things more random.
+        // Make sure different amounts of damage gets dealt.
 
-public class SpeedyScript_Lauren : MonoBehaviour
+public class SpeedyBullet_Lauren : MonoBehaviour
 {
-    // ==========[ VARIABLES ]==========
+// ==========[ VARIABLES ]==========
     public int numColumns; // How many bullets I want fired out at a time.
     public float speed; // How fast I want the bullets to travel.
     public Sprite texture; // The particle's texture/sprite.
@@ -48,6 +27,8 @@ public class SpeedyScript_Lauren : MonoBehaviour
     public Material material; // Particle's material.
     public float spin; // Rotating the bullets into a pattern.
     public float time;
+
+    public LayerMask layerMask;
 
     public ParticleSystem system;
     // private ParticleSystemRenderer render;
@@ -67,7 +48,7 @@ public class SpeedyScript_Lauren : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, time * spin);
     }
 
-    // ==========[ SUMMON (START) ]==========
+// ==========[ SUMMON (START) ]==========
     void Summon()
     {
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
@@ -86,6 +67,7 @@ public class SpeedyScript_Lauren : MonoBehaviour
             go.transform.position = this.transform.position;
             system = go.AddComponent<ParticleSystem>();
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
+
             var mainModule = system.main;
             mainModule.startColor = Color.green;
             mainModule.startSize = 0.5f;
@@ -104,8 +86,9 @@ public class SpeedyScript_Lauren : MonoBehaviour
             // Changing the "shape" to a Sprite.
             var shape = system.shape;
             shape.enabled = true;
-            shape.shapeType = ParticleSystemShapeType.Sphere;
+            shape.shapeType = ParticleSystemShapeType.Sprite;
             // shape.sprite = null;
+            // shape.randomDirectionAmount = 1;
             // shape.alignToDirection = false;
 
             // Adding the "texture."
@@ -113,6 +96,15 @@ public class SpeedyScript_Lauren : MonoBehaviour
             text.mode = ParticleSystemAnimationMode.Sprites;
             text.AddSprite(texture);
             text.enabled = true;
+
+            // Collision.
+            var collision = system.collision;
+            collision.type = ParticleSystemCollisionType.World;
+            collision.mode = ParticleSystemCollisionMode.Collision2D;
+            collision.lifetimeLoss = 1;
+            collision.collidesWith = layerMask;
+            collision.sendCollisionMessages = true;
+            collision.enabled = true;
         }
 
         // Firing the bullets. Keep OUTSIDE of the loop.
@@ -142,4 +134,4 @@ public class SpeedyScript_Lauren : MonoBehaviour
         }
     }
 
-} // End of Bullet Script.
+} // End of Speedy Bullet.

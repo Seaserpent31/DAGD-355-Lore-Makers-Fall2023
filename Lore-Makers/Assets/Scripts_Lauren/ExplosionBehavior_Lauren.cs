@@ -21,7 +21,7 @@ public class ExplosionBehavior_Lauren : MonoBehaviour
     // public bool hasExploded = false; // Whether the bomb has exploded or not.
 
     public float damage = 1f;
-    public float radius = 5f; // Range for splash damage.
+    public float radius = 3f; // Range for splash damage.
 
 // ==========[ START ]==========
     void Start()

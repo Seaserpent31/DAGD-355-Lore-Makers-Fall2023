@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Bullets_Lauren : MonoBehaviour
+public class OLDBullets_Lauren : MonoBehaviour
 {
     // Help used from:
         // https://youtu.be/Mq2zYk5tW_E?si=iDfJ1_zxp0sC6NAJ.

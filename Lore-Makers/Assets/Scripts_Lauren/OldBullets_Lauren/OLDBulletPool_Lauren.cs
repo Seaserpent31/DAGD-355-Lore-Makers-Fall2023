@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class BulletPool_Lauren : MonoBehaviour
+public class OLDBulletPool_Lauren : MonoBehaviour
 {
     // Help used from:
         // https://youtu.be/Mq2zYk5tW_E?si=iDfJ1_zxp0sC6NAJ.
 
     // *~~ VARIABLES ~~*
-    public static BulletPool_Lauren bulletPoolInstance;
+    public static OLDBulletPool_Lauren bulletPoolInstance;
 
     public GameObject pooledBullet;
     private bool notEnoughBullets = true;

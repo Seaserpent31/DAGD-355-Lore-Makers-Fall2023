@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 818813952902073871, guid: a511f7693c415244f99c56a302b31012, type: 3}
   damage: 1
-  radius: 5
+  radius: 3
 --- !u!58 &6386109490585038382
 CircleCollider2D:
   m_ObjectHideFlags: 0

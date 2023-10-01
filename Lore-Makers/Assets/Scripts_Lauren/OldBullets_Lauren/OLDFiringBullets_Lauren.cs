@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FiringBullets_Lauren : MonoBehaviour
+public class OLDFiringBullets_Lauren : MonoBehaviour
 {
     // Help used from:
         // https://youtu.be/Mq2zYk5tW_E?si=iDfJ1_zxp0sC6NAJ.
@@ -17,11 +17,11 @@ public class FiringBullets_Lauren : MonoBehaviour
     private float angle = 0;
 
     // BulletPool_Lauren bulletPool;
-    WeaponsManager_Lauren weaponType;
+    OLDWeaponsManager_Lauren weaponType;
 
     private void Awake()
     {
-        weaponType = GetComponent<WeaponsManager_Lauren>();
+        weaponType = GetComponent<OLDWeaponsManager_Lauren>();
     }
 
     // Start is called before the first frame update
@@ -51,11 +51,11 @@ public class FiringBullets_Lauren : MonoBehaviour
             Vector3 bulMove = new Vector3(bulDirX, bulDirY, 0f);
             Vector2 bulDir = (bulMove - transform.position).normalized;
 
-            GameObject bullet = BulletPool_Lauren.bulletPoolInstance.GetBullet();
+            GameObject bullet = OLDBulletPool_Lauren.bulletPoolInstance.GetBullet();
             bullet.transform.position = transform.position;
             bullet.transform.rotation = transform.rotation;
             bullet.SetActive(true);
-            bullet.GetComponent<Bullets_Lauren>().SetMoveDirection(bulDir);
+            bullet.GetComponent<OLDBullets_Lauren>().SetMoveDirection(bulDir);
 
            angle += angleStep;
         }
@@ -77,11 +77,11 @@ public class FiringBullets_Lauren : MonoBehaviour
             Vector3 bulMove = new Vector3(bulDirX, bulDirY, 0f);
             Vector2 bulDir = (bulMove - transform.position).normalized;
 
-            GameObject bul = BulletPool_Lauren.bulletPoolInstance.GetBullet();
+            GameObject bul = OLDBulletPool_Lauren.bulletPoolInstance.GetBullet();
             bul.transform.position = transform.position;
             bul.transform.rotation = transform.rotation;
             bul.SetActive(true);
-            bul.GetComponent<Bullets_Lauren>().SetMoveDirection(bulDir);
+            bul.GetComponent<OLDBullets_Lauren>().SetMoveDirection(bulDir);
         }
 
         angle += 10f;

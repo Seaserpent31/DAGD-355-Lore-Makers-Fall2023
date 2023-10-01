@@ -1,40 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-// Help with particle systems from: https://www.youtube.com/watch?v=46TqkhJu7uA&t=510s.
+// ==========[ POISON DART ]==========
+// Poison Dart:
+    // Shoots at a normal speed in a pattern.
+    // Deals a little less damage than regular bullets, but the bullets deal damage over time.
+    // To-Do:
+        // Make the bullets deal damage over time.
 
-// ==========[ BULLETS ]==========
-// Bullets using Unity's Particle System.
-// To-Do:
-    // Add different patterns and types (types of weapons/bullets).
-    // Figure out how collision works with the enemies.
-        // If I can't, go back to what I was doing previously (Object Pooling).
-    // Change name to Bullets_Lauren eventually, depending on if I use particles or object pooling.
-
-    // Bullet types:
-        // Bullet:
-            // Shoots at a normal speed in a spinning pattern.
-            // Deals normal amount of damage.
-        // Speedy Bullet:
-            // Shoot more bullets at a faster speed in random directions.
-            // Deals less damage than regular bullets.
-        // Electro Bullets:
-            // Shoots at a normal speed in a pattern.
-            // Deals normal amount of damage, but at multiple targets that were near each other.
-        // Poison Dart:
-            // Shoots at a normal speed in a pattern.
-            // Deals a little less damage than regular bullets, but the bullets deal damage over time.
-        // Sniper Bullet:
-            // Shoots one bullet at a time that go to the closest enemy.
-            // Deals a lot of damage to enemies.
-        // Rockets:
-            // Similar to Sniper Bullet.
-            // Shoots one rocket at a time that go to the closest enemy.
-            // Deals a lot of damage to multiple enemies at a time, depending on how close they are to the rocket.
-
-public class BulletsScript_Lauren : MonoBehaviour
+public class PoisonDart_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
     public int numColumns; // How many bullets I want fired out at a time.
@@ -50,7 +25,7 @@ public class BulletsScript_Lauren : MonoBehaviour
     public float time;
 
     public LayerMask layerMask;
-    
+
     public ParticleSystem system;
     // private ParticleSystemRenderer render;
 
@@ -67,6 +42,7 @@ public class BulletsScript_Lauren : MonoBehaviour
         time += Time.fixedDeltaTime;
 
         transform.rotation = Quaternion.Euler(0, 0, time * spin);
+
     }
 
 // ==========[ SUMMON (START) ]==========
@@ -75,8 +51,8 @@ public class BulletsScript_Lauren : MonoBehaviour
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
 
         angle = 360f / numColumns;
-        
-        for(int i = 0; i < numColumns; i++)
+
+        for (int i = 0; i < numColumns; i++)
         {
             // Simple particle material.
             Material particleMaterial = material;
@@ -88,11 +64,13 @@ public class BulletsScript_Lauren : MonoBehaviour
             go.transform.position = this.transform.position;
             system = go.AddComponent<ParticleSystem>();
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
+
             var mainModule = system.main;
             mainModule.startColor = Color.green;
             mainModule.startSize = 0.5f;
             mainModule.startSpeed = speed;
             mainModule.maxParticles = 10000;
+            // mainModule.duration = 0f;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
 
             // var renderModule = render;
@@ -134,10 +112,10 @@ public class BulletsScript_Lauren : MonoBehaviour
     // DoEmit() - Emit the particles (bullets).
     void DoEmit()
     {
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             system = child.GetComponent<ParticleSystem>();
-            
+
             // emitParams will override the current system's when called.
             // We can change this in Unity.
             var emitParams = new ParticleSystem.EmitParams();
@@ -153,4 +131,4 @@ public class BulletsScript_Lauren : MonoBehaviour
         }
     }
 
-} // End of Bullet Script.
+} // End of Poison Dart.
