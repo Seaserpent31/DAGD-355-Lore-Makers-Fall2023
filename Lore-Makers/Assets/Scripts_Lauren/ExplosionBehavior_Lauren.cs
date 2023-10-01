@@ -7,11 +7,11 @@ using UnityEngine;
 // When the Bomber enemy is "killed" or reaches the player, they explode, dealing damage.
 // The bomb is not meant to move, when the Bomber is destroyed, the bomb goes off where the Bomber was.
 // To-Do:
-    // Everything.
+    // Fix the amount of damage the player is supposed to take.
 
 public class ExplosionBehavior_Lauren : MonoBehaviour
 {
-    // ==========[ VARIABLES ]==========
+// ==========[ VARIABLES ]==========
     private PlayerMovement_Lauren player;
     // private GameObject bomb;
     
@@ -20,7 +20,7 @@ public class ExplosionBehavior_Lauren : MonoBehaviour
     public float damage = 2f;
     public float radius = 5f; // Range for splash damage.
 
-    // ==========[ START ]==========
+// ==========[ START ]==========
     void Start()
     {
         // bomb = GameObject.FindGameObjectWithTag("Bomb");
@@ -67,6 +67,7 @@ public class ExplosionBehavior_Lauren : MonoBehaviour
         // Destroy the bomb.
         Destroy(gameObject);
         Debug.Log("Bomb exploded");
-    }
+
+    } // End of Explode().
 
 } // End of Explosion Bheavior.
