@@ -8,6 +8,8 @@ public class GameManager_Ryk : MonoBehaviour
 
     public GameObject net;
 
+    public bool enemyKilled;
+
     // Start is called before the first frame update
     void Start()
     {
