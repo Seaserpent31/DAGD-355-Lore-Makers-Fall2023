@@ -10,13 +10,16 @@ using UnityEngine;
 public class BulletCollision_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
+    private Rigidbody2D rb;
+    
     // private GameObject enemy;
+    private EnemyMovement_Lauren enemy;
     // private BulletsScript_Lauren bullets;
 
     // public ParticleSystem particles;
     // List<ParticleCollisionEvent> collisionEvents;
 
-    // public LayerMask enemyLayer;
+    public LayerMask enemyLayer;
 
     // [SerializeField] private Vector2 raycastRadius = Vector2.one;
     // [SerializeField] private float raycastDistance = 1f;
@@ -28,6 +31,12 @@ public class BulletCollision_Lauren : MonoBehaviour
     void Start()
     {
         // enemy = GameObject.FindGameObjectWithTag("Enemy");
+
+        enemy = GetComponent<EnemyMovement_Lauren>();
+
+        enemyLayer = GetComponent<LayerMask>();
+
+        rb = GetComponent<Rigidbody2D>();
 
         // particles = GetComponent<ParticleSystem>();
         // collisionEvents = new List<ParticleCollisionEvent>();
@@ -90,7 +99,7 @@ public class BulletCollision_Lauren : MonoBehaviour
 
         // int numCollisionEvents = particles.GetCollisionEvents(other, collisionEvents);
 
-        // other = GameObject.FindGameObjectWithTag("Test");
+        other = GameObject.FindGameObjectWithTag("Enemy");
         // Rigidbody rb = other.GetComponent<Rigidbody>();
         // int i = 0;
 
@@ -104,10 +113,12 @@ public class BulletCollision_Lauren : MonoBehaviour
         // }
 
         // Rigidbody body = other.GetComponent<Rigidbody>();
-        // if (other.CompareTag("Test"))
-        // {
-        // Debug.Log("Hit an enemy");
-        // }
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("Hit an enemy");
+            Debug.Log(enemy.enemyHealth);
+            enemy.TakeDamage(1);
+        }
 
         // int safeLength = particleSystem.GetSafeCollisionEventSize();
         // if (collisionEvents.Length < safeLength)

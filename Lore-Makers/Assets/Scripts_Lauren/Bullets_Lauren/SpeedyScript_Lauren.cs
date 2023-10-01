@@ -8,35 +8,35 @@ using UnityEngine.UIElements;
 // ==========[ BULLETS ]==========
 // Bullets using Unity's Particle System.
 // To-Do:
-    // Add different patterns and types (types of weapons/bullets).
-    // Figure out how collision works with the enemies.
-        // If I can't, go back to what I was doing previously (Object Pooling).
-    // Change name to Bullets_Lauren eventually, depending on if I use particles or object pooling.
+// Add different patterns and types (types of weapons/bullets).
+// Figure out how collision works with the enemies.
+// If I can't, go back to what I was doing previously (Object Pooling).
+// Change name to Bullets_Lauren eventually, depending on if I use particles or object pooling.
 
-    // Bullet types:
-        // Bullet:
-            // Shoots at a normal speed in a spinning pattern.
-            // Deals normal amount of damage.
-        // Speedy Bullet:
-            // Shoot more bullets at a faster speed in random directions.
-            // Deals less damage than regular bullets.
-        // Electro Bullets:
-            // Shoots at a normal speed in a pattern.
-            // Deals normal amount of damage, but at multiple targets that were near each other.
-        // Poison Dart:
-            // Shoots at a normal speed in a pattern.
-            // Deals a little less damage than regular bullets, but the bullets deal damage over time.
-        // Sniper Bullet:
-            // Shoots one bullet at a time that go to the closest enemy.
-            // Deals a lot of damage to enemies.
-        // Rockets:
-            // Similar to Sniper Bullet.
-            // Shoots one rocket at a time that go to the closest enemy.
-            // Deals a lot of damage to multiple enemies at a time, depending on how close they are to the rocket.
+// Bullet types:
+// Bullet:
+// Shoots at a normal speed in a spinning pattern.
+// Deals normal amount of damage.
+// Speedy Bullet:
+// Shoot more bullets at a faster speed in random directions.
+// Deals less damage than regular bullets.
+// Electro Bullets:
+// Shoots at a normal speed in a pattern.
+// Deals normal amount of damage, but at multiple targets that were near each other.
+// Poison Dart:
+// Shoots at a normal speed in a pattern.
+// Deals a little less damage than regular bullets, but the bullets deal damage over time.
+// Sniper Bullet:
+// Shoots one bullet at a time that go to the closest enemy.
+// Deals a lot of damage to enemies.
+// Rockets:
+// Similar to Sniper Bullet.
+// Shoots one rocket at a time that go to the closest enemy.
+// Deals a lot of damage to multiple enemies at a time, depending on how close they are to the rocket.
 
-public class BulletsScript_Lauren : MonoBehaviour
+public class SpeedyScript_Lauren : MonoBehaviour
 {
-// ==========[ VARIABLES ]==========
+    // ==========[ VARIABLES ]==========
     public int numColumns; // How many bullets I want fired out at a time.
     public float speed; // How fast I want the bullets to travel.
     public Sprite texture; // The particle's texture/sprite.
@@ -49,8 +49,6 @@ public class BulletsScript_Lauren : MonoBehaviour
     public float spin; // Rotating the bullets into a pattern.
     public float time;
 
-    public LayerMask layerMask;
-    
     public ParticleSystem system;
     // private ParticleSystemRenderer render;
 
@@ -69,14 +67,14 @@ public class BulletsScript_Lauren : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, time * spin);
     }
 
-// ==========[ SUMMON (START) ]==========
+    // ==========[ SUMMON (START) ]==========
     void Summon()
     {
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
 
         angle = 360f / numColumns;
-        
-        for(int i = 0; i < numColumns; i++)
+
+        for (int i = 0; i < numColumns; i++)
         {
             // Simple particle material.
             Material particleMaterial = material;
@@ -106,8 +104,8 @@ public class BulletsScript_Lauren : MonoBehaviour
             // Changing the "shape" to a Sprite.
             var shape = system.shape;
             shape.enabled = true;
-            shape.shapeType = ParticleSystemShapeType.Sprite;
-            shape.sprite = null;
+            shape.shapeType = ParticleSystemShapeType.Sphere;
+            // shape.sprite = null;
             // shape.alignToDirection = false;
 
             // Adding the "texture."
@@ -115,15 +113,6 @@ public class BulletsScript_Lauren : MonoBehaviour
             text.mode = ParticleSystemAnimationMode.Sprites;
             text.AddSprite(texture);
             text.enabled = true;
-
-            // Collision.
-            var collision = system.collision;
-            collision.type = ParticleSystemCollisionType.World;
-            collision.mode = ParticleSystemCollisionMode.Collision2D;
-            collision.lifetimeLoss = 1;
-            collision.collidesWith = layerMask;
-            collision.sendCollisionMessages = true;
-            collision.enabled = true;
         }
 
         // Firing the bullets. Keep OUTSIDE of the loop.
@@ -134,10 +123,10 @@ public class BulletsScript_Lauren : MonoBehaviour
     // DoEmit() - Emit the particles (bullets).
     void DoEmit()
     {
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             system = child.GetComponent<ParticleSystem>();
-            
+
             // emitParams will override the current system's when called.
             // We can change this in Unity.
             var emitParams = new ParticleSystem.EmitParams();
