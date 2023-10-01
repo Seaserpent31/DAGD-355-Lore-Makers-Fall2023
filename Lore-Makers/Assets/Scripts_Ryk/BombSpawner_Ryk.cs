@@ -10,18 +10,22 @@ public class BombSpawner_Ryk : MonoBehaviour
 
     public GameObject bomb;
 
+    //Throwaway Variables
+    public bool bombActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
         spawnBomb = false;
         spawnRate = 0;
 
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(randomSpawnNumber > spawnRate)
+        /*if(randomSpawnNumber > spawnRate)
         {
             spawnBomb = true;
         }
@@ -29,6 +33,19 @@ public class BombSpawner_Ryk : MonoBehaviour
         if (spawnBomb) 
         {
             Instantiate(bomb, transform.position, Quaternion.identity);
+        }*/
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            if(!bombActive)
+            {
+                Instantiate(bomb, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
+                bombActive = true;
+            }
+            else if (bombActive)
+            {
+                bombActive = false;
+            }
         }
     }
 }

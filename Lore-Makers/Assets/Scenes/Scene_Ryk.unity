@@ -310,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 618073040}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -8, y: 0, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2.9787, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -421,6 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7274218194777518810, guid: 5831afa4fc82170448f95f606345d4ef, type: 3}
   net: {fileID: 245977569260484741, guid: 703e4dada6c638d438ed3dbd6b969163, type: 3}
+  enemyKilled: 0
 --- !u!4 &1060049901
 Transform:
   m_ObjectHideFlags: 0
@@ -583,6 +584,7 @@ MonoBehaviour:
   spawnRate: 0
   randomSpawnNumber: 0
   bomb: {fileID: 1721362412742229259, guid: 33fbb6cdb4e73384ba52e05df463a0fa, type: 3}
+  bombActive: 0
 --- !u!4 &2081542422
 Transform:
   m_ObjectHideFlags: 0
