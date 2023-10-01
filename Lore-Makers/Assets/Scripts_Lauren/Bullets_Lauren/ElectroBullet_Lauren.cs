@@ -10,7 +10,12 @@ using UnityEngine;
     // Deals normal amount of damage, but at multiple targets that were near each other.
     // IDEA - Make the bullets stun enemies?
     // To-Do:
-        // Make the bullets deal damage to multiple enemies at a time.
+        // (if yes for the idea) Make the enemies get stunned for a few seconds.
+        // Visualize the bullet shooting every enemy (make lifetimeloss 0 and do everything necessary).
+
+    // Damage (in a hypothetical case):
+        // Enemy has 50 health.
+        // Bullet does around 10-12 damage per enemy.
 
 public class ElectroBullet_Lauren : MonoBehaviour
 {
@@ -130,6 +135,22 @@ public class ElectroBullet_Lauren : MonoBehaviour
             if (!gameManager.isPhasing)
             {
                 system.Emit(emitParams, 10);
+
+                // Detect all enemies in a certain radius.
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 3f, layerMask);
+
+                // For each enemy detected, deal damage.
+                foreach (Collider2D collider in colliders)
+                {
+                    // Check if the detected object has an enemy script/component.
+                    EnemyMovement_Lauren enemy = collider.GetComponent<EnemyMovement_Lauren>();
+
+                    if (enemy != null)
+                    {
+                        enemy.TakeDamage(1);
+                        Debug.Log("Electro.");
+                    }
+                }
             }
         }
     }

@@ -14,6 +14,11 @@ using UnityEngine.UIElements;
     // To-Do:
         // Create an explosion, very similar to the one on Bombers (but deal damage to the enemies instead).
 
+    // Damage (in a hypothetical case):
+        // Enemy has 50 health.
+        // Rocket does around 30 damage (at the center of where the rocket hit).
+        // Less damage is dealt depending on how close enemies are to where the rocket hit.
+
 public class Rocket_Lauren : MonoBehaviour
 {
     // ==========[ VARIABLES ]==========

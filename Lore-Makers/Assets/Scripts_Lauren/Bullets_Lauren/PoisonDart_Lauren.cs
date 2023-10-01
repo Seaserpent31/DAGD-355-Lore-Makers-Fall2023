@@ -9,6 +9,11 @@ using UnityEngine;
     // To-Do:
         // Make the bullets deal damage over time.
 
+    // Damage (in a hypothetical case):
+        // Enemy has 50 health.
+        // Dart does around 7-10 base damage.
+        // For the next couple of seconds, the enemy takes 1-2 damage per second.
+
 public class PoisonDart_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========

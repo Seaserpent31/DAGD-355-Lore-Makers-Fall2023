@@ -15,6 +15,10 @@ using UnityEngine.UIElements;
         // If the player moves fast, bullets may miss.
             // (can't really control, but should probably compensate by adding a faster firerate?).
 
+    // Damage (in a hypothetical case):
+        // Enemy has 50 health.
+        // Bullet does around 20-25 damage.
+
 public class SniperBullet_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========

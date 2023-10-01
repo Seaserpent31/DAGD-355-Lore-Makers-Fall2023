@@ -13,6 +13,10 @@ using UnityEngine.UIElements;
         // Make things more random.
         // Make sure different amounts of damage gets dealt.
 
+    // Damage (in a hypothetical case):
+        // Enemy has 50 health.
+        // Bullet does around 5-7 damage.
+
 public class SpeedyBullet_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========

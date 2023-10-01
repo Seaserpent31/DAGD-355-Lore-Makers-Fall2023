@@ -12,6 +12,10 @@ using UnityEngine.UIElements;
     // To-Do:
         // Add different patterns and types (types of weapons/bullets).
 
+    // Damage (in a hypothetical case):
+        // Enemy has 50 health.
+        // Bullet does around around 10-12 damage.
+
 public class Bullets_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
