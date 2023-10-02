@@ -45,7 +45,6 @@ public class BulletCollision_Lauren : MonoBehaviour
             Debug.Log(enemy.enemyHealth);
             enemy.TakeDamage(1);
         }
-
     }
 
 } // End of Bullet Collision.

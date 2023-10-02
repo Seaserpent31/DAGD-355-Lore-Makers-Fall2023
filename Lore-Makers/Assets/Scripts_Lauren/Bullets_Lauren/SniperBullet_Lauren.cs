@@ -33,6 +33,7 @@ public class SniperBullet_Lauren : MonoBehaviour
     public Material material; // Particle's material.
     public float spin; // Rotating the bullets into a pattern.
     public float time;
+    public float damage;
 
     public LayerMask layerMask;
 
@@ -53,6 +54,8 @@ public class SniperBullet_Lauren : MonoBehaviour
         time += Time.fixedDeltaTime;
 
         transform.rotation = Quaternion.Euler(0, 0, time * spin);
+
+        damage = Random.Range(20f, 25f);
 
     }
 
