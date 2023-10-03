@@ -17,7 +17,7 @@ public class BombSpawner_Ryk : MonoBehaviour
     void Start()
     {
         spawnBomb = false;
-        spawnRate = 5;
+        spawnRate = 8;
 
     }
 
@@ -38,9 +38,9 @@ public class BombSpawner_Ryk : MonoBehaviour
         {
             if (!bombActive)
             {
-                randomSpawnNumber = Random.Range(0, spawnRate);
+                randomSpawnNumber = Random.Range(0, 10);
                 Debug.Log(randomSpawnNumber);
-                if (randomSpawnNumber > 2)
+                if (randomSpawnNumber < spawnRate)
                 {
                     Instantiate(bomb, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
                     bombActive = true;
