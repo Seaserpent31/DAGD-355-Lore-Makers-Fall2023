@@ -19,6 +19,8 @@ public class PlayerMovement_Lauren : MonoBehaviour
     private GameObject enemy;
     private GameManager gameManager;
 
+    private EnemyMovement_Lauren enemyMovement;
+
     public float playerHealth = 100f;
 
     // public LayerMask layerMask; // Since I gave my enemy the "Enemy" layer.
@@ -87,7 +89,11 @@ public class PlayerMovement_Lauren : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Enemy Collision.");
-            Destroy(collision.gameObject);
+
+            enemyMovement.animator.SetTrigger("destroy");
+
+            // To-Do:
+                // If enemies are in the process of dying, they should not be able to continue moving or taking damage.
         }
    
     }
