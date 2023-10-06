@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 143657436}
-  playerHealth: 100
+  playerHealth: 50
 --- !u!212 &143657429
 SpriteRenderer:
   m_ObjectHideFlags: 0

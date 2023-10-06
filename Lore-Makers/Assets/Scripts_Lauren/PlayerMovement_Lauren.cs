@@ -75,6 +75,24 @@ public class PlayerMovement_Lauren : MonoBehaviour
         // To-Do:
         // Tilting the player as they move from side to side (same as above).
 
+        if (horizontal > 0)
+        {
+            animator.SetBool("isRight", true);
+            animator.SetBool("isLeft", false);
+        }
+        // If the 'vertical' is less than 0, the ship is moving down.
+        else if (horizontal < 0)
+        {
+            animator.SetBool("isRight", false);
+            animator.SetBool("isLeft", true);
+        }
+        else if (horizontal == 0)
+        {
+            animator.SetBool("isRight", false);
+            animator.SetBool("isLeft", false);
+        }
+
+        // Phasing.
         if (gameManager.isPhasing)
         {
             animator.SetBool("isPhasing", true);
