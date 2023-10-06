@@ -134,11 +134,9 @@ GameObject:
   - component: {fileID: 143657430}
   - component: {fileID: 143657429}
   - component: {fileID: 143657428}
-  - component: {fileID: 143657431}
-  - component: {fileID: 143657433}
+  - component: {fileID: 143657436}
   - component: {fileID: 143657434}
   - component: {fileID: 143657435}
-  - component: {fileID: 143657436}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -158,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c4c77da436be841a2c7f01e4802484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 143657436}
   playerHealth: 100
 --- !u!212 &143657429
 SpriteRenderer:
@@ -227,41 +226,6 @@ Transform:
   - {fileID: 2075851031}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &143657431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143657427}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3ff06f62e25064ba42ef3265a12d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountBullets: 15
-  startAngle: 0
-  endAngle: 360
---- !u!114 &143657433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143657427}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc95d99f32dfd474bbb3525c1d121ffd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletTypes:
-  - {fileID: 4386278902832307325, guid: 6ab165af6b2f60840ac25f36583c5eb2, type: 3}
-  - {fileID: 5962352554516657818, guid: 874eef7bccf12f14e99b3b0f04117a10, type: 3}
-  - {fileID: 8328866587867418341, guid: 80d3124c1e30a0f438fdd5d754f156f1, type: 3}
-  - {fileID: 1626618570481185750, guid: 75b8e1d69c4467d43bff5a6b47b4e056, type: 3}
-  - {fileID: 4919281355610442761, guid: aeb0d96618f218646bee619d8b697e3d, type: 3}
-  - {fileID: 361074993977080580, guid: 201c6c99446698f4e8149083be97571b, type: 3}
-  currentWeaponIndex: 0
 --- !u!58 &143657434
 CircleCollider2D:
   m_ObjectHideFlags: 0

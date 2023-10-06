@@ -21,6 +21,8 @@ public class PlayerMovement_Lauren : MonoBehaviour
 
     private EnemyMovement_Lauren enemyMovement;
 
+    public Animator animator;
+
     public float playerHealth = 100f;
 
     // public LayerMask layerMask; // Since I gave my enemy the "Enemy" layer.
@@ -54,6 +56,33 @@ public class PlayerMovement_Lauren : MonoBehaviour
         // Mouse movement.
         Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(cursorPosition.x, cursorPosition.y);
+
+        // Getting the mouse's X and Y.
+        float vertical = Input.GetAxis("Mouse Y");
+        float horizontal = Input.GetAxis("Mouse X");
+
+        // If the 'vertical' is greater than 0, the ship is moving up.
+        if (vertical > 0)
+        {
+            animator.SetBool("isUp", true);
+        }
+        // If the 'vertical' is less than 0, the ship is moving down.
+        else if (vertical < 0)
+        {
+            animator.SetBool("isUp", false);
+        }
+
+        // To-Do:
+        // Tilting the player as they move from side to side (same as above).
+
+        if (gameManager.isPhasing)
+        {
+            animator.SetBool("isPhasing", true);
+        }
+        else if(!gameManager.isPhasing)
+        {
+            animator.SetBool("isPhasing", false);
+        }
 
         // RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, detectionRadius);
         // Debug.DrawRay(transform.position, transform.right * detectionRadius, Color.white);
@@ -105,7 +134,14 @@ public class PlayerMovement_Lauren : MonoBehaviour
         {
             // Game is over.
             Debug.Log("Game Over.");
+
+            animator.SetTrigger("destroy");
         }
+    }
+
+    public void kill()
+    {
+        Destroy(gameObject);
     }
 
 } // End of Player Movement.
