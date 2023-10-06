@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 47b825ee4a06cbc40b9698386ab8bb7b
+guid: 686aaabcb5699124c9d70f1e5d911f7c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: M_BomberEngine_Lauren_0
+      name: Nairan - Bomber - Engine_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e4e74cf36d35654083065a52410abb3
-      internalID: 436307001
+      spriteID: 002711a2701ad1c4a92b9bec8cb452db
+      internalID: 1240856581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: M_BomberEngine_Lauren_1
+      name: Nairan - Bomber - Engine_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63c4379c9f1abe047ab920a8b9fb83ae
-      internalID: -1464702697
+      spriteID: 1e50d38e38b0ecc42a031ab884539ecd
+      internalID: 567991788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: M_BomberEngine_Lauren_2
+      name: Nairan - Bomber - Engine_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c2569dac14b57245939839d05bada9a
-      internalID: 1748403628
+      spriteID: c5de333978fcbcb40ba109c0b967b706
+      internalID: 1431021192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: M_BomberEngine_Lauren_3
+      name: Nairan - Bomber - Engine_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc097fd088d312c4188d04683759ff55
-      internalID: -1656622734
+      spriteID: 858893c5ad3550e45a82831fb0641385
+      internalID: 1281105560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: M_BomberEngine_Lauren_4
+      name: Nairan - Bomber - Engine_4
       rect:
         serializedVersion: 2
         x: 256
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260039b61157d8a45a100476d04b1169
-      internalID: 882229327
+      spriteID: 6c143f88d8ef93e4b9a35ca39e5f1964
+      internalID: 151406437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: M_BomberEngine_Lauren_5
+      name: Nairan - Bomber - Engine_5
       rect:
         serializedVersion: 2
         x: 320
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4ed8b476e4c5f14c9f507b239c0652f
-      internalID: 370557120
+      spriteID: eee337b8547918d45add33604d5410ae
+      internalID: 636424510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: M_BomberEngine_Lauren_6
+      name: Nairan - Bomber - Engine_6
       rect:
         serializedVersion: 2
         x: 384
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 163a3e0ea5359f9409682eaa47b29d41
-      internalID: -111290389
+      spriteID: 71a25f653a71c91438018044e64133a1
+      internalID: 1061572097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: M_BomberEngine_Lauren_7
+      name: Nairan - Bomber - Engine_7
       rect:
         serializedVersion: 2
         x: 448
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 918faed083a6f83489b3c1e7f874ff55
-      internalID: -465309246
+      spriteID: 060ee0cbe0d56e4428faf5c0cbd90a90
+      internalID: 1258940216
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      M_BomberEngine_Lauren_0: 436307001
-      M_BomberEngine_Lauren_1: -1464702697
-      M_BomberEngine_Lauren_2: 1748403628
-      M_BomberEngine_Lauren_3: -1656622734
-      M_BomberEngine_Lauren_4: 882229327
-      M_BomberEngine_Lauren_5: 370557120
-      M_BomberEngine_Lauren_6: -111290389
-      M_BomberEngine_Lauren_7: -465309246
+      Nairan - Bomber - Engine_0: 1240856581
+      Nairan - Bomber - Engine_1: 567991788
+      Nairan - Bomber - Engine_2: 1431021192
+      Nairan - Bomber - Engine_3: 1281105560
+      Nairan - Bomber - Engine_4: 151406437
+      Nairan - Bomber - Engine_5: 636424510
+      Nairan - Bomber - Engine_6: 1061572097
+      Nairan - Bomber - Engine_7: 1258940216
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
