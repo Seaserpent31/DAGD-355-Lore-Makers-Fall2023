@@ -1,0 +1,655 @@
+fileFormatVersion: 2
+guid: 5de0d6ef9395e9545b4cd19caaae4c17
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9979feec9ee6f3047ab3a31fccb88e86
+      internalID: -193279213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 448
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a34765251db9a4a8c922083be2d6bb
+      internalID: -1450525396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 448
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8bf0e5345aa1ef41b94054254aa1c1a
+      internalID: -725861248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e267447416fce4b910adfbec4ace45
+      internalID: 255283067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_4
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 384
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066c66ca9d638f2478d8d14bab38b409
+      internalID: -1602062144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_5
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 384
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a794772e9d8d5e547bc8dc6420bcb7c1
+      internalID: -2126666758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b7b24319bac6a479d44e31d8fa742d
+      internalID: 410409420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_7
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 320
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceafd7fb6b95c9644a30052aed88026b
+      internalID: -527381008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_8
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 320
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a831c12c26965e419f711579b2c6df3
+      internalID: -1148332084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6e32d9b6519e14fad8380324fbad8c
+      internalID: -449083846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_10
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 256
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967ebc74975fccd4895e7e3c925bab1f
+      internalID: -2044921859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_11
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 256
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06972fdeb0759ae46bfa5225ee2b3e82
+      internalID: -1479791765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b1685ff1a63e14aba1946b44ef3e1e
+      internalID: -2046406039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_13
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 192
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4465b9ed0ad9544a9ec2669c8c210f
+      internalID: -1827330427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_14
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 192
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f82c5a700536f1498635e7c3689ab0f
+      internalID: 205152683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65b640a02cfa1942b92a90aea0964c5
+      internalID: 296054056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_16
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 128
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1f6f52e6b71e44dbb82b116aa36eb7
+      internalID: 840044296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_17
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 128
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71f0634992b0b84088725cc15a3445c
+      internalID: 1976172177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e9811e9bfa1af41aea84b756d7f7c2
+      internalID: -202248373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_19
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 64
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32c4aac2ae0ed6409676e777b8b2156
+      internalID: 1316044131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_20
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 64
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7cb0bf9182872b44966a3abdc284d79
+      internalID: 1540103947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c26d8191a28d17419cb0ef5d4b422bb
+      internalID: -12212729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_22
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 0
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2490d54e942d9a64f9e8fbaaab1580b9
+      internalID: 1274380914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shortshipsprite1-Charging_23
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1980633f7fb8da94e90983d03a245e6e
+      internalID: -1399932625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Shortshipsprite1-Charging_0: -193279213
+      Shortshipsprite1-Charging_1: -1450525396
+      Shortshipsprite1-Charging_10: -2044921859
+      Shortshipsprite1-Charging_11: -1479791765
+      Shortshipsprite1-Charging_12: -2046406039
+      Shortshipsprite1-Charging_13: -1827330427
+      Shortshipsprite1-Charging_14: 205152683
+      Shortshipsprite1-Charging_15: 296054056
+      Shortshipsprite1-Charging_16: 840044296
+      Shortshipsprite1-Charging_17: 1976172177
+      Shortshipsprite1-Charging_18: -202248373
+      Shortshipsprite1-Charging_19: 1316044131
+      Shortshipsprite1-Charging_2: -725861248
+      Shortshipsprite1-Charging_20: 1540103947
+      Shortshipsprite1-Charging_21: -12212729
+      Shortshipsprite1-Charging_22: 1274380914
+      Shortshipsprite1-Charging_23: -1399932625
+      Shortshipsprite1-Charging_3: 255283067
+      Shortshipsprite1-Charging_4: -1602062144
+      Shortshipsprite1-Charging_5: -2126666758
+      Shortshipsprite1-Charging_6: 410409420
+      Shortshipsprite1-Charging_7: -527381008
+      Shortshipsprite1-Charging_8: -1148332084
+      Shortshipsprite1-Charging_9: -449083846
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

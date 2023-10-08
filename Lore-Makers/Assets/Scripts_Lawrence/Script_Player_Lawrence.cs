@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class Script_Player_Lawrence : MonoBehaviour
     public bool isShooting;
     public bool isDead;
     public float maxChargeTime;
+    public Animator animator;
 
     public Slider healthBar;
     public Slider chargeBar;
@@ -31,7 +33,7 @@ public class Script_Player_Lawrence : MonoBehaviour
 
     public float chargeFasterTimer;
 
-
+    private float hurtAnimTime=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,8 +50,17 @@ public class Script_Player_Lawrence : MonoBehaviour
         //
         if(!isDead )
         {
+            if (animator.GetBool("GotRecoil"))
+            {
+                hurtAnimTime += Time.deltaTime;
+                if (hurtAnimTime > 0.5f)
+                {
+                    hurtAnimTime = 0;
+                    animator.SetBool("GotRecoil", false);
+                }
+            }
             //gets mouse input for shooting
-            if(Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 isCharging = true;
             }
@@ -127,8 +138,35 @@ public class Script_Player_Lawrence : MonoBehaviour
                 rb.velocity = MaxSpeed * new Vector2(Mathf.Cos(angleToGoal), Mathf.Sin(angleToGoal)) * easeStrength;
                
             }
-            
 
+
+
+            //animation setting
+            if(Mathf.Abs(rb.velocity.y)> Mathf.Abs(rb.velocity.x))
+            {
+                if(rb.velocity.y > 0)
+                {
+                    animator.SetInteger("moveState", 1);
+                }
+                else
+                {
+                    animator.SetInteger("moveState", 2);
+                }
+            }
+            else
+            {
+                if (rb.velocity.x < 0)
+                {
+                    animator.SetInteger("moveState", 3);
+                }
+                else
+                {
+                    animator.SetInteger("moveState", 0);
+                }
+            }
+
+            if(curHealth<=0)animator.SetBool("IsDead", true);
+            animator.SetBool("IsCharging", isCharging);
         }
     }
 
@@ -148,6 +186,7 @@ public class Script_Player_Lawrence : MonoBehaviour
             else
             {
                 curHealth -= 10;
+                animator.SetBool("GotRecoil",true);
             }
         }
         chargeTime = 0;
