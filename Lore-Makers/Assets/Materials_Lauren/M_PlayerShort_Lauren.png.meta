@@ -1,0 +1,655 @@
+fileFormatVersion: 2
+guid: 02fe05ff020bf3044a616e55f6ef9c9c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e203c1d55afcb514fbb478c45a948b00
+      internalID: -1476195859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 448
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3651cf03643a61438f490a3cec91b88
+      internalID: 1300800810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 448
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6515412f5a2c71a41b6f7629c3988312
+      internalID: 161012234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f671d38354d2bd94db1c817e72900e39
+      internalID: -451786288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_4
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 384
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e4a079c78634f429503b9d1285bf34
+      internalID: 1812219760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_5
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 384
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7981ae44786b537438194e2fa5f7fddf
+      internalID: -330298391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16483d9ae98a93a44bf58fcf1c9ce8e4
+      internalID: 830614342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_7
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 320
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12a0474a5a82a8a4486d96466707d311
+      internalID: 1394167818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_8
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 320
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8117088516b33d4291c4e2c0fd1773f
+      internalID: 189425227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be063e488b5d5c46aa42c0e67237a21
+      internalID: -162174086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_10
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 256
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b391f02d5e9c8c4d96965394768ce62
+      internalID: -946205529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_11
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 256
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c50de08ccb9a646b14575225d7f782
+      internalID: -1054210135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f65074b2ddabaf47a453e0f8e005ed5
+      internalID: -1940497828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_13
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 192
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6da71f8332663a4ea2085c37a2a8b0d
+      internalID: 141570753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_14
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 192
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4607b4d9cbbe25c40acd4f8e46dfdae7
+      internalID: -1448793236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175e0d9a179c7f94a8aec3b8669ca9a4
+      internalID: 577035320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_16
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 128
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b1e77bd785e154bb1062d5f54a31cb
+      internalID: 1667161600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_17
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 128
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a757209f8871a214aa8fbb34660d7bbd
+      internalID: -1207634018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91eebc1826e4e4d49814c2748d933d61
+      internalID: -1996922862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_19
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 64
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9dee730b643bf549b91a5cb3657254e
+      internalID: -585177132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_20
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 64
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 511e7fbb19fb2924a84d5511dd28e0f2
+      internalID: -1369530657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269455360af642b4ca9a80b24c819b54
+      internalID: -562722846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_22
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 0
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9602f3e9e06572641bec936ddd4ae363
+      internalID: -999675765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_PlayerShort_Lauren_23
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 46.666668
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d470c79e6fb4a5b4fa50ef3f4c6393d3
+      internalID: -1631308344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      M_PlayerShort_Lauren_0: -1476195859
+      M_PlayerShort_Lauren_1: 1300800810
+      M_PlayerShort_Lauren_10: -946205529
+      M_PlayerShort_Lauren_11: -1054210135
+      M_PlayerShort_Lauren_12: -1940497828
+      M_PlayerShort_Lauren_13: 141570753
+      M_PlayerShort_Lauren_14: -1448793236
+      M_PlayerShort_Lauren_15: 577035320
+      M_PlayerShort_Lauren_16: 1667161600
+      M_PlayerShort_Lauren_17: -1207634018
+      M_PlayerShort_Lauren_18: -1996922862
+      M_PlayerShort_Lauren_19: -585177132
+      M_PlayerShort_Lauren_2: 161012234
+      M_PlayerShort_Lauren_20: -1369530657
+      M_PlayerShort_Lauren_21: -562722846
+      M_PlayerShort_Lauren_22: -999675765
+      M_PlayerShort_Lauren_23: -1631308344
+      M_PlayerShort_Lauren_3: -451786288
+      M_PlayerShort_Lauren_4: 1812219760
+      M_PlayerShort_Lauren_5: -330298391
+      M_PlayerShort_Lauren_6: 830614342
+      M_PlayerShort_Lauren_7: 1394167818
+      M_PlayerShort_Lauren_8: 189425227
+      M_PlayerShort_Lauren_9: -162174086
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
