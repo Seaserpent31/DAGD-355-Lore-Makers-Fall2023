@@ -1264,6 +1264,7 @@ GameObject:
   - component: {fileID: 1534870264}
   - component: {fileID: 1534870263}
   - component: {fileID: 1534870262}
+  - component: {fileID: 1534870267}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1291,6 +1292,7 @@ MonoBehaviour:
   isShooting: 0
   isDead: 0
   maxChargeTime: 2
+  animator: {fileID: 1534870267}
   healthBar: {fileID: 1402704131}
   chargeBar: {fileID: 1554986592}
   chargeFasterTimer: 0
@@ -1320,7 +1322,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &1534870264
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1355,7 +1357,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
 --- !u!212 &1534870265
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1417,12 +1419,33 @@ Transform:
   m_GameObject: {fileID: 1534870261}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.76, y: -0.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1534870267
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534870261}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff1ea038a8390824ebe321ea931aa931, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1554986590
 GameObject:
   m_ObjectHideFlags: 0

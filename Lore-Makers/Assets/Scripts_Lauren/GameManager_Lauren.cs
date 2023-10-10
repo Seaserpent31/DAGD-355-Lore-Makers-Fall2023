@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
                 isPhasing = false;
 
-                player.GetComponent<Renderer>().enabled = true;
+                // player.GetComponent<Renderer>().enabled = true;
                 player.GetComponent<Collider2D>().enabled = true;
 
                 phaseTime = 7f;

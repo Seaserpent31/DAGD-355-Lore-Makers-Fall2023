@@ -19,6 +19,10 @@ public class PlayerMovement_Lauren : MonoBehaviour
     private GameObject enemy;
     private GameManager gameManager;
 
+    private EnemyMovement_Lauren enemyMovement;
+
+    public Animator animator;
+
     public float playerHealth = 100f;
 
     // public LayerMask layerMask; // Since I gave my enemy the "Enemy" layer.
@@ -52,6 +56,51 @@ public class PlayerMovement_Lauren : MonoBehaviour
         // Mouse movement.
         Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(cursorPosition.x, cursorPosition.y);
+
+        // Getting the mouse's X and Y.
+        float vertical = Input.GetAxis("Mouse Y");
+        float horizontal = Input.GetAxis("Mouse X");
+
+        // If the 'vertical' is greater than 0, the ship is moving up.
+        if (vertical > 0)
+        {
+            animator.SetBool("isUp", true);
+        }
+        // If the 'vertical' is less than 0, the ship is moving down.
+        else if (vertical < 0)
+        {
+            animator.SetBool("isUp", false);
+        }
+
+        // To-Do:
+        // Tilting the player as they move from side to side (same as above).
+
+        if (horizontal > 0)
+        {
+            animator.SetBool("isRight", true);
+            animator.SetBool("isLeft", false);
+        }
+        // If the 'vertical' is less than 0, the ship is moving down.
+        else if (horizontal < 0)
+        {
+            animator.SetBool("isRight", false);
+            animator.SetBool("isLeft", true);
+        }
+        else if (horizontal == 0)
+        {
+            animator.SetBool("isRight", false);
+            animator.SetBool("isLeft", false);
+        }
+
+        // Phasing.
+        if (gameManager.isPhasing)
+        {
+            animator.SetBool("isPhasing", true);
+        }
+        else if(!gameManager.isPhasing)
+        {
+            animator.SetBool("isPhasing", false);
+        }
 
         // RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, detectionRadius);
         // Debug.DrawRay(transform.position, transform.right * detectionRadius, Color.white);
@@ -87,7 +136,11 @@ public class PlayerMovement_Lauren : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Enemy Collision.");
-            Destroy(collision.gameObject);
+
+            enemyMovement.animator.SetTrigger("destroy");
+
+            // To-Do:
+                // If enemies are in the process of dying, they should not be able to continue moving or taking damage.
         }
    
     }
@@ -99,7 +152,14 @@ public class PlayerMovement_Lauren : MonoBehaviour
         {
             // Game is over.
             Debug.Log("Game Over.");
+
+            animator.SetTrigger("destroy");
         }
+    }
+
+    public void kill()
+    {
+        Destroy(gameObject);
     }
 
 } // End of Player Movement.

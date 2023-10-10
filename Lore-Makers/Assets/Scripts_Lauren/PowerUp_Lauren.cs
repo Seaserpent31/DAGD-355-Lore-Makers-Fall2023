@@ -68,7 +68,7 @@ public class PowerUp_Lauren : MonoBehaviour
               gameManager.isPhasing = true;
         
               // Disable collision and player's render.
-              player.GetComponent<Renderer>().enabled = false;
+              // player.GetComponent<Renderer>().enabled = false;
               player.GetComponent<Collider2D>().enabled = false;
 
               // Destroy the Power-Up.
