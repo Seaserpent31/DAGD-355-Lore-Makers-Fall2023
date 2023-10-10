@@ -13,7 +13,7 @@ public class NetSpawn_Ryk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player_Ryk");
+        //player = GameObject.Find("Player_Ryk");
     }
 
     // Update is called once per frame
