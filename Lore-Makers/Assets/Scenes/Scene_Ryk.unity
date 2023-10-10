@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 618073042}
   - component: {fileID: 618073041}
   - component: {fileID: 618073044}
+  - component: {fileID: 618073045}
   m_Layer: 0
   m_Name: Player_Ryk
   m_TagString: Player
@@ -343,6 +344,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &618073045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618073040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49f4237682ac7e945b9840a28edc252a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalPos: 0
+  angleToGoal: 0
+  distToGoal: 0
 --- !u!1 &870388784
 GameObject:
   m_ObjectHideFlags: 0
