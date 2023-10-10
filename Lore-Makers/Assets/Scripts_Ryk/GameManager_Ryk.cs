@@ -21,7 +21,7 @@ public class GameManager_Ryk : MonoBehaviour
     {
         spawnPosX = Random.Range(0, 10);
         spawnPosY = Random.Range(0, 10);
-        Instantiate(enemy, Vector3(spawnPosX, spawnPosY, 0f), Quaternion.identity);
+        //Instantiate(enemy, Vector3(spawnPosX, spawnPosY, 0f), Quaternion.identity);
     }
 
     // Update is called once per frame
