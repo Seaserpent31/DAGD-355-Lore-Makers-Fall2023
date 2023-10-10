@@ -21,6 +21,8 @@ public class EnemyMovement_Lauren : MonoBehaviour
     private GameManager gameManager;
     private GameObject player; // For finding the player's location.
 
+    public Animator animator;
+
     public GameObject bomb;
     // private ExplosionBehavior_Lauren explosion;
 
@@ -72,8 +74,9 @@ public class EnemyMovement_Lauren : MonoBehaviour
         enemyHealth -= damage;
         if (enemyHealth <= 0f)
         {
-            Destroy(gameObject);
+            animator.SetTrigger("destroy");
         }
+
     }
 
     private void OnDestroy()
@@ -81,6 +84,12 @@ public class EnemyMovement_Lauren : MonoBehaviour
         // Instantiate the bomb.
         Instantiate(bomb, transform.position, Quaternion.identity);
         Debug.Log("Bomb deployed.");
+
+    }
+
+    public void kill()
+    {
+        Destroy(gameObject);
     }
 
     // private void OnCollisionEnter2D(Collision2D collision)
