@@ -21,4 +21,9 @@ public class GameManager_Ryk : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D()
+    {
+
+    }
 }
