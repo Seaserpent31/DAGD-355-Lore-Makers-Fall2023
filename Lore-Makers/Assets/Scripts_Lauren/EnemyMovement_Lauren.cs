@@ -79,16 +79,13 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
     }
 
-    private void OnDestroy()
-    {
-        // Instantiate the bomb.
-        Instantiate(bomb, transform.position, Quaternion.identity);
-        Debug.Log("Bomb deployed.");
-
-    }
-
+   
     public void kill()
     {
+
+        // Instantiate the bomb.
+        Debug.Log("Bomb deployed.");
+        Instantiate(bomb, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

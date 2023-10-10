@@ -11,12 +11,12 @@ public class BulletCollision_Lauren : MonoBehaviour
 // ==========[ VARIABLES ]==========
     private Rigidbody2D rb;
 
-    private EnemyMovement_Lauren enemy;
+    private Script_BasicEnemy_Lawrence enemy;
 
     // ==========[ START ]==========
     void Start()
     {
-        enemy = GetComponent<EnemyMovement_Lauren>();
+        enemy = GetComponent<Script_BasicEnemy_Lawrence>();
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -41,9 +41,7 @@ public class BulletCollision_Lauren : MonoBehaviour
         if (other.tag == "Enemy")
         {
             // Deal damage.
-            Debug.Log("Hit an enemy");
-            Debug.Log(enemy.enemyHealth);
-            enemy.TakeDamage(1);
+            enemy.takeDamage(5);
         }
     }
 

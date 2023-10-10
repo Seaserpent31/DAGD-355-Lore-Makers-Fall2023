@@ -32,6 +32,8 @@ public class Bullets_Lauren : MonoBehaviour
     public float time;
     public float damage;
 
+    public bool isShooting;
+
     public LayerMask layerMask;
 
     public ParticleSystem system;
@@ -41,6 +43,7 @@ public class Bullets_Lauren : MonoBehaviour
 
     private void Awake()
     {
+        isShooting = GetComponentInParent<Script_Player_Lawrence>().isShooting;
         Summon();
     }
 
@@ -122,23 +125,28 @@ public class Bullets_Lauren : MonoBehaviour
     // DoEmit() - Emit the particles (bullets).
     void DoEmit()
     {
-        foreach(Transform child in transform)
+        isShooting = GetComponentInParent<Script_Player_Lawrence>().isShooting;
+        if (isShooting)
         {
-            system = child.GetComponent<ParticleSystem>();
-            
-            // emitParams will override the current system's when called.
-            // We can change this in Unity.
-            var emitParams = new ParticleSystem.EmitParams();
-            emitParams.startColor = color;
-            emitParams.startSize = size;
-            emitParams.startLifetime = lifetime;
-
-            // When phasing, we don't want the player to fire bullets.
-            if (!gameManager.isPhasing)
+            foreach (Transform child in transform)
             {
-                system.Emit(emitParams, 10);
+                system = child.GetComponent<ParticleSystem>();
+
+                // emitParams will override the current system's when called.
+                // We can change this in Unity.
+                var emitParams = new ParticleSystem.EmitParams();
+                emitParams.startColor = color;
+                emitParams.startSize = size;
+                emitParams.startLifetime = lifetime;
+
+                // When phasing, we don't want the player to fire bullets.
+                if (!gameManager.isPhasing)
+                {
+                    system.Emit(emitParams, 10);
+                }
             }
         }
+        
     }
 
 } // End of Bullet.

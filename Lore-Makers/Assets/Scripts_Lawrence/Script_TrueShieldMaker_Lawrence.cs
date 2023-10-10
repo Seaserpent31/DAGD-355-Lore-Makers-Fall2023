@@ -25,7 +25,12 @@ public class Script_TrueShieldMaker_Lawrence : MonoBehaviour
             if (!s)
             {
                 collision.gameObject.GetComponent<Script_BasicEnemy_Lawrence>().wasShielded = true;
-                Instantiate(shield, collision.gameObject.transform);
+                GameObject obj = Instantiate(shield, collision.gameObject.transform);
+                if (collision.gameObject.GetComponent<EnemyMovement_Lauren>() != null)
+                {
+                    obj.transform.localScale = new Vector3(0.5f, 0.5f, 0.3f);
+                }
+                
             }
         }
     }

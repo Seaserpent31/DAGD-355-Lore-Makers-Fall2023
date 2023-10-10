@@ -31,6 +31,9 @@ public class Script_Player_Lawrence : MonoBehaviour
     private float distToGoal;
     private float easeStrength;
 
+    private GameManager gameManager;
+
+
     public float chargeFasterTimer;
 
     private float hurtAnimTime=0;
@@ -41,6 +44,8 @@ public class Script_Player_Lawrence : MonoBehaviour
         curHealth = maxHealth;
         //healthBar.value = curHealth;
         isDead = false;
+        gameManager = GameManager.FindAnyObjectByType<GameManager>();
+        isShooting = true;
     }
 
     // Update is called once per frame
@@ -97,7 +102,7 @@ public class Script_Player_Lawrence : MonoBehaviour
                 }
             }
 
-             chargeBar.value = chargeTime;
+            chargeBar.value = chargeTime;
             if(chargeFasterTimer > 0)
             {
                 chargeBar.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = new UnityEngine.Color(0f / 255f, 243f / 255f, 255f / 255f);
@@ -140,9 +145,19 @@ public class Script_Player_Lawrence : MonoBehaviour
             }
 
 
+            if (gameManager.isPhasing)
+            {
+                animator.SetBool("isPhasing", true);
+            }
+            else if (!gameManager.isPhasing)
+            {
+                animator.SetBool("isPhasing", false);
+            }
+
+
 
             //animation setting
-            if(Mathf.Abs(rb.velocity.y)> Mathf.Abs(rb.velocity.x))
+            if (Mathf.Abs(rb.velocity.y)> Mathf.Abs(rb.velocity.x))
             {
                 if(rb.velocity.y > 0)
                 {
@@ -185,12 +200,30 @@ public class Script_Player_Lawrence : MonoBehaviour
             }
             else
             {
-                curHealth -= 10;
-                animator.SetBool("GotRecoil",true);
+                TakeDamage(10);
             }
         }
         chargeTime = 0;
         isCharging = false;
         isShooting=true;
     }
+
+    public void TakeDamage(float damage)
+    {
+        curHealth -= damage;
+        animator.SetBool("GotRecoil", true);
+        if (curHealth <= 0f)
+        {
+            // Game is over.
+            Debug.Log("Game Over.");
+
+            animator.SetBool("IsDead",true);
+        }
+    }
+
+    public void kill()
+    {
+        Destroy(gameObject);
+    }
+
 }

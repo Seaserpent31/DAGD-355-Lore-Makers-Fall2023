@@ -23,6 +23,10 @@ public class Script_BasicEnemy_Lawrence : MonoBehaviour
             {
                 GetComponent<Script_ShieldEnemy_Lawrence>().SpawnPowerUp();
             }
+            if (GetComponent<EnemyMovement_Lauren>() != null)
+            {
+                GetComponent<EnemyMovement_Lauren>().kill();
+            }
         }
     }
 
