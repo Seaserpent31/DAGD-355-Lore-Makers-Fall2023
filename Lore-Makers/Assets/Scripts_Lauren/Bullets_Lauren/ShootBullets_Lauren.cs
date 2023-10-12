@@ -1,42 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class OLDFiringBullets_Lauren : MonoBehaviour
+// Help used from:
+// https://youtu.be/Mq2zYk5tW_E?si=iDfJ1_zxp0sC6NAJ.
+
+#region Shoot Info
+// ==========[ SHOOT BULLETS ]==========
+// Do not need this anymore, but will still keep just in case something needs to be changed.
+// Currently just holds the same thing Bullet_Lauren and ElectroBullet_Lauren has (as of right now).
+#endregion
+
+public class ShootBullets_Lauren : MonoBehaviour
 {
-    // Help used from:
-        // https://youtu.be/Mq2zYk5tW_E?si=iDfJ1_zxp0sC6NAJ.
-
+// ==========[ VARIABLES ]==========
     [SerializeField] private int amountBullets = 10;
     //[SerializeField] float startAngle = 270f, endAngle = 90f;
-    [SerializeField] float startAngle = 0f, endAngle = 360f;
-        // I want the bullets to shoot everywhere on screen.
+    [SerializeField] float startAngle = 90f, endAngle = 270f;
+    // I want the bullets to shoot everywhere on screen.
+    [SerializeField] private float firerate;
 
     private Vector2 bulletMoveDirection;
 
     private float angle = 0;
 
-    // BulletPool_Lauren bulletPool;
-    OLDWeaponsManager_Lauren weaponType;
-
-    private void Awake()
+// ==========[ START ]==========
+    private void Start()
     {
-        weaponType = GetComponent<OLDWeaponsManager_Lauren>();
-    }
+        InvokeRepeating("Fire", 0f, firerate);
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (weaponType.currentWeaponIndex == 0)
-        {
-            InvokeRepeating("Fire", 0f, 1f);
-        }
-        else if (weaponType.currentWeaponIndex == 1)
-        {
-            InvokeRepeating("Spiral", 0f, 0.25f);
-        }
-    }
+    } // End of Start.
 
+    // Fire() - Firing the bullets.
     private void Fire()
     {
         float angleStep = (endAngle - startAngle) / amountBullets;
@@ -44,23 +40,26 @@ public class OLDFiringBullets_Lauren : MonoBehaviour
 
         for (int i = 0; i < amountBullets; i++)
         {
-            float bulDirX = transform.position.x + Mathf.Sin(angle * Mathf.PI / 180f);
-            float bulDirY = transform.position.y + Mathf.Cos(angle * Mathf.PI / 180f);
-                // Calculating end points.
+            float bulDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
+            float bulDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
+            // Calculating end points.
 
             Vector3 bulMove = new Vector3(bulDirX, bulDirY, 0f);
             Vector2 bulDir = (bulMove - transform.position).normalized;
 
-            GameObject bullet = OLDBulletPool_Lauren.bulletPoolInstance.GetBullet();
+            GameObject bullet = BulletPool_Lauren.instance.GetBullet();
             bullet.transform.position = transform.position;
             bullet.transform.rotation = transform.rotation;
             bullet.SetActive(true);
-            bullet.GetComponent<OLDBullets_Lauren>().SetMoveDirection(bulDir);
+            bullet.GetComponent<BulletBase_Lauren>().SetDirection(bulDir);
 
-           angle += angleStep;
+            angle += angleStep;
+
         }
-    }
 
+    } // End of Fire().
+
+    // Spiral() - Same as Fire() but in a different pattern.
     private void Spiral()
     {
         for (int i = 0; i < 10; i++)
@@ -77,11 +76,11 @@ public class OLDFiringBullets_Lauren : MonoBehaviour
             Vector3 bulMove = new Vector3(bulDirX, bulDirY, 0f);
             Vector2 bulDir = (bulMove - transform.position).normalized;
 
-            GameObject bul = OLDBulletPool_Lauren.bulletPoolInstance.GetBullet();
+            GameObject bul = BulletPool_Lauren.instance.GetBullet();
             bul.transform.position = transform.position;
             bul.transform.rotation = transform.rotation;
             bul.SetActive(true);
-            bul.GetComponent<OLDBullets_Lauren>().SetMoveDirection(bulDir);
+            bul.GetComponent<BulletBase_Lauren>().SetDirection(bulDir);
         }
 
         angle += 10f;
@@ -90,12 +89,9 @@ public class OLDFiringBullets_Lauren : MonoBehaviour
         if (angle >= 360f)
         {
             angle = 0f;
-        }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+        }
+
+    } // End of Spiral().
+
+} // End of Shoot Bullets.
