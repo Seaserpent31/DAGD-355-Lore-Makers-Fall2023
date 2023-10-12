@@ -23,5 +23,8 @@ public class Bomb_Ryk : MonoBehaviour
         }
 
         transform.position -= new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+        //transform.rotation += Quaternion(0f, 0f, 0f, 0f) * speed * Time.deltaTime;
     }
+
+    //if
 }
