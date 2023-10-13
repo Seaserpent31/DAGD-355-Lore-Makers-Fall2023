@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-#region Dart Info
+#region Electro Info
 // ==========[ ELECTRO BULLET ]==========
 // These darts fire at a normal rate.
 // They deal a normal amount of damage, but deal damage in a chain (as long as there are nearby enemies).
@@ -16,7 +16,8 @@ using UnityEngine.UIElements;
 public class electroBullet_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
-   public WeaponManager_Lauren weaponManager;
+    public WeaponManager_Lauren weaponManager;
+    public GameManager gameManager;
     
     [SerializeField] private int amountBullets = 10;
     //[SerializeField] float startAngle = 270f, endAngle = 90f;
@@ -24,30 +25,44 @@ public class electroBullet_Lauren : MonoBehaviour
     // I want the bullets to shoot everywhere on screen.
 
     [SerializeField] private float firerate;
-    [SerializeField] private bool isShooting = false;
 
     private Vector2 bulletMoveDirection;
 
     private float angle = 0f;
+
+    private bool isShooting = false;
 
     // ==========[ START ]==========
     private void Start()
     {
         if (weaponManager.curWeaponIndex == 1)
         {
-            InvokeRepeating("Spiral", 0f, firerate);
+            StartShooting();
         }
-        else if (weaponManager.curWeaponIndex != 1)
+    }
+
+    private void Update()
+    {
+        if (weaponManager.curWeaponIndex == 1)
         {
-            CancelInvoke();
+            if (!isShooting)
+            {
+                StartShooting();
+            }
         }
-
-    } // End of Start.
-
+        else
+        {
+            if (isShooting)
+            {
+                StopShooting();
+            }
+        }
+    }
 
     // Spiral() - Shoots bullets in a spiral.
-    private void Fire()
+    private void Spiral()
     {
+
         for (int i = 0; i < 10; i++)
         {
             // Firing bullets at different angles.
@@ -79,5 +94,17 @@ public class electroBullet_Lauren : MonoBehaviour
         }
 
     } // End of Spiral().
+
+    private void StartShooting()
+    {
+        isShooting = true;
+        InvokeRepeating("Spiral", 0f, firerate);
+    }
+
+    private void StopShooting()
+    {
+        isShooting = false;
+        CancelInvoke("Spiral");
+    }
 
 } // End of Electro Bullet.

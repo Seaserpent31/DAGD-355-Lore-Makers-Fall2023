@@ -11,12 +11,21 @@ using UnityEngine.UIElements;
 // Basic bullet. Fires at a normal rate and deals a normal amount of damage to enemies hit.
 // To-Do:
     // Mess around with numbers, add important things, etc. (same goes for every bullet script).
+
+
+
+// To fix my weapon sawpping, will probably have to have ALL bullet info on one script and swap between them.
+    // For ex) having a "Fire" and "Spiral" invoke but "if index == 0, fire" and "if index == 1, spiral" kind of thing.
+    // Kind of like swapping scenes/screens in DAGD 255.
+
+    // replace a lot of the numbers and stuff with variables so i can edit them for each bullet type.
 #endregion
 
 public class Bullet_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
     public WeaponManager_Lauren weaponManager;
+    public GameManager gameManager;
 
     [SerializeField] private int amountBullets = 10;
     //[SerializeField] float startAngle = 270f, endAngle = 90f;
@@ -24,27 +33,42 @@ public class Bullet_Lauren : MonoBehaviour
     // I want the bullets to shoot everywhere on screen.
 
     [SerializeField] private float firerate;
-    [SerializeField] private bool isShooting = true;
 
     private Vector2 bulletMoveDirection;
 
-// ==========[ START ]==========
+    private bool isShooting = false;
+
+    // ==========[ START ]==========
     private void Start()
     {
         if (weaponManager.curWeaponIndex == 0)
         {
-            InvokeRepeating("Fire", 0f, firerate);
+            StartShooting();
         }
-        else if (weaponManager.curWeaponIndex != 0)
-        {
-            CancelInvoke();
-        }
+    }
 
-    } // End of Start.
+    private void Update()
+    {
+        if (weaponManager.curWeaponIndex == 0)
+        {
+            if (!isShooting)
+            {
+                StartShooting();
+            }
+        }
+        else
+        {
+            if (isShooting)
+            {
+                StopShooting();
+            }
+        }
+    }
 
     // Fire() - Firing the bullet.
     private void Fire()
     {
+
         float angleStep = (endAngle - startAngle) / amountBullets;
         float angle = startAngle;
 
@@ -68,5 +92,18 @@ public class Bullet_Lauren : MonoBehaviour
         }
 
     } // End of Fire().
+
+    private void StartShooting()
+    {
+        isShooting = true;
+        InvokeRepeating("Fire", 0f, firerate);
+    }
+
+    // StopFiring() - Stop firing bullets.
+    private void StopShooting()
+    {
+        isShooting = false;
+        CancelInvoke("Fire");
+    }
 
 } // End of Bullet.

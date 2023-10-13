@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 // ==========[ GAME MANAGER ]==========
@@ -36,6 +37,8 @@ public class GameManager : MonoBehaviour
             // Shoot bullets (maybe?).
     public float phaseTime = 7f; // How long the player will be phasing for.
 
+    public bool isShooting = true;
+
 // ==========[ START ]==========
     void Start()
     {
@@ -54,7 +57,7 @@ public class GameManager : MonoBehaviour
             if (phaseTime <= 0f)
             {
                 // Once the timer reaches zero, it should reset and the player should be visible and able to collide with things again.
-                Debug.Log("Phased back in.");
+                print("Phased back in.");
 
                 isPhasing = false;
 

@@ -25,6 +25,8 @@ using UnityEngine;
 public class BulletBase_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
+    public WeaponManager_Lauren weaponManager;
+    
     private Vector2 direction;
 
     public float speed;

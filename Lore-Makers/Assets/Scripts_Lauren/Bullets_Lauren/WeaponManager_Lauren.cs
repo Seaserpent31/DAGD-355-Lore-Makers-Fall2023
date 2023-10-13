@@ -36,12 +36,29 @@ public class WeaponManager_Lauren : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            weapons[curWeaponIndex].SetActive(false);
-            curWeaponIndex += 1;
-            weapons[curWeaponIndex].SetActive(true);
-            currentWeapon = weapons[curWeaponIndex];
+            if (curWeaponIndex < numWeapons -1)
+            {
+                weapons[curWeaponIndex].SetActive(false);
+                curWeaponIndex += 1;
+                weapons[curWeaponIndex].SetActive(true);
+                currentWeapon = weapons[curWeaponIndex];
 
-            print(curWeaponIndex);
+                print(curWeaponIndex);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if(curWeaponIndex > 0)
+            {
+                weapons[curWeaponIndex].SetActive(false);
+                curWeaponIndex -= 1;
+                weapons[curWeaponIndex].SetActive(true);
+                currentWeapon = weapons[curWeaponIndex];
+
+                print(curWeaponIndex);
+            }
+
         }
 
     }
