@@ -35,7 +35,7 @@ public class BulletBase_Lauren : MonoBehaviour
     // OnEnable() - Destroying the bullet after a certain amount of time (lifetime).
     private void OnEnable()
     {
-        Invoke("Destroy", 5f);
+        Invoke("Destroy", 3f);
 
     }
 

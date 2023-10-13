@@ -13,21 +13,32 @@ using UnityEngine.UIElements;
     // Mess around with numbers, add important things, etc. (same goes for every bullet script).
 #endregion
 
-public class Bullet_Lauren : BulletBase_Lauren
+public class Bullet_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
+    public WeaponManager_Lauren weaponManager;
+
     [SerializeField] private int amountBullets = 10;
     //[SerializeField] float startAngle = 270f, endAngle = 90f;
     [SerializeField] float startAngle = 90f, endAngle = 270f;
     // I want the bullets to shoot everywhere on screen.
+
     [SerializeField] private float firerate;
+    [SerializeField] private bool isShooting = true;
 
     private Vector2 bulletMoveDirection;
 
 // ==========[ START ]==========
     private void Start()
     {
-        InvokeRepeating("Fire", 0f, firerate);
+        if (weaponManager.curWeaponIndex == 0)
+        {
+            InvokeRepeating("Fire", 0f, firerate);
+        }
+        else if (weaponManager.curWeaponIndex != 0)
+        {
+            CancelInvoke();
+        }
 
     } // End of Start.
 

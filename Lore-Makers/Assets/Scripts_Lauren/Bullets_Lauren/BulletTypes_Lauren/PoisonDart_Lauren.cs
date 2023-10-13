@@ -12,21 +12,26 @@ using UnityEngine.UIElements;
     // Add effects to show enemies being posioned (look at other games for inspiration).
 #endregion 
 
-public class PoisonDart_Lauren : BulletBase_Lauren
+public class PoisonDart_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
     [SerializeField] private int amountBullets = 10;
     //[SerializeField] float startAngle = 270f, endAngle = 90f;
     [SerializeField] float startAngle = 90f, endAngle = 270f;
     // I want the bullets to shoot everywhere on screen.
+
     [SerializeField] private float firerate;
+    [SerializeField] private bool isShooting = false;
 
     private Vector2 bulletMoveDirection;
 
 // ==========[ START ]==========
     private void Start()
     {
-        InvokeRepeating("Fire", 0f, firerate);
+        if (isShooting)
+        {
+            InvokeRepeating("Fire", 0f, firerate);
+        }
 
     } // End of Start.
 

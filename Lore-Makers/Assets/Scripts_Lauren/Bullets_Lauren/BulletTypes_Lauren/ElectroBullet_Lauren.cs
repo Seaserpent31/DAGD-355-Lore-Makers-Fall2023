@@ -13,28 +13,40 @@ using UnityEngine.UIElements;
     // Look at the code from previous electro bullet script (look on GitHub since I deleted the script).
 #endregion 
 
-public class electroBullet_Lauren : BulletBase_Lauren
+public class electroBullet_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
+   public WeaponManager_Lauren weaponManager;
+    
     [SerializeField] private int amountBullets = 10;
     //[SerializeField] float startAngle = 270f, endAngle = 90f;
-    [SerializeField] float startAngle = 90f, endAngle = 270f;
+    // [SerializeField] float startAngle = 90f, endAngle = 270f;
     // I want the bullets to shoot everywhere on screen.
+
     [SerializeField] private float firerate;
+    [SerializeField] private bool isShooting = false;
 
     private Vector2 bulletMoveDirection;
 
-    private float angle = 0;
+    private float angle = 0f;
 
-// ==========[ START ]==========
+    // ==========[ START ]==========
     private void Start()
     {
-        InvokeRepeating("Spiral", 0f, firerate);
+        if (weaponManager.curWeaponIndex == 1)
+        {
+            InvokeRepeating("Spiral", 0f, firerate);
+        }
+        else if (weaponManager.curWeaponIndex != 1)
+        {
+            CancelInvoke();
+        }
 
     } // End of Start.
 
+
     // Spiral() - Shoots bullets in a spiral.
-    private void Spiral()
+    private void Fire()
     {
         for (int i = 0; i < 10; i++)
         {

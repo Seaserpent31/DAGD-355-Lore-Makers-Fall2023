@@ -14,11 +14,12 @@ using UnityEngine.UIElements;
 
 public class ShootBullets_Lauren : MonoBehaviour
 {
-// ==========[ VARIABLES ]==========
+    // ==========[ VARIABLES ]==========
     [SerializeField] private int amountBullets = 10;
     //[SerializeField] float startAngle = 270f, endAngle = 90f;
     [SerializeField] float startAngle = 90f, endAngle = 270f;
     // I want the bullets to shoot everywhere on screen.
+
     [SerializeField] private float firerate;
 
     private Vector2 bulletMoveDirection;
@@ -28,6 +29,7 @@ public class ShootBullets_Lauren : MonoBehaviour
 // ==========[ START ]==========
     private void Start()
     {
+
         InvokeRepeating("Fire", 0f, firerate);
 
     } // End of Start.
