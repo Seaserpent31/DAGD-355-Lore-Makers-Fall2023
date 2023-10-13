@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1008911122518399439}
   - component: {fileID: 7310992996590463101}
   - component: {fileID: -1821407012239118402}
+  - component: {fileID: -2835883753628384617}
   m_Layer: 0
   m_Name: ElectroBullet_Lauren
   m_TagString: Bullet
@@ -97,5 +98,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1dfc12bb6012d74884d2004533ac374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponManager: {fileID: -2835883753628384617}
   speed: 5
   rotation: 0
+--- !u!114 &-2835883753628384617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537949362706684126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6520ffbb21cc04b4a9c91ab2a694b9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefabs:
+  - {fileID: 6211569611441351926, guid: a1847837e80db3045b3da18642b45725, type: 3}
+  - {fileID: 4537949362706684126}
+  - {fileID: 6617683483058864215, guid: 8b5790f45bc00f64b95a7b337b4a64de, type: 3}
+  - {fileID: 6115326767142009947, guid: 34f47d18fc7f3c44684f30ae41195118, type: 3}
+  - {fileID: 4054361489284737096, guid: 0d62e3973600e98489d3b221bccba516, type: 3}
+  - {fileID: 2543699856908370598, guid: e20cf88987bc71d4dbe1c92fae582358, type: 3}

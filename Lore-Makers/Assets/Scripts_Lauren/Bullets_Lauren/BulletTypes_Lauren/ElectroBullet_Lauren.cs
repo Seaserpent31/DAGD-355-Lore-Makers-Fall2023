@@ -35,28 +35,12 @@ public class electroBullet_Lauren : MonoBehaviour
     // ==========[ START ]==========
     private void Start()
     {
-        if (weaponManager.curWeaponIndex == 1)
-        {
-            StartShooting();
-        }
+
     }
 
     private void Update()
     {
-        if (weaponManager.curWeaponIndex == 1)
-        {
-            if (!isShooting)
-            {
-                StartShooting();
-            }
-        }
-        else
-        {
-            if (isShooting)
-            {
-                StopShooting();
-            }
-        }
+
     }
 
     // Spiral() - Shoots bullets in a spiral.

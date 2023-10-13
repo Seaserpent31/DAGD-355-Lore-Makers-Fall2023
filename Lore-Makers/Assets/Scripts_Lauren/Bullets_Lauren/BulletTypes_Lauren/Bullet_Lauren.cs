@@ -36,74 +36,157 @@ public class Bullet_Lauren : MonoBehaviour
 
     private Vector2 bulletMoveDirection;
 
-    private bool isShooting = false;
+    // private bool isShooting = true;
+
+    private float angle = 0f;
+
+    private int pattern = 0;
+        // 0 - Normal
+        // 1 - Electro
+        // 2 - Poison Dart
+        // 3 - Rocket
+        // 4 - Sniper
+        // 5 - Speedy
+
+    private float lastShot = 0f;
 
     // ==========[ START ]==========
     private void Start()
     {
-        if (weaponManager.curWeaponIndex == 0)
-        {
-            StartShooting();
-        }
+        // StartShooting();
     }
 
     private void Update()
     {
-        if (weaponManager.curWeaponIndex == 0)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (!isShooting)
-            {
-                StartShooting();
-            }
+            // Bullet
+            pattern = 0;
+            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Bullet);
         }
-        else
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (isShooting)
-            {
-                StopShooting();
-            }
+            // Electro Bullet
+            pattern = 1;
+            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Electro);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            // Poison Dart
+            pattern = 2;
+            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.PoisonDart);         
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            // Rocket
+            pattern = 3;
+            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Rocket);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            // Sniper
+            pattern = 4;
+            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Sniper);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            // Speedy Bullet
+            pattern = 5;
+            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Speedy);
+        }
+
+        switch (pattern)
+        {
+            case 0:
+                Fire();
+                break;
+            case 1:
+                Spiral();
+                break;
+            case 2:
+                Fire();
+                break;
+            case 3:
+                Fire();
+                break;
+            case 4:
+                Fire();
+                break;
+            case 5:
+                Fire();
+                break;
         }
     }
 
     // Fire() - Firing the bullet.
     private void Fire()
     {
+        // So hundreds of bullets don't shoot at a time.
+        float shotTime = 1f / firerate;
 
-        float angleStep = (endAngle - startAngle) / amountBullets;
-        float angle = startAngle;
-
-        for (int i = 0; i < amountBullets; i++)
+        if (Time.time - lastShot >= shotTime)
         {
-            float bulDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
-            float bulDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
-            // Calculating end points.
+            lastShot = Time.time;
 
-            Vector3 bulMove = new Vector3(bulDirX, bulDirY, 0f);
-            Vector2 bulDir = (bulMove - transform.position).normalized;
+            float angleStep = (endAngle - startAngle) / amountBullets;
+            float angle = startAngle;
 
-            GameObject bullet = BulletPool_Lauren.instance.GetBullet();
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = transform.rotation;
-            bullet.SetActive(true);
-            bullet.GetComponent<BulletBase_Lauren>().SetDirection(bulDir);
+            for (int i = 0; i < amountBullets; i++)
+            {
+                float bulDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
+                float bulDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
+                // Calculating end points.
 
-            angle += angleStep;
+                Vector3 bulMove = new Vector3(bulDirX, bulDirY, 0f);
+                Vector2 bulDir = (bulMove - transform.position).normalized;
 
+                GameObject bullet = BulletPool_Lauren.instance.GetBullet();
+                bullet.transform.position = transform.position;
+                bullet.transform.rotation = transform.rotation;
+                bullet.SetActive(true);
+                bullet.GetComponent<BulletBase_Lauren>().SetDirection(bulDir);
+
+                angle += angleStep;
+            }
         }
 
     } // End of Fire().
 
-    private void StartShooting()
+    // Spiral() - Spiral bullets.
+    private void Spiral()
     {
-        isShooting = true;
-        InvokeRepeating("Fire", 0f, firerate);
-    }
+        // So hundreds of bullets don't shoot at a time.
+        float shotTime = 1f / firerate;
 
-    // StopFiring() - Stop firing bullets.
-    private void StopShooting()
-    {
-        isShooting = false;
-        CancelInvoke("Fire");
-    }
+        if (Time.time - lastShot >= shotTime)
+        {
+            lastShot = Time.time;
+
+            for (int i = 0; i < 10; i++)
+            {
+                float bulDirX = transform.position.x + Mathf.Sin(((angle + 90f * i) * Mathf.PI / 4) / 90f);
+                float bulDirY = transform.position.y + Mathf.Cos(((angle + 90f * i) * Mathf.PI / 4) / 90f);
+
+                Vector3 bulMove = new Vector3(bulDirX, bulDirY, 0f);
+                Vector2 bulDir = (bulMove - transform.position).normalized;
+
+                GameObject bul = BulletPool_Lauren.instance.GetBullet();
+                bul.transform.position = transform.position;
+                bul.transform.rotation = transform.rotation;
+                bul.SetActive(true);
+                bul.GetComponent<BulletBase_Lauren>().SetDirection(bulDir);
+            }
+
+            angle += 10f;
+
+            // If the angle reaches the "end," we have to reset it.
+            if (angle >= 360f)
+            {
+                angle = 0f;
+
+            }
+        }
+
+    } // End of Spiral().
 
 } // End of Bullet.
