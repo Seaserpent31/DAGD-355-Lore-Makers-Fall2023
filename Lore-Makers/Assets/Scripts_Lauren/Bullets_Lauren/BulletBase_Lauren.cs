@@ -28,6 +28,8 @@ public class BulletBase_Lauren : MonoBehaviour
     public WeaponManager_Lauren weaponManager;
     // private GameObject enemy;
 
+    public LayerMask enemyLayer;
+
     private Vector2 direction;
 
     public float speed;

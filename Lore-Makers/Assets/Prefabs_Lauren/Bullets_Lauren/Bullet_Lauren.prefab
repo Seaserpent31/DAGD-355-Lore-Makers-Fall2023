@@ -101,6 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponManager: {fileID: -6326786641198521377}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
   speed: 5
   rotation: 0
 --- !u!114 &-6326786641198521377

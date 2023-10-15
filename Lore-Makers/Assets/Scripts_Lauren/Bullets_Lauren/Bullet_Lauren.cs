@@ -26,8 +26,10 @@ using static UnityEditor.ObjectChangeEventStream;
 public class Bullet_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
-    public WeaponManager_Lauren weaponManager;
     public GameManager gameManager;
+    public WeaponManager_Lauren weaponManager;
+    public BulletBase_Lauren bulletBase;
+    public ElectroEffect_Lauren electroEffect;
 
     private Rigidbody2D rb;
 
@@ -45,20 +47,24 @@ public class Bullet_Lauren : MonoBehaviour
 
     private float lastShot = 0f;
 
+    public LayerMask enemyLayer;
+
     // private bool isShooting = true;
 
     private int pattern = 0;
-        // 0 - Normal
-        // 1 - Electro
-        // 2 - Poison Dart
-        // 3 - Rocket
-        // 4 - Sniper
-        // 5 - Speedy
+    // 0 - Normal
+    // 1 - Electro
+    // 2 - Poison Dart
+    // 3 - Rocket
+    // 4 - Sniper
+    // 5 - Speedy
 
     // ==========[ START ]==========
     private void Start()
     {
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
+        // bulletBase = FindAnyObjectByType<BulletBase_Lauren>();
+
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -113,6 +119,7 @@ public class Bullet_Lauren : MonoBehaviour
                 if (!gameManager.isPhasing)
                 {
                     Electro();
+                    electroEffect.ElectroEffect();
                 }                
                 break;
             case 2: // Poison Dart
@@ -189,7 +196,7 @@ public class Bullet_Lauren : MonoBehaviour
         amountBullets = 10;
         startAngle = 0;
         endAngle = 360;
-        firerate = 3f;
+        firerate = 1f;
 
         // So hundreds of bullets don't shoot at a time.
         float shotTime = 1f / firerate;
@@ -217,10 +224,17 @@ public class Bullet_Lauren : MonoBehaviour
                 bullet.GetComponent<BulletBase_Lauren>().SetDirection(bulDir);
 
                 angle += angleStep;
+
             }
+
         }
 
     } // End of Electro().
+
+    public void ElectroEffect()
+    {
+
+    }
 
     // PoisonDart() - Firing poison darts.
     private void PoisonDart()

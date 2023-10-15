@@ -62,8 +62,8 @@ public class EnemyMovement_Lauren : MonoBehaviour
         if(!gameManager.isPhasing)
         {
             // Moving and rotating so the enemy faces the player.
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+            // transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            // transform.rotation = Quaternion.Euler(Vector3.forward * angle);
         }
 
         // Instead, the enemies should find "new paths" until the player phases back in.
@@ -103,6 +103,7 @@ public class EnemyMovement_Lauren : MonoBehaviour
     public void kill()
     {
         Destroy(gameObject);
+
     }
 
 } // End of Enemy Movement.
