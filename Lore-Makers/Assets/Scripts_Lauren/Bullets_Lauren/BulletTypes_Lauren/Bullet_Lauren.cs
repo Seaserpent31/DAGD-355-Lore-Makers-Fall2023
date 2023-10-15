@@ -29,6 +29,8 @@ public class Bullet_Lauren : MonoBehaviour
     public WeaponManager_Lauren weaponManager;
     public GameManager gameManager;
 
+    private Rigidbody2D rb;
+
     // [SerializeField]
     private int amountBullets;
     // [SerializeField]
@@ -43,10 +45,6 @@ public class Bullet_Lauren : MonoBehaviour
 
     private float lastShot = 0f;
 
-    public Transform target;
-
-    private Rigidbody2D rb;
-
     // private bool isShooting = true;
 
     private int pattern = 0;
@@ -60,6 +58,7 @@ public class Bullet_Lauren : MonoBehaviour
     // ==========[ START ]==========
     private void Start()
     {
+        gameManager = GameManager.FindAnyObjectByType<GameManager>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -69,58 +68,76 @@ public class Bullet_Lauren : MonoBehaviour
         {
             // Bullet
             pattern = 0;
-            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Bullet);
+            // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Bullet);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             // Electro Bullet
             pattern = 1;
-            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Electro);
+            // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Electro);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             // Poison Dart
             pattern = 2;
-            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.PoisonDart);         
+            // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.PoisonDart);         
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             // Rocket
             pattern = 3;
-            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Rocket);
+            // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Rocket);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             // Sniper
             pattern = 4;
-            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Sniper);
+            // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Sniper);
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             // Speedy Bullet
             pattern = 5;
-            weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Speedy);
+            // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Speedy);
         }
 
         switch (pattern)
         {
             case 0: // Bullet
-                Bullet();
+                if(!gameManager.isPhasing)
+                {
+                    Bullet();
+                }
                 break;
             case 1: // Electro
-                Electro();
+                if (!gameManager.isPhasing)
+                {
+                    Electro();
+                }                
                 break;
             case 2: // Poison Dart
-                PoisonDart();
+                if (!gameManager.isPhasing)
+                {
+                    PoisonDart();
+                }               
                 break;
             case 3: // Rocket
-                Rocket();
+                if (!gameManager.isPhasing)
+                {
+                    Rocket();
+                }
                 break;
             case 4: // Sniper
-                Sniper();
+                if (!gameManager.isPhasing)
+                {
+                    Sniper();
+                }
                 break;
             case 5: // Speedy Bullet
-                Speedy();
+                if (!gameManager.isPhasing)
+                {
+                    Speedy();
+                }
                 break;
         }
     }

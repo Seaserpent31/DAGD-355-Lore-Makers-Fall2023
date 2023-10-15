@@ -20,6 +20,9 @@ public class EnemyMovement_Lauren : MonoBehaviour
     // ==========[ VARIABLES ]==========
     private GameManager gameManager;
     private GameObject player; // For finding the player's location.
+    private GameObject bullet;
+
+    private Rigidbody2D rb;
 
     public Animator animator;
 
@@ -32,18 +35,16 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
     private float dis;
 
-    private Rigidbody2D rb;
-
 // ==========[ START ]==========
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        // Instead of plugging the "Player" in into Unity, this was added so I could make the Enemy prefab work.
-        player = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        bullet = GameObject.FindGameObjectWithTag("Bullet");
 
-        //bomb = GameObject.FindGameObjectWithTag("Test");
+        // bomb = GameObject.FindGameObjectWithTag("Test");
         // explosion = ExplosionBehavior_Lauren.FindAnyObjectByType<ExplosionBehavior_Lauren>();
 
     } // End of Start.
@@ -69,6 +70,18 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
     } // End of Update.
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Debug.Log("Bullet Collision with Enemy.");
+
+            Destroy(gameObject);
+
+        }
+
+    }
+
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
@@ -82,7 +95,7 @@ public class EnemyMovement_Lauren : MonoBehaviour
     private void OnDestroy()
     {
         // Instantiate the bomb.
-        Instantiate(bomb, transform.position, Quaternion.identity);
+        // Instantiate(bomb, transform.position, Quaternion.identity);
         Debug.Log("Bomb deployed.");
 
     }
@@ -91,14 +104,5 @@ public class EnemyMovement_Lauren : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //
-    // }
 
 } // End of Enemy Movement.

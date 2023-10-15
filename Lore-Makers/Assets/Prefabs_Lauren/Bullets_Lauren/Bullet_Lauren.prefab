@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2783742371712871361}
   - component: {fileID: -6326786641198521377}
   - component: {fileID: -8527638192006697781}
-  m_Layer: 0
+  - component: {fileID: -3671224299269383457}
+  m_Layer: 7
   m_Name: Bullet_Lauren
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -114,13 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6520ffbb21cc04b4a9c91ab2a694b9bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefabs:
-  - {fileID: 6211569611441351926}
-  - {fileID: 4537949362706684126, guid: 117a95a450f877048bb3cca2785f80fa, type: 3}
-  - {fileID: 6617683483058864215, guid: 8b5790f45bc00f64b95a7b337b4a64de, type: 3}
-  - {fileID: 6115326767142009947, guid: 34f47d18fc7f3c44684f30ae41195118, type: 3}
-  - {fileID: 4054361489284737096, guid: 0d62e3973600e98489d3b221bccba516, type: 3}
-  - {fileID: 2543699856908370598, guid: e20cf88987bc71d4dbe1c92fae582358, type: 3}
 --- !u!58 &-8527638192006697781
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -156,3 +150,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &-3671224299269383457
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211569611441351926}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7

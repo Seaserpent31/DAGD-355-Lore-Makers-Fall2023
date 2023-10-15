@@ -26,13 +26,14 @@ public class BulletBase_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
     public WeaponManager_Lauren weaponManager;
-    
+    // private GameObject enemy;
+
     private Vector2 direction;
 
     public float speed;
     public float rotation;
 
-    // private Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     // OnEnable() - Destroying the bullet after a certain amount of time (lifetime).
     private void OnEnable()
@@ -44,8 +45,9 @@ public class BulletBase_Lauren : MonoBehaviour
 // ==========[ START ]==========
     void Start()
     {
-        // rb = GetComponent<Rigidbody2D>();
-        // rb.velocity = new Vector2(0, speed);
+        // enemy = GameObject.FindGameObjectWithTag("Enemy");
+
+        rb = GetComponent<Rigidbody2D>();
 
         transform.rotation = Quaternion.Euler(0f, 0f, rotation);
 
