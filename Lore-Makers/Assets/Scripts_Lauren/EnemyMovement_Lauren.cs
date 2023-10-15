@@ -24,6 +24,8 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public LayerMask enemyLayer;
+
     public Animator animator;
 
     public GameObject bomb;
@@ -70,18 +72,6 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
     } // End of Update.
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            Debug.Log("Bullet Collision with Enemy.");
-
-            Destroy(gameObject);
-
-        }
-
-    }
-
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
@@ -103,6 +93,42 @@ public class EnemyMovement_Lauren : MonoBehaviour
     public void kill()
     {
         Destroy(gameObject);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        BulletDamage_Lauren bullet = GetComponent<BulletDamage_Lauren>();
+        int currentType = BulletDamage_Lauren.currentType;
+
+        if (collision.gameObject.tag == "Bullet")
+        {
+            if (currentType == 0) // Bullet
+            {
+                bullet.RegularEffect(Random.Range(10f, 12f));
+            }
+            else if (currentType == 1) // Electro Bullet
+            {
+                bullet.ElectroEffect(Random.Range(7f, 10f));
+            }
+            else if (currentType == 2) // Poison Dart
+            {
+                bullet.PoisonEffect(Random.Range(10f, 12f));
+            }
+            else if (currentType == 3) // Rocket
+            {
+                bullet.RocketEffect(Random.Range(28f, 32f));
+            }
+            else if (currentType == 4) // Sniper Bullet
+            {
+                bullet.SniperEffect(Random.Range(20f, 25f));
+            }
+            else if (currentType == 5) // Speedy Bullet
+            {
+                bullet.SpeedyEffect(Random.Range(5f, 7f));
+            }
+
+        }
 
     }
 

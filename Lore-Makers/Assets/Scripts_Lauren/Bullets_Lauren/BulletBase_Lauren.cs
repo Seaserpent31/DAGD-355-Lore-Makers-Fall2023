@@ -26,6 +26,7 @@ public class BulletBase_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
     public WeaponManager_Lauren weaponManager;
+    public BulletDamage_Lauren bulletDamage;
     // private GameObject enemy;
 
     public LayerMask enemyLayer;

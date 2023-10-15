@@ -28,8 +28,8 @@ public class Bullet_Lauren : MonoBehaviour
 // ==========[ VARIABLES ]==========
     public GameManager gameManager;
     public WeaponManager_Lauren weaponManager;
-    public BulletBase_Lauren bulletBase;
-    public ElectroEffect_Lauren electroEffect;
+    public BulletDamage_Lauren bulletDamage;
+    // public EnemyMovement_Lauren enemyDamage;
 
     private Rigidbody2D rb;
 
@@ -48,6 +48,8 @@ public class Bullet_Lauren : MonoBehaviour
     private float lastShot = 0f;
 
     public LayerMask enemyLayer;
+
+    public int damageAmount;
 
     // private bool isShooting = true;
 
@@ -74,36 +76,42 @@ public class Bullet_Lauren : MonoBehaviour
         {
             // Bullet
             pattern = 0;
+            bulletDamage.ChangeType(0);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Bullet);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             // Electro Bullet
             pattern = 1;
+            bulletDamage.ChangeType(1);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Electro);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             // Poison Dart
             pattern = 2;
+            bulletDamage.ChangeType(2);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.PoisonDart);         
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             // Rocket
             pattern = 3;
+            bulletDamage.ChangeType(3);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Rocket);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             // Sniper
             pattern = 4;
+            bulletDamage.ChangeType(4);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Sniper);
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             // Speedy Bullet
             pattern = 5;
+            bulletDamage.ChangeType(5);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Speedy);
         }
 
@@ -119,13 +127,14 @@ public class Bullet_Lauren : MonoBehaviour
                 if (!gameManager.isPhasing)
                 {
                     Electro();
-                    electroEffect.ElectroEffect();
+                    // bulletDamage.ElectroEffect();
                 }                
                 break;
             case 2: // Poison Dart
                 if (!gameManager.isPhasing)
                 {
                     PoisonDart();
+                    // bulletDamage.PoisonEffect();
                 }               
                 break;
             case 3: // Rocket
@@ -239,7 +248,7 @@ public class Bullet_Lauren : MonoBehaviour
     // PoisonDart() - Firing poison darts.
     private void PoisonDart()
     {
-        amountBullets = 30;
+        amountBullets = 15;
         firerate = 1f;
 
         // So hundreds of bullets don't shoot at a time.

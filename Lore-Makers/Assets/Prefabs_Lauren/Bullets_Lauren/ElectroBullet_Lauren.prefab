@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7310992996590463101}
   - component: {fileID: -1821407012239118402}
   - component: {fileID: -2835883753628384617}
+  - component: {fileID: 3129198791690526871}
   - component: {fileID: -6107930284666489281}
   - component: {fileID: 2438957665350604031}
   m_Layer: 7
@@ -101,11 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponManager: {fileID: -2835883753628384617}
-  speed: 0
-  rotation: 0
+  bulletDamage: {fileID: 3129198791690526871}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  speed: 0
+  rotation: 0
 --- !u!114 &-2835883753628384617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +120,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6520ffbb21cc04b4a9c91ab2a694b9bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3129198791690526871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537949362706684126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc1965cf978ba041803fc3bfd256b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  bulletType: 0
+  damage: 0
 --- !u!58 &-6107930284666489281
 CircleCollider2D:
   m_ObjectHideFlags: 0
