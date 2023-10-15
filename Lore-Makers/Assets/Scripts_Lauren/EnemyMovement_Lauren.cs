@@ -8,11 +8,8 @@ using UnityEngine;
     // They do not shoot at the player, however they carry a bomb.
     // If they reach the player or are in range of the player when they're "killed," they deal damage to the player.
 // To-Do:
-    // Add the "explosion" and make sure it deals damage to the player.
-    // Make sure the collision with the bullets works before we do the first one.
     // Fix enemy rotation - it doesn't "rotate fast enough" to face the player.
-    // When the player is phasing in and out, the enemies should NOT be able to detect the player.
-        // Make it to where the enemies roam randomly until the player phases back into existence.
+    // Make it to where the enemies roam randomly until the player phases back into existence.
     // Make sure enemies actually spawn instead of just placing prefabs.
 
 public class EnemyMovement_Lauren : MonoBehaviour
@@ -22,6 +19,8 @@ public class EnemyMovement_Lauren : MonoBehaviour
     private GameObject player; // For finding the player's location.
     private GameObject bullet;
 
+    public GameObject explosion;
+
     private Rigidbody2D rb;
 
     public LayerMask enemyLayer;
@@ -29,7 +28,6 @@ public class EnemyMovement_Lauren : MonoBehaviour
     public Animator animator;
 
     public GameObject bomb;
-    // private ExplosionBehavior_Lauren explosion;
 
     public float speed;
 
@@ -45,9 +43,6 @@ public class EnemyMovement_Lauren : MonoBehaviour
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         bullet = GameObject.FindGameObjectWithTag("Bullet");
-
-        // bomb = GameObject.FindGameObjectWithTag("Test");
-        // explosion = ExplosionBehavior_Lauren.FindAnyObjectByType<ExplosionBehavior_Lauren>();
 
     } // End of Start.
 
@@ -78,20 +73,18 @@ public class EnemyMovement_Lauren : MonoBehaviour
         if (enemyHealth <= 0f)
         {
             animator.SetTrigger("destroy");
+
         }
-
-    }
-
-    private void OnDestroy()
-    {
-        // Instantiate the bomb.
-        // Instantiate(bomb, transform.position, Quaternion.identity);
-        Debug.Log("Bomb deployed.");
 
     }
 
     public void kill()
     {
+        // Bomb
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Instantiate(bomb, transform.position, Quaternion.identity);
+        Debug.Log("Bomb deployed.");
+
         Destroy(gameObject);
 
     }

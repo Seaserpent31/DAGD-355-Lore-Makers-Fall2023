@@ -16,11 +16,6 @@ using static UnityEditor.ObjectChangeEventStream;
 // To-Do:
 // Mess around with numbers, add important things, etc. (same goes for every bullet script).
 
-// To fix my weapon sawpping, will probably have to have ALL bullet info on one script and swap between them.
-// For ex) having a "Fire" and "Spiral" invoke but "if index == 0, fire" and "if index == 1, spiral" kind of thing.
-// Kind of like swapping scenes/screens in DAGD 255.
-
-// replace a lot of the numbers and stuff with variables so i can edit them for each bullet type.
 #endregion
 
 public class Bullet_Lauren : MonoBehaviour

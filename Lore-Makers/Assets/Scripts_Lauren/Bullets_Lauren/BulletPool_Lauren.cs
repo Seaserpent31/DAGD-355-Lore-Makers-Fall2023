@@ -9,6 +9,7 @@ using UnityEngine;
 #region Pool Info
 // ==========[ BULLET POOL ]==========
 // For pooling bullets.
+
 #endregion
 
 public class BulletPool_Lauren : MonoBehaviour

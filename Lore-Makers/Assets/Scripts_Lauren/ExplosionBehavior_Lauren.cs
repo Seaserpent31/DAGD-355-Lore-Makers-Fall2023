@@ -8,15 +8,11 @@ using UnityEngine;
 // ==========[ EXPLOSION BEHAVIOR ]==========
 // When the Bomber enemy is "killed" or reaches the player, they explode, dealing damage.
 // The bomb is not meant to move, when the Bomber is destroyed, the bomb goes off where the Bomber was.
-// To-Do:
-    // Change things with damage (works for now - up close, deals around 9 and deals less further away).
-    // Add particles for when the bomb explodes.
 
 public class ExplosionBehavior_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
     private PlayerMovement_Lauren player;
-    public ParticleSystem explosion;
     
     // public bool hasExploded = false; // Whether the bomb has exploded or not.
 
@@ -69,7 +65,6 @@ public class ExplosionBehavior_Lauren : MonoBehaviour
         }
 
         // Explosion effect.
-        // Instantiate(explosion, transform.position, Quaternion.identity);
 
         // Destroy the bomb.
         Destroy(gameObject);

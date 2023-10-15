@@ -9,17 +9,7 @@ using UnityEngine;
 // ==========[ BULLET BASE ]==========
 // A base for the different bullet scripts.
 // Each script inherits this script.
-// To-Do:
-    // Add the important variables I need and go from there.
-    // Speed
-    // Rotation
-    // Firerate
-    // Damage
-    // Direction
-    // Lifetime
-    // isRandom(?)
-    // isPosion(?)
-    // isElectric(?)
+
 #endregion
 
 public class BulletBase_Lauren : MonoBehaviour

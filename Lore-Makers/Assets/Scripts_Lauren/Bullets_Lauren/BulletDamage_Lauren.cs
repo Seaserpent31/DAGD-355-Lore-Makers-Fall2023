@@ -108,7 +108,7 @@ public class BulletDamage_Lauren : MonoBehaviour
         poisonDamage = Random.Range(1f, 3f);
         poisonTimer = 5f;
 
-        poisonTimer -= Time.deltaTime;
+        poisonTimer--;
         if (poisonTimer >= 0)
         {
             damage += poisonDamage * Time.deltaTime;
