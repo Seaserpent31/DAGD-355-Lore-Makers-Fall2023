@@ -6,6 +6,7 @@ public class BulletDamage_Lauren : MonoBehaviour
 {
     public GameObject enemy;
     // public EnemyMovement_Lauren enemyDamage;
+    public GameObject lightning;
 
     public LayerMask enemyLayer;
 
@@ -84,6 +85,11 @@ public class BulletDamage_Lauren : MonoBehaviour
                 enemy.TakeDamage(damage);
                 Debug.Log("Electro bullet. Damage dealt: " + damage);
 
+                Instantiate(lightning, transform.position, Quaternion.identity);
+
+                // "Lightning" effect credits:
+                // https://youtu.be/RdNnbozAPGQ?si=3BLARx6J3UkxEOfW
+                // https://www.patreon.com/posts/21393747
             }
 
         }

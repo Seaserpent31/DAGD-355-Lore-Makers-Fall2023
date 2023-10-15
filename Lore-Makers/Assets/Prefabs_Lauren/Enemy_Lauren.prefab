@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3730107599685292168}
+  lightning: {fileID: 1306605793903958, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64

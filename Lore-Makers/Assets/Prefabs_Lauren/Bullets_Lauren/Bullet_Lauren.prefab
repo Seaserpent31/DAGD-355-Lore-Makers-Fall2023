@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3730107599685292168, guid: b39c8942574eb5443bc29907544d21d5, type: 3}
-  bulletBase: {fileID: 2783742371712871361}
+  lightning: {fileID: 1306605793903958, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
