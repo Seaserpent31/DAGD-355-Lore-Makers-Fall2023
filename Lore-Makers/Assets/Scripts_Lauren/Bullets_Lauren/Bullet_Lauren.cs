@@ -21,10 +21,14 @@ using static UnityEditor.ObjectChangeEventStream;
 public class Bullet_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
-    public GameManager gameManager;
+    public GameManager gameManager;   
+    public AudioManager_Lauren audioManager;
+
     public WeaponManager_Lauren weaponManager;
     public BulletDamage_Lauren bulletDamage;
     // public EnemyMovement_Lauren enemyDamage;
+
+    [SerializeField] private AudioClip clip;
 
     private Rigidbody2D rb;
 
@@ -60,6 +64,7 @@ public class Bullet_Lauren : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
+        audioManager = AudioManager_Lauren.FindAnyObjectByType<AudioManager_Lauren>();
         // bulletBase = FindAnyObjectByType<BulletBase_Lauren>();
 
         rb = GetComponent<Rigidbody2D>();
@@ -73,6 +78,8 @@ public class Bullet_Lauren : MonoBehaviour
             pattern = 0;
             bulletDamage.ChangeType(0);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Bullet);
+
+            audioManager.Play(clip);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -80,13 +87,17 @@ public class Bullet_Lauren : MonoBehaviour
             pattern = 1;
             bulletDamage.ChangeType(1);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Electro);
+
+            audioManager.Play(clip);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             // Poison Dart
             pattern = 2;
             bulletDamage.ChangeType(2);
-            // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.PoisonDart);         
+            // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.PoisonDart);
+            // 
+            audioManager.Play(clip);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -94,6 +105,8 @@ public class Bullet_Lauren : MonoBehaviour
             pattern = 3;
             bulletDamage.ChangeType(3);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Rocket);
+
+            audioManager.Play(clip);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
@@ -101,6 +114,8 @@ public class Bullet_Lauren : MonoBehaviour
             pattern = 4;
             bulletDamage.ChangeType(4);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Sniper);
+
+            audioManager.Play(clip);
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
@@ -108,6 +123,8 @@ public class Bullet_Lauren : MonoBehaviour
             pattern = 5;
             bulletDamage.ChangeType(5);
             // weaponManager.SwapWeapon(WeaponManager_Lauren.WeaponType.Speedy);
+
+            audioManager.Play(clip);
         }
 
         switch (pattern)

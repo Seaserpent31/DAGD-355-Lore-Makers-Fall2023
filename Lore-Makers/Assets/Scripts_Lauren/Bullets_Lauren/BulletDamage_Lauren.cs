@@ -35,10 +35,15 @@ public class BulletDamage_Lauren : MonoBehaviour
     // Rocket
     public float radius = 3f;
 
+    // Audio
+    // public AudioManager_Lauren audioManager;
+
+    // [SerializeField] private AudioClip electricShock;
+
     void Start()
     {
         // bullet = GameObject.FindGameObjectWithTag("Bullet");
-
+        // audioManager = AudioManager_Lauren.FindAnyObjectByType<AudioManager_Lauren>();
     }
 
     void Update()
@@ -85,7 +90,11 @@ public class BulletDamage_Lauren : MonoBehaviour
                 enemy.TakeDamage(damage);
                 Debug.Log("Electro bullet. Damage dealt: " + damage);
 
-                Instantiate(lightning, transform.position, Quaternion.identity);
+                // audioManager.Play(electricShock);
+                // audioManager.audioSource.volume = 0.01f;
+                    // Interferes with the explosion audio, may just take out one of the two.
+
+                Instantiate(lightning, collider.transform.position, Quaternion.identity);
 
                 // "Lightning" effect credits:
                 // https://youtu.be/RdNnbozAPGQ?si=3BLARx6J3UkxEOfW

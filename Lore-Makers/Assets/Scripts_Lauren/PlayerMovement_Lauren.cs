@@ -14,13 +14,16 @@ using static UnityEngine.UI.Image;
 public class PlayerMovement_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
+    // Other References.
     private GameManager gameManager;  
     private GameObject enemy;
     
     private Rigidbody2D rb;
 
+    // Animation.
     public Animator animator;
 
+    // Health.
     public float playerHealth = 100f;
 
 // ==========[ START ]==========
@@ -87,20 +90,24 @@ public class PlayerMovement_Lauren : MonoBehaviour
 
     } // End of Update.
 
+// ==========[ OTHER FUNCTIONS ]==========
+    // OnCollisionEnter2D() - Collision with enemies.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Enemy Collision with Player.");
     
-            // enemyMovement.animator.SetTrigger("destroy");
+            Destroy(enemy);
 
             // To-Do:
                 // If enemies are in the process of dying, they should not be able to continue moving or taking damage.
+
         }
    
-    }
+    } // End of OnCollisonEnter2D.
 
+    // TakeDamage() - Taking damage.
     public void TakeDamage(float damage)
     {
         playerHealth -= damage;
@@ -110,12 +117,16 @@ public class PlayerMovement_Lauren : MonoBehaviour
             Debug.Log("Game Over.");
 
             animator.SetTrigger("destroy");
-        }
-    }
 
-    public void kill()
+        }
+
+    } // End of TakeDamage().
+
+    // Kill() - "Killing" the player.
+    public void Kill()
     {
         Destroy(gameObject);
-    }
+
+    } // End of Kill().
 
 } // End of Player Movement.

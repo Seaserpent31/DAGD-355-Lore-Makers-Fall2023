@@ -15,25 +15,28 @@ using UnityEngine;
 public class EnemyMovement_Lauren : MonoBehaviour
 {
     // ==========[ VARIABLES ]==========
-    private GameManager gameManager;
+    // Other References.
+    private GameManager gameManager; // For phasing and future things.
+
     private GameObject player; // For finding the player's location.
-    private GameObject bullet;
-
-    public GameObject explosion;
-
-    private Rigidbody2D rb;
+    public GameObject bomb; // Bomb prefab for when the enemy dies.
+    public GameObject explosion; // Explosion effect.
 
     public LayerMask enemyLayer;
 
+    private Rigidbody2D rb;
+
+    // Animation.
     public Animator animator;
 
-    public GameObject bomb;
+    // Audio.
+    public AudioManager_Lauren audioManager;
+    [SerializeField] private AudioClip clip;
 
+    // Movement and Health.
     public float speed;
-
-    public float enemyHealth = 10f;
-
-    private float dis;
+    public float enemyHealth = 50; // Enemy health, probably not 50 (just a placeholder).
+    private float dis; // Used for finding the player's location.
 
 // ==========[ START ]==========
     void Start()
@@ -41,8 +44,9 @@ public class EnemyMovement_Lauren : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
+        audioManager = AudioManager_Lauren.FindAnyObjectByType<AudioManager_Lauren>();
+
         player = GameObject.FindGameObjectWithTag("Player");
-        bullet = GameObject.FindGameObjectWithTag("Bullet");
 
     } // End of Start.
 
@@ -61,15 +65,20 @@ public class EnemyMovement_Lauren : MonoBehaviour
             // Moving and rotating so the enemy faces the player.
             // transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             // transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+                // Commenting out for testing purposes. Remember to get rid of the // later.
+
         }
 
         // Instead, the enemies should find "new paths" until the player phases back in.
 
     } // End of Update.
 
+// ==========[ OTHER FUNCTIONS ]==========
+    // TakeDamage() - Taking damage.
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
+        // If the enemy reaches 0 health, they should "die."
         if (enemyHealth <= 0f)
         {
             animator.SetTrigger("destroy");
@@ -78,17 +87,25 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
     }
 
-    public void kill()
-    {
-        // Bomb
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        Instantiate(bomb, transform.position, Quaternion.identity);
-        Debug.Log("Bomb deployed.");
-
+    // Kill() - "Killing" the enemy.
+    public void Kill()
+    {       
         Destroy(gameObject);
 
-    }
+        // Bomb and Explosion.
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Instantiate(bomb, transform.position, Quaternion.identity);
 
+        audioManager.Play(clip);
+        audioManager.audioSource.volume = 0.25f;
+
+        // I don't really like how the explosion particles go off after the animation is completely done, might have to fix.
+
+        Debug.Log("Bomb deployed.");
+
+    } // End of Kill().
+
+    // OnCollisionEnter2D() - Collision with the bullets.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         BulletDamage_Lauren bullet = GetComponent<BulletDamage_Lauren>();
@@ -96,33 +113,34 @@ public class EnemyMovement_Lauren : MonoBehaviour
 
         if (collision.gameObject.tag == "Bullet")
         {
-            if (currentType == 0) // Bullet
+            // Bullet types.
+            if (currentType == 0) // Bullet.
             {
                 bullet.RegularEffect(Random.Range(10f, 12f));
             }
-            else if (currentType == 1) // Electro Bullet
+            else if (currentType == 1) // Electro Bullet.
             {
                 bullet.ElectroEffect(Random.Range(7f, 10f));
             }
-            else if (currentType == 2) // Poison Dart
+            else if (currentType == 2) // Poison Dart.
             {
                 bullet.PoisonEffect(Random.Range(10f, 12f));
             }
-            else if (currentType == 3) // Rocket
+            else if (currentType == 3) // Rocket.
             {
                 bullet.RocketEffect(Random.Range(28f, 32f));
             }
-            else if (currentType == 4) // Sniper Bullet
+            else if (currentType == 4) // Sniper Bullet.
             {
                 bullet.SniperEffect(Random.Range(20f, 25f));
             }
-            else if (currentType == 5) // Speedy Bullet
+            else if (currentType == 5) // Speedy Bullet.
             {
                 bullet.SpeedyEffect(Random.Range(5f, 7f));
             }
 
         }
 
-    }
+    }// End of OnCollisionEnter2D().
 
 } // End of Enemy Movement.
