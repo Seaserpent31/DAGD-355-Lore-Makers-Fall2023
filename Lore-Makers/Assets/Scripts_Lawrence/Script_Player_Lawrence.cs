@@ -31,12 +31,13 @@ public class Script_Player_Lawrence : MonoBehaviour
     private float distToGoal;
     private float easeStrength;
 
-    private GameManager gameManager;
-
-
+    private GameManager manger;
     public float chargeFasterTimer;
 
     private float hurtAnimTime=0;
+
+    private float deathTimer=0;
+    public GameObject gameOverMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +45,7 @@ public class Script_Player_Lawrence : MonoBehaviour
         curHealth = maxHealth;
         //healthBar.value = curHealth;
         isDead = false;
-        gameManager = GameManager.FindAnyObjectByType<GameManager>();
+        manger = GameManager.FindAnyObjectByType<GameManager>();
         isShooting = true;
     }
 
@@ -145,11 +146,11 @@ public class Script_Player_Lawrence : MonoBehaviour
             }
 
 
-            if (gameManager.isPhasing)
+            if (manger.isPhasing)
             {
                 animator.SetBool("isPhasing", true);
             }
-            else if (!gameManager.isPhasing)
+            else if (!manger.isPhasing)
             {
                 animator.SetBool("isPhasing", false);
             }
@@ -180,10 +181,24 @@ public class Script_Player_Lawrence : MonoBehaviour
                 }
             }
 
-            if(curHealth<=0)animator.SetBool("IsDead", true);
+            if (curHealth <= 0)
+            {
+                isDead = true;
+            }
             animator.SetBool("IsCharging", isCharging);
         }
+        else
+        {
+            animator.SetBool("IsDead", true);
+            deathTimer += Time.deltaTime;
+            if(deathTimer >= 2)
+            {
+                endGameplayer();
+                deathTimer = 0;
+            }
+        }
     }
+
 
     void AttemptChargeShot()
     {
@@ -221,9 +236,39 @@ public class Script_Player_Lawrence : MonoBehaviour
         }
     }
 
+    void endGameplayer()
+    {
+        GameObject.Find("GameManager").GetComponent<GameManager_Lawrence>().endGame();
+        if (GameObject.Find("GameManager") == null)
+        {
+            Debug.Log("fail to find game manager");
+        }
+        Time.timeScale = 0f;
+        
+        gameOverMenu.SetActive(true);
+    }
     public void kill()
     {
         Destroy(gameObject);
+    }
+
+    public void ResetPlayer()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = Vector3.zero;
+        transform.position = new Vector3(-5f, 0, 0);
+        isShooting = true;
+        curHealth = maxHealth;
+        healthBar.value = curHealth;
+        isDead = false;
+
+        chargeTime = 0;
+        isCharging = false;
+        animator.SetBool("isPhasing", false);
+        animator.SetBool("IsDead", false);
+        animator.SetInteger("moveState", 0);
+        hurtAnimTime=0;
+        deathTimer = 0;
     }
 
 }

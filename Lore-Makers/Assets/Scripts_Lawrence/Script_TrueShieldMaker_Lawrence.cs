@@ -5,10 +5,13 @@ using UnityEngine;
 public class Script_TrueShieldMaker_Lawrence : MonoBehaviour
 {
     public GameObject shield;
+    //sound stuff
+    public AudioClip Sheildsound;
+    static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class Script_TrueShieldMaker_Lawrence : MonoBehaviour
             bool s = collision.gameObject.GetComponent<Script_BasicEnemy_Lawrence>().wasShielded;
             if (!s)
             {
+                audioSrc.PlayOneShot(Sheildsound);
                 collision.gameObject.GetComponent<Script_BasicEnemy_Lawrence>().wasShielded = true;
                 GameObject obj = Instantiate(shield, collision.gameObject.transform);
                 if (collision.gameObject.GetComponent<EnemyMovement_Lauren>() != null)
