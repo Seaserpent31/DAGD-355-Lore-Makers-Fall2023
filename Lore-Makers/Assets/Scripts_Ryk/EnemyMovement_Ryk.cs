@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement_Ryk : MonoBehaviour
 {
+    private float speed;
+
     private int enemyFirePattern;
 
     private float enemyFireRate;
@@ -13,6 +15,7 @@ public class EnemyMovement_Ryk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = 5.0f;
 
         enemyFirePattern = Random.Range(0, 3);
 
@@ -47,6 +50,8 @@ public class EnemyMovement_Ryk : MonoBehaviour
             Instantiate(shot, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
             enemyFireRate = 0;
         }
+
+        //position.transform -= new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
     }
 
     private void firePatternTriple()
