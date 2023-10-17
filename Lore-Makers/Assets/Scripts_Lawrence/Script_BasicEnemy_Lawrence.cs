@@ -31,6 +31,11 @@ public class Script_BasicEnemy_Lawrence : MonoBehaviour
                 manager.GetComponent<GameManager_Lawrence>().score += 10;
                 GetComponent<EnemyMovement_Lauren>().Kill();
             }
+            if (GetComponent<EnemyMovement_Ryk>() != null)
+            {
+                manager.GetComponent<GameManager_Lawrence>().score += 10;
+                GetComponent<EnemyMovement_Lauren>().Kill();
+            }
 
             Destroy(gameObject);
         }

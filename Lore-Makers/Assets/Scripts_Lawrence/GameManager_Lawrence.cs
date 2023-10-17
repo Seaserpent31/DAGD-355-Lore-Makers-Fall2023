@@ -12,6 +12,15 @@ public class GameManager_Lawrence : MonoBehaviour
     private float spawnTimerShield;
     private Vector3 spawnPos;
 
+    public GameObject bomberEnemy;
+    public float spawnIntervalBomber;
+    private float spawnTimerBomber;
+
+
+    public GameObject BasicEnemy;
+    public float spawnIntervalBasic;
+    private float spawnTimerBasic;
+
     public int score;
     public TextMeshProUGUI scoreText;
 
@@ -39,6 +48,19 @@ public class GameManager_Lawrence : MonoBehaviour
             spawnTimerShield = spawnIntervalShield;
             spawnShieldEnemy();
         }
+        spawnTimerBomber -= Time.deltaTime;
+        if (spawnTimerBomber <= 0)
+        {
+            spawnTimerBomber = spawnIntervalBomber;
+            spawnBomberEnemy();
+        }
+
+        spawnTimerBasic -= Time.deltaTime;
+        if (spawnTimerBasic <= 0)
+        {
+            spawnTimerBasic = spawnIntervalBasic;
+            spawnBasicEnemy();
+        }
         scoreText.text = "Score :" + score;
     }
 
@@ -46,6 +68,16 @@ public class GameManager_Lawrence : MonoBehaviour
     {
         spawnPos = new Vector3(30, Random.Range(-6.3f, 9.25f), 0);
         Instantiate(shieldEnemy, spawnPos, Quaternion.identity);
+    }
+    public void spawnBomberEnemy()
+    {
+        spawnPos = new Vector3(30, Random.Range(-6.3f, 9.25f), 0);
+        Instantiate(bomberEnemy, spawnPos, Quaternion.identity);
+    }
+    public void spawnBasicEnemy()
+    {
+        spawnPos = new Vector3(30, Random.Range(-6.3f, 9.25f), 0);
+        Instantiate(BasicEnemy, spawnPos, Quaternion.identity);
     }
 
     public void StartGame()

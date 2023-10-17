@@ -795,7 +795,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldEnemy: {fileID: 5681113297961998179, guid: b8736a4a704b9f34fa716b3a61a2257b, type: 3}
   PlayerChar: {fileID: 1534870261}
-  spawnIntervalShield: 5
+  spawnIntervalShield: 7
+  bomberEnemy: {fileID: 3730107599685292168, guid: b39c8942574eb5443bc29907544d21d5, type: 3}
+  spawnIntervalBomber: 5
+  BasicEnemy: {fileID: 7274218194777518810, guid: 5831afa4fc82170448f95f606345d4ef, type: 3}
+  spawnIntervalBasic: 2
   score: 0
   scoreText: {fileID: 1391774785}
   startsound: {fileID: 8300000, guid: 7585b68e0a0cbbe4580ea5fd600c61be, type: 3}
@@ -811,8 +815,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1d5e5473f10d349946b0b1c577975d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  phasing: {fileID: 0}
   isPhasing: 0
   phaseTime: 7
+  isShooting: 1
 --- !u!82 &1455878700
 AudioSource:
   m_ObjectHideFlags: 0
