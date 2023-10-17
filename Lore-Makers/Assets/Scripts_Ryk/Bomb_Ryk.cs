@@ -6,10 +6,14 @@ public class Bomb_Ryk : MonoBehaviour
 {
     public float speed;
     public bool bombActive = true;
+    private float damage = 20;
+
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         speed = 6f;
     }
 
@@ -27,4 +31,13 @@ public class Bomb_Ryk : MonoBehaviour
     }
 
     //if
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
 }
