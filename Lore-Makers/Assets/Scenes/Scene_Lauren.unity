@@ -1037,14 +1037,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61912b5fbc4a9934aa21077c5a376013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
-  clip: {fileID: 0}
+  bomb: {fileID: 4765120861730325276, guid: 3ded4c07b2ce02f4eaa00f8aefbd6f75, type: 3}
   explosion: {fileID: 8760915696299070819, guid: a511f7693c415244f99c56a302b31012, type: 3}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 0}
-  bomb: {fileID: 4765120861730325276, guid: 3ded4c07b2ce02f4eaa00f8aefbd6f75, type: 3}
+  audioManager: {fileID: 0}
+  clip: {fileID: 0}
   speed: 0
   enemyHealth: 10
 --- !u!114 &1039934438
@@ -1067,8 +1067,6 @@ MonoBehaviour:
   bulletType: 0
   damage: 0
   radius: 3
-  audioManager: {fileID: 0}
-  electricShock: {fileID: 0}
 --- !u!1001 &1116007197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1517,7 +1515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 0}
-  clip: {fileID: 8300000, guid: 3b31354c7e217ab4088c46b75e760137, type: 3}
+  phasing: {fileID: 8300000, guid: 3b31354c7e217ab4088c46b75e760137, type: 3}
   isPhasing: 0
   phaseTime: 8
   isShooting: 1
