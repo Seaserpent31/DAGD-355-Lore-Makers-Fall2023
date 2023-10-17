@@ -12,8 +12,10 @@ public class Net_Ryk : MonoBehaviour
     public float burstRadius;
     public bool burstNet;
 
-    public float gravityRange;
+    public Vector3 gravityRange;
     public float gravityStrength;
+    public float pullForce;
+    public bool isEnemyPulled;
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +43,19 @@ public class Net_Ryk : MonoBehaviour
         }
 
         transform.position += new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+    }
+
+    /*private void gravityPull()
+    {
+        if (GameObject.FindGameObjectWithTag("Enemy").transform.position < gameObject.transform.position + gravityRange)
+        {
+            
+        }
+        pullForce = (gameObject.transform.position - GameObject.FindGameObjectWithTag("Enemy").transform.position).normalized / distance to Enemy * gravityStrength;
+    }*/
+
+    private void OnTriggerEnter2D()
+    {
+        
     }
 }
