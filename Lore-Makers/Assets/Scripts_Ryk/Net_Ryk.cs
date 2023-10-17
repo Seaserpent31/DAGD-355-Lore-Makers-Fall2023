@@ -53,4 +53,9 @@ public class Net_Ryk : MonoBehaviour
         }
         pullForce = (gameObject.transform.position - GameObject.FindGameObjectWithTag("Enemy").transform.position).normalized / distance to Enemy * gravityStrength;
     }*/
+
+    private void OnTriggerEnter2D()
+    {
+        
+    }
 }
