@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 572ad64005079584ba190091ce417e6d
+guid: b462e3de76852774fa393f4ef49e2dee
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerPhasing_0
+      name: M_PlayerPhasing_Lauren_0
       rect:
         serializedVersion: 2
         x: 0
         y: 448
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4271132250433643bceea5d9b3ff90b
-      internalID: -1768805509
+      spriteID: c4cff59bca57397408331d71cf67d833
+      internalID: 873345676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_1
+      name: M_PlayerPhasing_Lauren_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 46
         y: 448
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ad9f962576ce4b45a98d3e9c9bd7ee8
-      internalID: 1033441966
+      spriteID: 68d7385585ac24c45bbf687133794550
+      internalID: -1616867172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_2
+      name: M_PlayerPhasing_Lauren_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 92
         y: 448
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b4dd9a8cd70e924497a0b235c2c3e24
-      internalID: -1250985608
+      spriteID: 184226c2c59576d419e29b87a443ad1e
+      internalID: -862218538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_3
+      name: M_PlayerPhasing_Lauren_3
       rect:
         serializedVersion: 2
         x: 0
         y: 384
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f05f16df29b3454d98c6d1e70afd6c3
-      internalID: -1485319148
+      spriteID: f51afed713e1ee04f8bbfcd5d2ac295f
+      internalID: 1187096924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_4
+      name: M_PlayerPhasing_Lauren_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 46
         y: 384
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,19 +208,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1488ab0f28d3ad04c8e6babf145321b1
-      internalID: -692606718
+      spriteID: 983696490cb38f248973c1c1cfa161dd
+      internalID: 1551587433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_5
+      name: M_PlayerPhasing_Lauren_5
       rect:
         serializedVersion: 2
-        x: 128
+        x: 92
         y: 384
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,19 +229,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe2a4caff94e0684ca81b36aaa4acef0
-      internalID: 260068746
+      spriteID: 722207c0775c9104ebb8ffc3d3b22672
+      internalID: 1938048391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_6
+      name: M_PlayerPhasing_Lauren_6
       rect:
         serializedVersion: 2
         x: 0
         y: 320
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -250,19 +250,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63fc1fac024d38c46b695c61e7575806
-      internalID: 1859166350
+      spriteID: 4f32ef86d9bedbd4bb9d4e0e42b4d01d
+      internalID: 1855816994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_7
+      name: M_PlayerPhasing_Lauren_7
       rect:
         serializedVersion: 2
-        x: 64
+        x: 46
         y: 320
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -271,19 +271,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fc3441f571fbde43aa91f010a8d27ef
-      internalID: -523769077
+      spriteID: 6e092818a9ca715438c9f34bcbc81bde
+      internalID: -120730425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_8
+      name: M_PlayerPhasing_Lauren_8
       rect:
         serializedVersion: 2
-        x: 128
+        x: 92
         y: 320
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -292,19 +292,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fb82b38e743a0d4d97f78c808ab4f3e
-      internalID: 1340858930
+      spriteID: 98f7df6637b33ab42973fb0cdd09e286
+      internalID: -724475919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_9
+      name: M_PlayerPhasing_Lauren_9
       rect:
         serializedVersion: 2
         x: 0
         y: 256
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -313,19 +313,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f6094ab6b2ec9f499eaefd09c8b555b
-      internalID: 359510730
+      spriteID: ecc8e04496783ab4b8f46515ddec9a0e
+      internalID: 1455008869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_10
+      name: M_PlayerPhasing_Lauren_10
       rect:
         serializedVersion: 2
-        x: 64
+        x: 46
         y: 256
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -334,19 +334,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b5c1dd2ab0327949a6fb1d48046cdf8
-      internalID: -1782187413
+      spriteID: 0322b749bc899204cbcc7989a34a0bad
+      internalID: 1796870365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_11
+      name: M_PlayerPhasing_Lauren_11
       rect:
         serializedVersion: 2
-        x: 128
+        x: 92
         y: 256
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -355,19 +355,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9f85d8277c15d242b462d7541ad7dae
-      internalID: -1233224858
+      spriteID: 3ff981f7a16125841bda43e8ec8bc2a8
+      internalID: -1586470986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_12
+      name: M_PlayerPhasing_Lauren_12
       rect:
         serializedVersion: 2
         x: 0
         y: 192
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -376,19 +376,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f997ac8ea64b0654c8352aa3cd94eb42
-      internalID: 169905609
+      spriteID: d4207fe224bba824caf0ca6901d68625
+      internalID: -1513972041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_13
+      name: M_PlayerPhasing_Lauren_13
       rect:
         serializedVersion: 2
-        x: 64
+        x: 46
         y: 192
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -397,19 +397,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6ba64425b1ef094c8217ec9e7cf7a01
-      internalID: -1249853548
+      spriteID: b98b34f0baa167f4998fac285e0dcf88
+      internalID: 611706044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_14
+      name: M_PlayerPhasing_Lauren_14
       rect:
         serializedVersion: 2
-        x: 128
+        x: 92
         y: 192
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -418,19 +418,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e4193d21873b7a4599e31207bec379b
-      internalID: -1020070891
+      spriteID: 9d778b62308484e49844b46a68ee6a18
+      internalID: -677189987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_15
+      name: M_PlayerPhasing_Lauren_15
       rect:
         serializedVersion: 2
         x: 0
         y: 128
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -439,19 +439,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e503d545522bb054dba0a63c69d71790
-      internalID: 642843876
+      spriteID: d2853085524e25f4baf46a11ef69519b
+      internalID: -550729451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_16
+      name: M_PlayerPhasing_Lauren_16
       rect:
         serializedVersion: 2
-        x: 64
+        x: 46
         y: 128
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -460,19 +460,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97d687abd1fa7e2499b271f35588de99
-      internalID: 1178218008
+      spriteID: 25a126d37a9915448804cc5f32cab7a6
+      internalID: -1706581746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_17
+      name: M_PlayerPhasing_Lauren_17
       rect:
         serializedVersion: 2
-        x: 128
+        x: 92
         y: 128
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -481,19 +481,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d2b8d481fefccc4596160b389bac73d
-      internalID: -858027930
+      spriteID: 587339fb7709c0941a09bcd05d533af1
+      internalID: -1924555322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_18
+      name: M_PlayerPhasing_Lauren_18
       rect:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -502,19 +502,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4891c411420112e46ad9526c8fbd8714
-      internalID: 181625222
+      spriteID: 244eb63c53c5c484483fad5bd7470d83
+      internalID: 1667113862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_19
+      name: M_PlayerPhasing_Lauren_19
       rect:
         serializedVersion: 2
-        x: 64
+        x: 46
         y: 64
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -523,19 +523,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6018aa4137da0d54eac97abb4a02b3d8
-      internalID: 1417249519
+      spriteID: aa2570b3d14c494429f37cbaf9e3fac2
+      internalID: -906372814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_20
+      name: M_PlayerPhasing_Lauren_20
       rect:
         serializedVersion: 2
-        x: 128
+        x: 92
         y: 64
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -544,19 +544,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5fa1d2851c192342acd3d00e373e5ba
-      internalID: -404602056
+      spriteID: 51af22067ebe66b41b224d34baa3afb1
+      internalID: 1475274024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_21
+      name: M_PlayerPhasing_Lauren_21
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -565,19 +565,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba8a6b0c1cf2cae47aab07072a222a17
-      internalID: -156337697
+      spriteID: 7ea005349fc21a749aacd0439ceb209a
+      internalID: -864015714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_22
+      name: M_PlayerPhasing_Lauren_22
       rect:
         serializedVersion: 2
-        x: 64
+        x: 46
         y: 0
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -586,19 +586,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77055d8a1366a6c459ccc18883e18540
-      internalID: -1095481853
+      spriteID: 0db5cc740d0bd104090cc91adbdfdbe7
+      internalID: 925269805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerPhasing_23
+      name: M_PlayerPhasing_Lauren_23
       rect:
         serializedVersion: 2
-        x: 128
+        x: 92
         y: 0
-        width: 64
+        width: 46.666668
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -607,8 +607,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f0eee9acb2577d49b6b070ae7dc0804
-      internalID: 2139656607
+      spriteID: 2d6155c2d9f5beb40843f653808c79bc
+      internalID: 370131911
       vertices: []
       indices: 
       edges: []
@@ -624,30 +624,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      playerPhasing_0: -1768805509
-      playerPhasing_1: 1033441966
-      playerPhasing_10: -1782187413
-      playerPhasing_11: -1233224858
-      playerPhasing_12: 169905609
-      playerPhasing_13: -1249853548
-      playerPhasing_14: -1020070891
-      playerPhasing_15: 642843876
-      playerPhasing_16: 1178218008
-      playerPhasing_17: -858027930
-      playerPhasing_18: 181625222
-      playerPhasing_19: 1417249519
-      playerPhasing_2: -1250985608
-      playerPhasing_20: -404602056
-      playerPhasing_21: -156337697
-      playerPhasing_22: -1095481853
-      playerPhasing_23: 2139656607
-      playerPhasing_3: -1485319148
-      playerPhasing_4: -692606718
-      playerPhasing_5: 260068746
-      playerPhasing_6: 1859166350
-      playerPhasing_7: -523769077
-      playerPhasing_8: 1340858930
-      playerPhasing_9: 359510730
+      M_PlayerPhasing_Lauren_0: 873345676
+      M_PlayerPhasing_Lauren_1: -1616867172
+      M_PlayerPhasing_Lauren_10: 1796870365
+      M_PlayerPhasing_Lauren_11: -1586470986
+      M_PlayerPhasing_Lauren_12: -1513972041
+      M_PlayerPhasing_Lauren_13: 611706044
+      M_PlayerPhasing_Lauren_14: -677189987
+      M_PlayerPhasing_Lauren_15: -550729451
+      M_PlayerPhasing_Lauren_16: -1706581746
+      M_PlayerPhasing_Lauren_17: -1924555322
+      M_PlayerPhasing_Lauren_18: 1667113862
+      M_PlayerPhasing_Lauren_19: -906372814
+      M_PlayerPhasing_Lauren_2: -862218538
+      M_PlayerPhasing_Lauren_20: 1475274024
+      M_PlayerPhasing_Lauren_21: -864015714
+      M_PlayerPhasing_Lauren_22: 925269805
+      M_PlayerPhasing_Lauren_23: 370131911
+      M_PlayerPhasing_Lauren_3: 1187096924
+      M_PlayerPhasing_Lauren_4: 1551587433
+      M_PlayerPhasing_Lauren_5: 1938048391
+      M_PlayerPhasing_Lauren_6: 1855816994
+      M_PlayerPhasing_Lauren_7: -120730425
+      M_PlayerPhasing_Lauren_8: -724475919
+      M_PlayerPhasing_Lauren_9: 1455008869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

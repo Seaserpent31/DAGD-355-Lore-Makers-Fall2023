@@ -14,20 +14,17 @@ using static UnityEngine.UI.Image;
 public class PlayerMovement_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
+    // Other References.
+    private GameManager gameManager;  
+    private GameObject enemy;
+    
     private Rigidbody2D rb;
 
-    private GameObject enemy;
-    private GameManager gameManager;
-
-    private EnemyMovement_Lauren enemyMovement;
-
+    // Animation.
     public Animator animator;
 
+    // Health.
     public float playerHealth = 100f;
-
-    // public LayerMask layerMask; // Since I gave my enemy the "Enemy" layer.
-
-    // private float detectionRadius = 1f; // So we can find the "things" (enemies) we're trying to detect.
 
 // ==========[ START ]==========
     void Start()
@@ -38,17 +35,6 @@ public class PlayerMovement_Lauren : MonoBehaviour
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
 
     } // End of Start.
-
-    // private void FixedUpdate()
-    // {
-    //     Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius, enemyLayer);
-    //
-    //     foreach (Collider2D collider in colliders)
-    //     {
-    //        Debug.Log("Enemy Collision.");
-    //        Destroy(collider.gameObject);
-    //     }
-    // }
 
 // ==========[ UPDATE ]==========
     void Update()
@@ -102,49 +88,26 @@ public class PlayerMovement_Lauren : MonoBehaviour
             animator.SetBool("isPhasing", false);
         }
 
-        // RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, detectionRadius);
-        // Debug.DrawRay(transform.position, transform.right * detectionRadius, Color.white);
-
-        // if (hit.collider != null)
-        // {
-        //   if (hit.collider.CompareTag("Enemy"))
-        //   {
-        //       Debug.Log("Collided with Enemy.");
-        //       Destroy(hit.collider.gameObject);
-        //   }
-        // }
-
-        // Raycasting
-        // For some reason, NOTHING I did for 2D collision was working, but after trying this, it worked.
-        // RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0f, transform.right, 0f, layerMask);
-
-        // if(!gameManager.isPhasing)
-        // {
-        //     if (hit.collider != null)
-        //     {
-        //         GameObject enemy = hit.collider.gameObject;
-        //         Debug.Log("Player collided with enemy: " + enemy.name);
-
-        //         enemy.GetComponent<EnemyMovement_Lauren>().TakeDamage(10);
-        //     }
-        // }
-
     } // End of Update.
 
+// ==========[ OTHER FUNCTIONS ]==========
+    // OnCollisionEnter2D() - Collision with enemies.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Enemy Collision.");
-
-            enemyMovement.animator.SetTrigger("destroy");
+            Debug.Log("Enemy Collision with Player.");
+    
+            Destroy(enemy);
 
             // To-Do:
                 // If enemies are in the process of dying, they should not be able to continue moving or taking damage.
+
         }
    
-    }
+    } // End of OnCollisonEnter2D.
 
+    // TakeDamage() - Taking damage.
     public void TakeDamage(float damage)
     {
         playerHealth -= damage;
@@ -154,12 +117,16 @@ public class PlayerMovement_Lauren : MonoBehaviour
             Debug.Log("Game Over.");
 
             animator.SetTrigger("destroy");
-        }
-    }
 
-    public void kill()
+        }
+
+    } // End of TakeDamage().
+
+    // Kill() - "Killing" the player.
+    public void Kill()
     {
         Destroy(gameObject);
-    }
+
+    } // End of Kill().
 
 } // End of Player Movement.

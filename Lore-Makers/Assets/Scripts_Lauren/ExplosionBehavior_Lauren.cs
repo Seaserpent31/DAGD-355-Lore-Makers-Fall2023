@@ -8,27 +8,21 @@ using UnityEngine;
 // ==========[ EXPLOSION BEHAVIOR ]==========
 // When the Bomber enemy is "killed" or reaches the player, they explode, dealing damage.
 // The bomb is not meant to move, when the Bomber is destroyed, the bomb goes off where the Bomber was.
-// To-Do:
-    // Change things with damage (works for now - up close, deals around 9 and deals less further away).
-    // Add particles for when the bomb explodes.
 
 public class ExplosionBehavior_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
+    // Other References.
     private PlayerMovement_Lauren player;
-    public ParticleSystem explosion;
-    
-    // public bool hasExploded = false; // Whether the bomb has exploded or not.
 
+    // Damage.
     public float damage = 1f;
     public float radius = 3f; // Range for splash damage.
 
 // ==========[ START ]==========
     void Start()
     {
-        // bomb = GameObject.FindGameObjectWithTag("Bomb");
-
-        // Making the bomb explode immediately after it's instantiated.
+        // We want the bomb to immediately explode after it is instantiated.
         Invoke("Explode", 0f);
 
     } // End of Start.
@@ -40,6 +34,8 @@ public class ExplosionBehavior_Lauren : MonoBehaviour
 
     } // End of Update.
 
+// ==========[ OTHER FUNCTIONS ]==========
+    // Explode() - For the bomb's explosion.
     void Explode()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
@@ -65,11 +61,10 @@ public class ExplosionBehavior_Lauren : MonoBehaviour
                     Debug.Log(calculatedDamage);
                     Debug.Log("Damage taken. Remaining health: " + player.playerHealth);
                 }
-            }
-        }
 
-        // Explosion effect.
-        // Instantiate(explosion, transform.position, Quaternion.identity);
+            }
+
+        }
 
         // Destroy the bomb.
         Destroy(gameObject);
