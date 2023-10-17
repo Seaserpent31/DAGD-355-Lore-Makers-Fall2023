@@ -29,7 +29,7 @@ public class Script_BasicEnemy_Lawrence : MonoBehaviour
             if (GetComponent<EnemyMovement_Lauren>() != null)
             {
                 manager.GetComponent<GameManager_Lawrence>().score += 10;
-                GetComponent<EnemyMovement_Lauren>().kill();
+                GetComponent<EnemyMovement_Lauren>().Kill();
             }
 
             Destroy(gameObject);
