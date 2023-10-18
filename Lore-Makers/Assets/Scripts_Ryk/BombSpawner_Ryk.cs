@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BombSpawner_Ryk : MonoBehaviour
 {
-    public bool spawnBomb;
+    bool spawnBomb;
     public int spawnRate;
-    public int randomSpawnNumber;
+    int randomSpawnNumber;
 
     public GameObject bomb;
 
@@ -17,7 +17,6 @@ public class BombSpawner_Ryk : MonoBehaviour
     void Start()
     {
         spawnBomb = false;
-        spawnRate = 8;
 
     }
 
@@ -34,21 +33,19 @@ public class BombSpawner_Ryk : MonoBehaviour
             Instantiate(bomb, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
         }*/
 
-        if (Input.GetKeyDown(KeyCode.F))
+        
+    }
+
+    public void kill()
+    {
+        if (!bombActive)
         {
-            if (!bombActive)
+            randomSpawnNumber = Random.Range(0, 10);
+            //Debug.Log(randomSpawnNumber);
+            if (randomSpawnNumber < spawnRate)
             {
-                randomSpawnNumber = Random.Range(0, 10);
-                Debug.Log(randomSpawnNumber);
-                if (randomSpawnNumber < spawnRate)
-                {
-                    Instantiate(bomb, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
-                    bombActive = true;
-                }
-            }
-            else if (bombActive)
-            {
-                bombActive = false;
+                Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
+                bombActive = true;
             }
         }
     }

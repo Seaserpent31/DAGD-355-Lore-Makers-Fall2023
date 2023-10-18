@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5924405950404632873}
   - component: {fileID: 644695805676932805}
   - component: {fileID: 4333453708338754970}
+  - component: {fileID: 4324985559352803004}
+  - component: {fileID: -6249603739290231784}
   m_Layer: 6
   m_Name: Enemy_Lauren
   m_TagString: Enemy
@@ -224,3 +226,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4324985559352803004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3730107599685292168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2cedcaf94086a4ebc067302e334d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 75
+  Maxhealth: 75
+  wasShielded: 0
+  manager: {fileID: 0}
+--- !u!114 &-6249603739290231784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3730107599685292168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbaad38f1a45514bb23416507612e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRate: 11
+  bomb: {fileID: 1721362412742229259, guid: 33fbb6cdb4e73384ba52e05df463a0fa, type: 3}
+  bombActive: 0

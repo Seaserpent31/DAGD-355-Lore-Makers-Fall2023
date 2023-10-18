@@ -21,6 +21,11 @@ public class GameManager_Lawrence : MonoBehaviour
     public float spawnIntervalBasic;
     private float spawnTimerBasic;
 
+    public GameObject PhaseUp;
+    public float spawnIntervalPhase;
+    private float spawnTimerPhase;
+
+
     public int score;
     public TextMeshProUGUI scoreText;
 
@@ -61,6 +66,13 @@ public class GameManager_Lawrence : MonoBehaviour
             spawnTimerBasic = spawnIntervalBasic;
             spawnBasicEnemy();
         }
+
+        spawnTimerPhase -= Time.deltaTime;
+        if (spawnTimerPhase <= 0)
+        {
+            spawnTimerPhase = spawnIntervalPhase;
+            spawnPhase();
+        }
         scoreText.text = "Score :" + score;
     }
 
@@ -76,10 +88,14 @@ public class GameManager_Lawrence : MonoBehaviour
     }
     public void spawnBasicEnemy()
     {
-        spawnPos = new Vector3(30, Random.Range(-6.3f, 9.25f), 0);
+        spawnPos = new Vector3(15, Random.Range(-6.3f, 9.25f), 0);
         Instantiate(BasicEnemy, spawnPos, Quaternion.identity);
     }
-
+    public void spawnPhase()
+    {
+        spawnPos = new Vector3(Random.Range(-17f, 17f), Random.Range(-6.3f, 9.25f), 0);
+        Instantiate(PhaseUp, spawnPos, Quaternion.identity);
+    }
     public void StartGame()
     {
         score = 0;
@@ -95,6 +111,18 @@ public class GameManager_Lawrence : MonoBehaviour
         foreach(GameObject enemy in allEnemies)
         {
             Destroy(enemy);
+        }
+        GameObject[] allShots = GameObject.FindGameObjectsWithTag("Shot");
+        Debug.Log(allShots.Length);
+        foreach (GameObject shot in allShots)
+        {
+            Destroy(shot);
+        }
+        GameObject[] allUps = GameObject.FindGameObjectsWithTag("PowerUp");
+        Debug.Log(allUps.Length);
+        foreach (GameObject shot in allUps)
+        {
+            Destroy(shot);
         }
     }
 }

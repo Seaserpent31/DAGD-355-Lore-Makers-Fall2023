@@ -89,7 +89,6 @@ public class EnemyMovement_Lauren : MonoBehaviour
     public void Kill()
     {       
         Destroy(gameObject);
-
         // Bomb and Explosion.
         Instantiate(explosion, transform.position, Quaternion.identity);
         Instantiate(bomb, transform.position, Quaternion.identity);
@@ -100,6 +99,7 @@ public class EnemyMovement_Lauren : MonoBehaviour
         // I don't really like how the explosion particles go off after the animation is completely done, might have to fix.
 
         Debug.Log("Bomb deployed.");
+
 
     } // End of Kill().
 

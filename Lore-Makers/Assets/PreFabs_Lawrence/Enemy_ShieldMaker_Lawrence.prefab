@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5947945115286376706}
   - component: {fileID: 5568807036114197564}
   - component: {fileID: 2097858576755946673}
-  - component: {fileID: -5637029095887788603}
+  - component: {fileID: -7292320369488787611}
   m_Layer: 6
   m_Name: Enemy_ShieldMaker_Lawrence
   m_TagString: Enemy
@@ -200,7 +200,7 @@ MonoBehaviour:
   Maxhealth: 100
   wasShielded: 0
   manager: {fileID: 0}
---- !u!114 &-5637029095887788603
+--- !u!114 &-7292320369488787611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,9 +209,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5681113297961998179}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 707baec088e72ab4eb82dedc639f1af0, type: 3}
+  m_Script: {fileID: 11500000, guid: fdbaad38f1a45514bb23416507612e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnRate: 3
+  bomb: {fileID: 1721362412742229259, guid: 33fbb6cdb4e73384ba52e05df463a0fa, type: 3}
+  bombActive: 0
 --- !u!1001 &5980438568884951641
 PrefabInstance:
   m_ObjectHideFlags: 0

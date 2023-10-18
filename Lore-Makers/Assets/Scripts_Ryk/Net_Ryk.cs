@@ -6,6 +6,7 @@ public class Net_Ryk : MonoBehaviour
 {
     public float speed;
     public int damage;
+    public int passiveDamage;
 
     public bool netActive = true;
 
@@ -17,13 +18,17 @@ public class Net_Ryk : MonoBehaviour
     public float pullForce;
     public bool isEnemyPulled;
 
+    List<GameObject> trappedGuys;
+
     // Start is called before the first frame update
     void Start()
     {
         speed = 6f;
-        damage = 25;
+        damage = 50;
+        passiveDamage = 5;
         burstRadius = 5f;
         burstNet = false;
+        trappedGuys = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -32,14 +37,17 @@ public class Net_Ryk : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && netActive)
         {
+            Debug.Log(trappedGuys.Count);
             Destroy(gameObject);
-            Debug.Log("Destroyed");
+            foreach(GameObject go in trappedGuys)
+            {
+                if (go != null)
+                {
+                    //Debug.Log("netDamage");
+                    go.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(damage);
+                }
+            }
             burstNet = true;
-        }
-
-        if (burstNet)
-        {
-            Debug.Log(damage + " damage dealt");
         }
 
         transform.position += new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
@@ -56,7 +64,11 @@ public class Net_Ryk : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Triggered!");
+        if (collider.gameObject.tag == "Enemy")
+        {
+            collider.gameObject.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(passiveDamage);
+            trappedGuys.Add(collider.gameObject);
+        }
     }
 }
 

@@ -51,14 +51,18 @@ public class EnemyMovement_Ryk : MonoBehaviour
         enemyFireRate += Time.deltaTime;
         if (enemyFireRate >= 3)
         {
-            Instantiate(shot, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
+            Instantiate(shot, gameObject.transform.position, Quaternion.identity);
             enemyFireRate = 0;
             enemyFire = true;
         }
 
         if (enemyFire)
         {
-            GameObject.FindGameObjectWithTag("Shot").transform.position -= new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+            if (GameObject.FindGameObjectWithTag("Shot") != null)
+            {
+                //GameObject.FindGameObjectWithTag("Shot").transform.position -= new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+            }
+            
         }
     }
 

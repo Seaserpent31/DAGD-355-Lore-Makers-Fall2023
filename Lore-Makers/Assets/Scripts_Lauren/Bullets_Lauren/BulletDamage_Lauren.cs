@@ -51,22 +51,55 @@ public class BulletDamage_Lauren : MonoBehaviour
        
         
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            enemy = collision.gameObject;
+            if (currentType == 0) // Bullet.
+            {
+                RegularEffect(Random.Range(10f, 12f));
+            }
+            else if (currentType == 1) // Electro Bullet.
+            {
+                ElectroEffect(Random.Range(7f, 10f));
+            }
+            else if (currentType == 2) // Poison Dart.
+            {
+                PoisonEffect(Random.Range(10f, 12f));
+            }
+            else if (currentType == 3) // Rocket.
+            {
+                RocketEffect(Random.Range(28f, 32f));
+            }
+            else if (currentType == 4) // Sniper Bullet.
+            {
+                SniperEffect(Random.Range(20f, 25f));
+            }
+            else if (currentType == 5) // Speedy Bullet.
+            {
+                SpeedyEffect(Random.Range(5f, 7f));
+            }
+            gameObject.SetActive(false);
+        }
+    }
+    
 
-    // ChangeType() - Changing the bullet type.
+        // ChangeType() - Changing the bullet type.
     public void ChangeType(int newType)
     {
-        currentType = newType;
+       currentType = newType;
     }
     
     // RegularEffect() - Regular bullets. Doesn't do anything special, deals a normal amount of damage.
     public void RegularEffect(float damage)
     {
-        EnemyMovement_Lauren enemy = GetComponent<EnemyMovement_Lauren>();
+        //EnemyMovement_Lauren enemy = GetComponent<EnemyMovement_Lauren>();
 
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
-            Debug.Log("Bullet. Damage dealt: " + damage);
+            enemy.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(damage);
+            //Debug.Log("Bullet. Damage dealt: " + damage);
 
         }
 
@@ -83,12 +116,12 @@ public class BulletDamage_Lauren : MonoBehaviour
         foreach (Collider2D collider in colliders)
         {
             // Check if the detected object has an enemy script/component.
-            EnemyMovement_Lauren enemy = collider.GetComponent<EnemyMovement_Lauren>();
+           // EnemyMovement_Lauren enemy = collider.GetComponent<EnemyMovement_Lauren>();
 
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
-                Debug.Log("Electro bullet. Damage dealt: " + damage);
+                enemy.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(damage);
+                //Debug.Log("Electro bullet. Damage dealt: " + damage);
 
                 // audioManager.Play(electricShock);
                 // audioManager.audioSource.volume = 0.01f;
@@ -110,12 +143,12 @@ public class BulletDamage_Lauren : MonoBehaviour
     // PoisonEffect() - Deals a little less damage than regular bullets, but deals extra damage over time.
     public void PoisonEffect(float damage)
     {
-        EnemyMovement_Lauren enemy = GetComponent<EnemyMovement_Lauren>();
+        //EnemyMovement_Lauren enemy = GetComponent<EnemyMovement_Lauren>();
 
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
-            Debug.Log("Poison bullet. Damage dealt: " + damage);
+            enemy.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(damage);
+            //Debug.Log("Poison bullet. Damage dealt: " + damage);
 
         }
 
@@ -127,7 +160,7 @@ public class BulletDamage_Lauren : MonoBehaviour
         if (poisonTimer >= 0)
         {
             damage += poisonDamage * Time.deltaTime;
-            Debug.Log("Additional damage: " + poisonDamage);
+            //Debug.Log("Additional damage: " + poisonDamage);
         }
         else
         {
@@ -147,7 +180,7 @@ public class BulletDamage_Lauren : MonoBehaviour
         {
             if (collider.CompareTag("Enemy"))
             {
-                EnemyMovement_Lauren enemy = collider.GetComponent<EnemyMovement_Lauren>();
+               // EnemyMovement_Lauren enemy = collider.GetComponent<EnemyMovement_Lauren>();
 
                 if (enemy != null)
                 {
@@ -159,8 +192,8 @@ public class BulletDamage_Lauren : MonoBehaviour
                     var damagePercent = Mathf.InverseLerp(radius, 0, distance);
                     int calculatedDamage = (int)(damagePercent * damage);
 
-                    enemy.TakeDamage(calculatedDamage);
-                    Debug.Log("Rocket. Damage Dealt: " + calculatedDamage);
+                    enemy.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(calculatedDamage);
+                    //Debug.Log("Rocket. Damage Dealt: " + calculatedDamage);
                 }
 
                 // To-Do: Make the enemies explode after they DIE, not after they get shot.
@@ -172,12 +205,12 @@ public class BulletDamage_Lauren : MonoBehaviour
     // SniperEffect() - Does nothing special, just deals a lot of damage.
     public void SniperEffect(float damage)
     {
-        EnemyMovement_Lauren enemy = GetComponent<EnemyMovement_Lauren>();
+       // EnemyMovement_Lauren enemy = GetComponent<EnemyMovement_Lauren>();
 
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
-            Debug.Log("Sniper Bullet. Damage dealt: " + damage);
+            enemy.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(damage);
+            //Debug.Log("Sniper Bullet. Damage dealt: " + damage);
 
         }
 
@@ -186,12 +219,12 @@ public class BulletDamage_Lauren : MonoBehaviour
     // SpeedyEffect() - Deals the least amount of damage, but makes up for it with amount of bullets fired at a time.
     public void SpeedyEffect(float damage)
     {
-        EnemyMovement_Lauren enemy = GetComponent<EnemyMovement_Lauren>();
+        //EnemyMovement_Lauren enemy = GetComponent<EnemyMovement_Lauren>();
 
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
-            Debug.Log("Speedy Bullet. Damage dealt: " + damage);
+            enemy.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(damage);
+            //Debug.Log("Speedy Bullet. Damage dealt: " + damage);
 
         }
 

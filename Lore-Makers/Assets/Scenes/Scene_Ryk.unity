@@ -731,8 +731,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Ryk
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -204181389122273637, guid: 5831afa4fc82170448f95f606345d4ef, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

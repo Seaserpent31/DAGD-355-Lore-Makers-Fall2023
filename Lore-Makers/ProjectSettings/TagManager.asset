@@ -9,6 +9,9 @@ TagManager:
   - PowerUp
   - Test
   - Bullet
+  - Net
+  - Shot
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - UI
   - Enemy
   - Bullet
-  - 
+  - Player
   - 
   - 
   - 

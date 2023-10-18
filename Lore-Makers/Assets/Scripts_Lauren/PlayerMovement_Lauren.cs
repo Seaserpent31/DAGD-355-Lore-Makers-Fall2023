@@ -67,8 +67,9 @@ public class PlayerMovement_Lauren : MonoBehaviour
        {
             Debug.Log("Enemy Collision with Player.");
     
-            Destroy(enemy);
+            Destroy(collision.gameObject);
 
+            gameObject.GetComponent<Script_Player_Lawrence>().TakeDamage(10);
             // To-Do:
                 // If enemies are in the process of dying, they should not be able to continue moving or taking damage.
 

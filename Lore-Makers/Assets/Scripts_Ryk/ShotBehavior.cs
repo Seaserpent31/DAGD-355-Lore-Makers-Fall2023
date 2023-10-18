@@ -15,13 +15,19 @@ public class ShotBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position += new Vector3(-1f, 0f, 0f) * speed * Time.deltaTime;
+        transform.position += new Vector3(-1f, 0f, 0f) * speed * Time.deltaTime;
+
+        if(transform.position.x < -20f)Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Player Hit!");
-        //Deal Damage
-        Destroy(gameObject);
+        if (collider.gameObject.GetComponent<Script_Player_Lawrence>() != null)
+        {
+            Debug.Log("Player Hit!");
+            //Deal Damage
+            collider.gameObject.GetComponent<Script_Player_Lawrence>().TakeDamage(5);
+            Destroy(gameObject);
+        }
     }
 }

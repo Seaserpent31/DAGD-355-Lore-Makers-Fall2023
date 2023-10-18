@@ -9,7 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8429496871998167207}
-  m_Layer: 0
+  - component: {fileID: 8679385367081228390}
+  - component: {fileID: 8947348010892012861}
+  - component: {fileID: 3557100001161789480}
+  - component: {fileID: 1225557885451262712}
+  m_Layer: 8
   m_Name: BulletSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,6 +35,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4370196394221571358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8679385367081228390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084659220702549869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0512f6907e624c4e8676da2cbe66d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  audioManager: {fileID: 0}
+  weaponManager: {fileID: 8947348010892012861}
+  bulletDamage: {fileID: 3557100001161789480}
+  clip: {fileID: 8300000, guid: 4987ab427f5669847a79975ab1f1dec4, type: 3}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  damageAmount: 0
+--- !u!114 &8947348010892012861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084659220702549869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6520ffbb21cc04b4a9c91ab2a694b9bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3557100001161789480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084659220702549869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc1965cf978ba041803fc3bfd256b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 3730107599685292168, guid: b39c8942574eb5443bc29907544d21d5, type: 3}
+  lightning: {fileID: 1306605793903958, guid: 9ce4142b18056ab4b813713b878856ca, type: 3}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  bulletType: 0
+  damage: 0
+  radius: 3
+--- !u!114 &1225557885451262712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084659220702549869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053ca2f21d65fe44abe7c5e5d889d8e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledBullet: {fileID: 6211569611441351926, guid: a1847837e80db3045b3da18642b45725, type: 3}
 --- !u!1 &6296542994943012141
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,7 +117,7 @@ GameObject:
   - component: {fileID: 4722131778692496092}
   - component: {fileID: -4542105103090535651}
   - component: {fileID: 2570078054035570222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -338,5 +408,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c4c77da436be841a2c7f01e4802484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   animator: {fileID: 4722131778692496092}
-  playerHealth: 100

@@ -20,11 +20,17 @@ public class Script_BasicEnemy_Lawrence : MonoBehaviour
     {
         if(health <= 0)
         {
+
+            if(GetComponent<BombSpawner_Ryk>() != null)
+            {
+                GetComponent<BombSpawner_Ryk>().kill();
+            }
             
             if (GetComponent<Script_ShieldEnemy_Lawrence>() != null)
             {
                 manager.GetComponent<GameManager_Lawrence>().score += 20;
                 GetComponent<Script_ShieldEnemy_Lawrence>().SpawnPowerUp();
+                Destroy(gameObject);
             }
             if (GetComponent<EnemyMovement_Lauren>() != null)
             {
@@ -34,7 +40,7 @@ public class Script_BasicEnemy_Lawrence : MonoBehaviour
             if (GetComponent<EnemyMovement_Ryk>() != null)
             {
                 manager.GetComponent<GameManager_Lawrence>().score += 10;
-                GetComponent<EnemyMovement_Lauren>().Kill();
+                Destroy(gameObject);
             }
 
             Destroy(gameObject);
