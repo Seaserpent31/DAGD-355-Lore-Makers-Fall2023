@@ -56,10 +56,10 @@ public class ExplosionBehavior_Lauren : MonoBehaviour
                     var damagePercent = Mathf.InverseLerp(radius, 0, distance);
                     int calculatedDamage = (int)(damagePercent * 10 * damage);
 
-                    // Dea damage.
-                    player.TakeDamage(calculatedDamage);
+                    // Deal damage.
+                    // player.TakeDamage(calculatedDamage);
                     Debug.Log(calculatedDamage);
-                    Debug.Log("Damage taken. Remaining health: " + player.playerHealth);
+                    // Debug.Log("Damage taken. Remaining health: " + player.playerHealth);
                 }
 
             }

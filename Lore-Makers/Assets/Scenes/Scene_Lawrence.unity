@@ -818,7 +818,7 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   phasing: {fileID: 0}
   isPhasing: 0
-  phaseTime: 7
+  phaseTime: 2
   isShooting: 1
 --- !u!82 &1455878700
 AudioSource:
@@ -1981,6 +1981,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2570078054035570222, guid: 92a7d7eef0852eb4aaba236d9d429ab1, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1455878699}
     - target: {fileID: 4370196394221571358, guid: 92a7d7eef0852eb4aaba236d9d429ab1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
