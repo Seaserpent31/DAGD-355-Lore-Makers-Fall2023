@@ -15,7 +15,7 @@ public class ShotBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(-1f, 0f, 0f) * speed * Time.deltaTime;
+        //transform.position += new Vector3(-1f, 0f, 0f) * speed * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
