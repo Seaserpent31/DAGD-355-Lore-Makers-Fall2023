@@ -59,3 +59,4 @@ public class Net_Ryk : MonoBehaviour
         Debug.Log("Triggered!");
     }
 }
+
