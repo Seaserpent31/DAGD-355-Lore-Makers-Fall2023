@@ -15,21 +15,21 @@ public class PlayerMovement_Lauren : MonoBehaviour
 {
 // ==========[ VARIABLES ]==========
     // Other References.
-    private GameManager gameManager;  
+    public GameManager gameManager;  
     private GameObject enemy;
     
-    private Rigidbody2D rb;
+    // private Rigidbody2D rb;
 
     // Animation.
     public Animator animator;
 
     // Health.
-    public float playerHealth = 100f;
+    // public float playerHealth = 100f;
 
 // ==========[ START ]==========
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        // rb = GetComponent<Rigidbody2D>();
 
         enemy = GameObject.FindGameObjectWithTag("Enemy"); // Finding the Enemy object.
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
@@ -40,43 +40,12 @@ public class PlayerMovement_Lauren : MonoBehaviour
     void Update()
     {
         // Mouse movement.
-        Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        /* Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(cursorPosition.x, cursorPosition.y);
 
         // Getting the mouse's X and Y.
         float vertical = Input.GetAxis("Mouse Y");
-        float horizontal = Input.GetAxis("Mouse X");
-
-        // If the 'vertical' is greater than 0, the ship is moving up.
-        if (vertical > 0)
-        {
-            animator.SetBool("isUp", true);
-        }
-        // If the 'vertical' is less than 0, the ship is moving down.
-        else if (vertical < 0)
-        {
-            animator.SetBool("isUp", false);
-        }
-
-        // To-Do:
-        // Tilting the player as they move from side to side (same as above).
-
-        if (horizontal > 0)
-        {
-            animator.SetBool("isRight", true);
-            animator.SetBool("isLeft", false);
-        }
-        // If the 'vertical' is less than 0, the ship is moving down.
-        else if (horizontal < 0)
-        {
-            animator.SetBool("isRight", false);
-            animator.SetBool("isLeft", true);
-        }
-        else if (horizontal == 0)
-        {
-            animator.SetBool("isRight", false);
-            animator.SetBool("isLeft", false);
-        }
+        float horizontal = Input.GetAxis("Mouse X"); */
 
         // Phasing.
         if (gameManager.isPhasing)
@@ -95,7 +64,7 @@ public class PlayerMovement_Lauren : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-        {
+       {
             Debug.Log("Enemy Collision with Player.");
     
             Destroy(enemy);
@@ -105,28 +74,28 @@ public class PlayerMovement_Lauren : MonoBehaviour
 
         }
    
-    } // End of OnCollisonEnter2D.
+     } // End of OnCollisonEnter2D.
 
     // TakeDamage() - Taking damage.
-    public void TakeDamage(float damage)
-    {
-        playerHealth -= damage;
-        if (playerHealth <= 0f)
-        {
-            // Game is over.
-            Debug.Log("Game Over.");
+    // public void TakeDamage(float damage)
+    // {
+    //     playerHealth -= damage;
+    //     if (playerHealth <= 0f)
+    //     {
+    //         // Game is over.
+    //         Debug.Log("Game Over.");
 
-            animator.SetTrigger("destroy");
+    //         animator.SetTrigger("destroy");
 
-        }
+    //     }
 
-    } // End of TakeDamage().
+   //  } // End of TakeDamage().
 
     // Kill() - "Killing" the player.
-    public void Kill()
-    {
-        Destroy(gameObject);
+    // public void Kill()
+    // {
+     //    Destroy(gameObject);
 
-    } // End of Kill().
+    // } // End of Kill().
 
 } // End of Player Movement.

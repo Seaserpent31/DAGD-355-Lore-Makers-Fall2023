@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8429496871998167207}
-  - component: {fileID: 2748044446127844555}
   m_Layer: 0
   m_Name: BulletSpawner
   m_TagString: Untagged
@@ -32,34 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4370196394221571358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2748044446127844555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4084659220702549869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a867eba83e30a2e4996cea6f9178ef33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numColumns: 5
-  speed: 5
-  texture: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  color: {r: 1, g: 0.93831706, b: 0.49685526, a: 1}
-  lifetime: 5
-  firerate: 0.5
-  size: 0.35
-  material: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-  spin: 180
-  time: 0
-  damage: 0
-  isShooting: 0
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  system: {fileID: 0}
 --- !u!1 &6296542994943012141
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,6 +46,7 @@ GameObject:
   - component: {fileID: 7833144609584763346}
   - component: {fileID: 4722131778692496092}
   - component: {fileID: -4542105103090535651}
+  - component: {fileID: 2570078054035570222}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -235,8 +207,8 @@ MonoBehaviour:
   animator: {fileID: 4722131778692496092}
   healthBar: {fileID: 0}
   chargeBar: {fileID: 0}
-  score: 0
   chargeFasterTimer: 0
+  gameOverMenu: {fileID: 0}
 --- !u!95 &4722131778692496092
 Animator:
   serializedVersion: 5
@@ -354,3 +326,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2570078054035570222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296542994943012141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c4c77da436be841a2c7f01e4802484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4722131778692496092}
+  playerHealth: 100
