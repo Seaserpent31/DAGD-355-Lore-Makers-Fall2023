@@ -56,6 +56,6 @@ public class Net_Ryk : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Trigerred!");
+        Debug.Log("Triggered!");
     }
 }
