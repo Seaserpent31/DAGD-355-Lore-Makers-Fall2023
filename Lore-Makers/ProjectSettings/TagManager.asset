@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - PowerUp
   - Test
+  - Spawner
+  - Net
+  - Shot
   layers:
   - Default
   - TransparentFX
