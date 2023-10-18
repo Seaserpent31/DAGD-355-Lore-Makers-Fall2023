@@ -29,24 +29,22 @@ public class GameManager_Ryk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        /*if (Input.GetKeyDown(KeyCode.F))
         {
             if (gameObjectWithTag("Bomber"))
             {
                 Instantiate(bomb, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
-                bombActive = true;
             }
 
             else
             {
                 randomSpawnNumber = Random.Range(0, 10);
-                Debug.Log(randomSpawnNumber);
+                //Debug.Log(randomSpawnNumber);
                 if (randomSpawnNumber < spawnRate)
                 {
                     Instantiate(bomb, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
-                    bombActive = true;
                 }
             }
-        }
+        }*/
     }
 }
