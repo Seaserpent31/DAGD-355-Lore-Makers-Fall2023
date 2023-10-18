@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class EnemyMovement_Ryk : MonoBehaviour
@@ -9,6 +10,8 @@ public class EnemyMovement_Ryk : MonoBehaviour
     private int enemyFirePattern;
 
     private float enemyFireRate;
+
+    private bool enemyFire;
 
     public GameObject shot;
 
@@ -22,6 +25,7 @@ public class EnemyMovement_Ryk : MonoBehaviour
         //Debug.Log(spawnPosX + " " + spawnPosY);
         Debug.Log(enemyFirePattern);
 
+        enemyFire = false;
     }
 
     // Update is called once per frame
@@ -45,13 +49,17 @@ public class EnemyMovement_Ryk : MonoBehaviour
     private void firePatternSingle()
     {
         enemyFireRate += Time.deltaTime;
-        if (enemyFireRate >= 3 )
+        if (enemyFireRate >= 3)
         {
             Instantiate(shot, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
             enemyFireRate = 0;
+            enemyFire = true;
         }
 
-        //position.transform -= new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+        if (enemyFire)
+        {
+            GameObject.FindGameObjectWithTag("Shot").transform.position -= new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+        }
     }
 
     private void firePatternTriple()
@@ -59,8 +67,8 @@ public class EnemyMovement_Ryk : MonoBehaviour
 
     }
 
-    private void firePatternPierce() 
+    private void firePatternPierce()
     {
-        
+
     }
 }

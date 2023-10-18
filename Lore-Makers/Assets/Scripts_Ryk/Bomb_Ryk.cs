@@ -6,7 +6,7 @@ public class Bomb_Ryk : MonoBehaviour
 {
     public float speed;
     public bool bombActive = true;
-    //private float damage = 20;
+    private float damage = 20;
 
     private Rigidbody2D rb;
 
@@ -36,7 +36,7 @@ public class Bomb_Ryk : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //collision.gameObject.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(damage);
+            //collision.gameObject.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(damage); Rename to Player GameObject
             Destroy(gameObject);
             Debug.Log("Bomb Damage");
         }

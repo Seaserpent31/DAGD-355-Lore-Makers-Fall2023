@@ -16,6 +16,8 @@ public class GameManager_Ryk : MonoBehaviour
     public float spawnPosX;
     public float spawnPosY;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +29,22 @@ public class GameManager_Ryk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        if (enemy != null)
+        /*if (Input.GetKeyDown(KeyCode.F))
         {
-            enemyKilled = true; 
-            //enemy.SetActive(false);
+            if (gameObjectWithTag("Bomber"))
+            {
+                Instantiate(bomb, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
+            }
 
-
-        }
+            else
+            {
+                randomSpawnNumber = Random.Range(0, 10);
+                //Debug.Log(randomSpawnNumber);
+                if (randomSpawnNumber < spawnRate)
+                {
+                    Instantiate(bomb, GameObject.FindGameObjectWithTag("Enemy").transform.position, Quaternion.identity);
+                }
+            }
+        }*/
     }
 }
