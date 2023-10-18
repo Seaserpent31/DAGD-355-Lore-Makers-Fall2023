@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu_Lawrence.unity
+    guid: bc27cf14c29850f479d0ae7c7a2b3c60
   - enabled: 1
     path: Assets/Scenes/Scene_Lawrence.unity
     guid: 8fc93bfee3995eb499645def94600e04
-  - enabled: 1
-    path: Assets/Scenes/MainMenu_Lawrence.unity
-    guid: bc27cf14c29850f479d0ae7c7a2b3c60
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
