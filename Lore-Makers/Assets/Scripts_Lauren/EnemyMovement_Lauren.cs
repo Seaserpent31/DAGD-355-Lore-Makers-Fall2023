@@ -54,18 +54,16 @@ public class EnemyMovement_Lauren : MonoBehaviour
     void Update()
     {
         // Finding the player's location.
-        dis = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 dir = player.transform.position - transform.forward;
+        Vector2 dir = player.transform.position - transform.position;
         dir.Normalize();
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         // If the player is phasing, the enemies should NOT continue following them.
-        if(!gameManager.isPhasing)
+        if (!gameManager.isPhasing)
         {
             // Moving and rotating so the enemy faces the player.
-            // transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-            // transform.rotation = Quaternion.Euler(Vector3.forward * angle);
-                // Commenting out for testing purposes. Remember to get rid of the // later.
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90f));
 
         }
 
