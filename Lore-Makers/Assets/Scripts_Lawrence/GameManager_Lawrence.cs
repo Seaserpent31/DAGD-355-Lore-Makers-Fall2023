@@ -89,7 +89,7 @@ public class GameManager_Lawrence : MonoBehaviour
     public void spawnBasicEnemy()
     {
         spawnPos = new Vector3(15, Random.Range(-6.3f, 9.25f), 0);
-        Instantiate(BasicEnemy, spawnPos, Quaternion.identity);
+        Instantiate(BasicEnemy, spawnPos, Quaternion.Euler(0,0,-90));
     }
     public void spawnPhase()
     {
@@ -107,22 +107,27 @@ public class GameManager_Lawrence : MonoBehaviour
     public void endGame()
     {
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        Debug.Log(allEnemies.Length);
+       // Debug.Log(allEnemies.Length);
         foreach(GameObject enemy in allEnemies)
         {
             Destroy(enemy);
         }
         GameObject[] allShots = GameObject.FindGameObjectsWithTag("Shot");
-        Debug.Log(allShots.Length);
+        //Debug.Log(allShots.Length);
         foreach (GameObject shot in allShots)
         {
             Destroy(shot);
         }
         GameObject[] allUps = GameObject.FindGameObjectsWithTag("PowerUp");
-        Debug.Log(allUps.Length);
+        //Debug.Log(allUps.Length);
         foreach (GameObject shot in allUps)
         {
             Destroy(shot);
+        }
+        GameObject[] allBullets = GameObject.FindGameObjectsWithTag("PowerUp");
+        foreach (GameObject bullet in allBullets)
+        {
+            bullet.SetActive(false);
         }
     }
 }
