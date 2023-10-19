@@ -246,6 +246,7 @@ public class Script_Player_Lawrence : MonoBehaviour
         Time.timeScale = 0f;
         
         gameOverMenu.SetActive(true);
+        animator.SetBool("IsDead", false);
     }
     public void kill()
     {

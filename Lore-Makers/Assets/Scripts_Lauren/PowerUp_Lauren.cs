@@ -42,7 +42,7 @@ public class PowerUp_Lauren : MonoBehaviour
         if (hit.collider.CompareTag("Player"))
         {
             audioManager.Play(phasing);
-            audioManager.audioSource.volume = 0.1f;  
+            audioManager.audioSource.volume = 1f;  
 
             Debug.Log("Phasing out.");
               gameManager.isPhasing = true;

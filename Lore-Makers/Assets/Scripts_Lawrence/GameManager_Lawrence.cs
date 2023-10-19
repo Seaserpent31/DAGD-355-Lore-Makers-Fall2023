@@ -124,7 +124,8 @@ public class GameManager_Lawrence : MonoBehaviour
         {
             Destroy(shot);
         }
-        GameObject[] allBullets = GameObject.FindGameObjectsWithTag("PowerUp");
+
+        GameObject[] allBullets = GameObject.FindGameObjectsWithTag("Bullet");
         foreach (GameObject bullet in allBullets)
         {
             bullet.SetActive(false);

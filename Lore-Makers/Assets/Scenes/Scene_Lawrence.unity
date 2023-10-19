@@ -488,7 +488,7 @@ MonoBehaviour:
   BasicEnemy: {fileID: 7274218194777518810, guid: 5831afa4fc82170448f95f606345d4ef, type: 3}
   spawnIntervalBasic: 2
   PhaseUp: {fileID: 4823688606739849382, guid: 04abd4376e869e34dbe8e4ea519f8434, type: 3}
-  spawnIntervalPhase: 24
+  spawnIntervalPhase: 32
   score: 0
   scoreText: {fileID: 1391774785}
   startsound: {fileID: 8300000, guid: 7585b68e0a0cbbe4580ea5fd600c61be, type: 3}
@@ -504,8 +504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1d5e5473f10d349946b0b1c577975d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
-  phasing: {fileID: 0}
   isPhasing: 0
   phaseTime: 8
   isShooting: 1
