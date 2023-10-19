@@ -20,12 +20,17 @@ public class PowerUp_Lauren : MonoBehaviour
     private GameManager gameManager;
     private GameObject player;
 
+    // Audio.
+    public AudioManager_Lauren audioManager;
+    [SerializeField] private AudioClip phasing;
 
-// ==========[ START ]==========
+    // ==========[ START ]==========
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); // Finding the Player.
         gameManager = GameManager.FindAnyObjectByType<GameManager>();
+
+        audioManager = AudioManager_Lauren.FindAnyObjectByType<AudioManager_Lauren>();
 
     } // End of Start.
 
@@ -36,7 +41,10 @@ public class PowerUp_Lauren : MonoBehaviour
 
         if (hit.collider.CompareTag("Player"))
         {
-              Debug.Log("Phasing out.");
+            audioManager.Play(phasing);
+            audioManager.audioSource.volume = 0.1f;  
+
+            Debug.Log("Phasing out.");
               gameManager.isPhasing = true;
         
               // Disable collision and player's render.

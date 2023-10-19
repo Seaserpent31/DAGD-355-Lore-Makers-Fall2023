@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c4c77da436be841a2c7f01e4802484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   animator: {fileID: 143657436}
-  playerHealth: 50
 --- !u!212 &143657429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1423,11 +1423,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2822427246323911288, guid: 04abd4376e869e34dbe8e4ea519f8434, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.72
+      value: -5.3
       objectReference: {fileID: 0}
     - target: {fileID: 2822427246323911288, guid: 04abd4376e869e34dbe8e4ea519f8434, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.96
+      value: -4.88
       objectReference: {fileID: 0}
     - target: {fileID: 2822427246323911288, guid: 04abd4376e869e34dbe8e4ea519f8434, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1461,6 +1461,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4706811038042574964, guid: 04abd4376e869e34dbe8e4ea519f8434, type: 3}
+      propertyPath: phasing
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b31354c7e217ab4088c46b75e760137, type: 3}
+    - target: {fileID: 4706811038042574964, guid: 04abd4376e869e34dbe8e4ea519f8434, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 985305275}
     - target: {fileID: 4823688606739849382, guid: 04abd4376e869e34dbe8e4ea519f8434, type: 3}
       propertyPath: m_Name
       value: PowerUp_Lauren
@@ -1514,8 +1522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1d5e5473f10d349946b0b1c577975d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
-  phasing: {fileID: 8300000, guid: 3b31354c7e217ab4088c46b75e760137, type: 3}
   isPhasing: 0
   phaseTime: 8
   isShooting: 1
