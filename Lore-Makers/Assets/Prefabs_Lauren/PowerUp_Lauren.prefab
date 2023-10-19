@@ -133,3 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a95ade3dce25a468d102cc6930c24d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  phasing: {fileID: 8300000, guid: 3b31354c7e217ab4088c46b75e760137, type: 3}
