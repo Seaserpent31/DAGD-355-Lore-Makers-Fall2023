@@ -32,10 +32,8 @@ public class Net_Ryk : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && netActive)
         {
-<<<<<<< Updated upstream
             Destroy(gameObject);
             Debug.Log("Destroyed");
-=======
             Debug.Log(trappedGuys.Count);
 
             foreach(GameObject go in trappedGuys)
@@ -51,7 +49,6 @@ public class Net_Ryk : MonoBehaviour
 
             //Instatiate
 
->>>>>>> Stashed changes
             burstNet = true;
             Destroy(gameObject);
         }
