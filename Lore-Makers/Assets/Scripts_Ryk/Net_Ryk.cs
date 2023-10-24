@@ -32,9 +32,28 @@ public class Net_Ryk : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && netActive)
         {
+<<<<<<< Updated upstream
             Destroy(gameObject);
             Debug.Log("Destroyed");
+=======
+            Debug.Log(trappedGuys.Count);
+
+            foreach(GameObject go in trappedGuys)
+            {
+                if (go != null)
+                {
+                    //Debug.Log("netDamage");
+                    go.GetComponent<Script_BasicEnemy_Lawrence>().takeDamage(damage);
+                }
+            }
+
+            //spawn explosion prefab which pull enemies closer to the vortex and applies massive damage and destroys self
+
+            //Instatiate
+
+>>>>>>> Stashed changes
             burstNet = true;
+            Destroy(gameObject);
         }
 
         if (burstNet)
