@@ -445,6 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   net: {fileID: 245977569260484741, guid: 703e4dada6c638d438ed3dbd6b969163, type: 3}
+  electricBurst: {fileID: 7610881673156352332, guid: bc4a0b53f404384458870e83650ea341, type: 3}
   player: {fileID: 0}
   netActive: 0
 --- !u!1 &1060049899
@@ -781,6 +782,14 @@ PrefabInstance:
     - target: {fileID: 1293665847181079935, guid: bc4a0b53f404384458870e83650ea341, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743530946007897819, guid: bc4a0b53f404384458870e83650ea341, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743530946007897819, guid: bc4a0b53f404384458870e83650ea341, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7610881673156352332, guid: bc4a0b53f404384458870e83650ea341, type: 3}
       propertyPath: m_Name

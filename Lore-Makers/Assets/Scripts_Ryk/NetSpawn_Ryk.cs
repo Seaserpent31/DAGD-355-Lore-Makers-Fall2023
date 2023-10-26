@@ -5,6 +5,7 @@ using UnityEngine;
 public class NetSpawn_Ryk : MonoBehaviour
 {
     public GameObject net;
+    public GameObject electricBurst;
 
     public GameObject player;
 
@@ -28,6 +29,7 @@ public class NetSpawn_Ryk : MonoBehaviour
             }
             else if (netActive)
             {
+                Instantiate(electricBurst, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
                 netActive = false;
             }
         }
