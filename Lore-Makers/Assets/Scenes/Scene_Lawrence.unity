@@ -340,6 +340,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 686461829416121928, guid: af5628fda3257224db5106008aa090d5, type: 3}
+      propertyPath: m_text
+      value: Num 1-6 to swap passive shot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1823891151152908000, guid: af5628fda3257224db5106008aa090d5, type: 3}
+      propertyPath: m_text
+      value: "1 - Bullet\n2 - Electro Bullet\n3 - Dart \n4 - Rocket\n5 - Sniper Bullet\n6
+        - Speedy Bullet"
+      objectReference: {fileID: 0}
     - target: {fileID: 5206761742486828101, guid: af5628fda3257224db5106008aa090d5, type: 3}
       propertyPath: m_Name
       value: ControlsMenu
@@ -492,6 +501,8 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 1391774785}
   startsound: {fileID: 8300000, guid: 7585b68e0a0cbbe4580ea5fd600c61be, type: 3}
+  audioManager: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: 06047291a03b7d644980029b2f8c92e8, type: 3}
 --- !u!114 &1455878699
 MonoBehaviour:
   m_ObjectHideFlags: 0

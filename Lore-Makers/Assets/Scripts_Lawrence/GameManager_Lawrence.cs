@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements.Experimental;
 
 public class GameManager_Lawrence : MonoBehaviour
 {
@@ -34,12 +35,17 @@ public class GameManager_Lawrence : MonoBehaviour
     public AudioClip startsound;
     static AudioSource audioSrc;
 
+    // Background Audio (Lauren)
+    public AudioManager_Lauren audioManager;
+    [SerializeField] private AudioClip backgroundMusic;
+
     // Start is called before the first frame update
     void Start()
     {
         spawnTimerShield = spawnIntervalShield;
         audioSrc = GetComponent<AudioSource>();
 
+        audioManager = AudioManager_Lauren.FindAnyObjectByType<AudioManager_Lauren>();
 
         StartGame();
     }
@@ -102,10 +108,14 @@ public class GameManager_Lawrence : MonoBehaviour
         Time.timeScale = 1f;
         PlayerChar.GetComponent<Script_Player_Lawrence>().ResetPlayer();
         audioSrc.PlayOneShot(startsound);
+
+        audioManager.Play(backgroundMusic);
     }
 
     public void endGame()
     {
+        audioManager.Stop(backgroundMusic);
+        
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
        // Debug.Log(allEnemies.Length);
         foreach(GameObject enemy in allEnemies)

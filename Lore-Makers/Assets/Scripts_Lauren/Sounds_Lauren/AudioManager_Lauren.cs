@@ -45,10 +45,12 @@ public class AudioManager_Lauren : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
 
-    public void Stop (string name)
+    public void Stop (AudioClip clip)
     {
         // Sound_Lauren s = Array.Find(sounds, sound => sound.name == name);
         // s.source.Stop();
+
+        audioSource.Stop();
     }
 
 }
