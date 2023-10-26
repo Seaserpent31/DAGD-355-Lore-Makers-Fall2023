@@ -17,6 +17,8 @@ public class Net_Ryk : MonoBehaviour
     public float pullForce;
     public bool isEnemyPulled;
 
+    //public GameObject electricBurst;
+
     public static List<Object> trappedGuys = new List<Object>();
 
     // Start is called before the first frame update
@@ -50,9 +52,9 @@ public class Net_Ryk : MonoBehaviour
             //spawn explosion prefab which pull enemies closer to the vortex and applies massive damage and destroys self
 
             //Instatiate
-
+            //Instantiate(electricBurst, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
             burstNet = true;
-            Destroy(gameObject);
+            //Destroy(electricBurst);
         }
 
         if (burstNet)

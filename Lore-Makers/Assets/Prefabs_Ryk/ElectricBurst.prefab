@@ -111,6 +111,7 @@ MonoBehaviour:
   gravityStrength: 0
   pullForce: 0
   isEnemyPulled: 0
+  electricBurst: {fileID: 7610881673156352332}
 --- !u!50 &847076598828629980
 Rigidbody2D:
   serializedVersion: 4
