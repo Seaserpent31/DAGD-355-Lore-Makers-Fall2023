@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa07ba3a6471b04bb1ce39eb806b625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 5249208754775858132, guid: c15dca4e09dcded479a58b3a2802594e, type: 3}
+  shot: {fileID: 67599812175316401, guid: af94b09b92940ad46b287038599fdba9, type: 3}
 --- !u!114 &4878720813699539057
 MonoBehaviour:
   m_ObjectHideFlags: 0
