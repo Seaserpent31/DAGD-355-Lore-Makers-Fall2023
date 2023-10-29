@@ -104,7 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   damage: 0
-  passiveDamage: 0
   netActive: 1
   burstRadius: 0
   burstNet: 0
@@ -112,6 +111,7 @@ MonoBehaviour:
   gravityStrength: 0
   pullForce: 0
   isEnemyPulled: 0
+  electricBurst: {fileID: 7610881673156352332, guid: bc4a0b53f404384458870e83650ea341, type: 3}
 --- !u!50 &1748838116043380663
 Rigidbody2D:
   serializedVersion: 4
